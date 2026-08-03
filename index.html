@@ -2,36 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Token Rush – 200+ Fun Games & Exciting Rewards</title>
-    <meta name="description" content="Token Rush is a premium Android gaming platform made for Indian Gamers. Play 200+ fun games and win exciting rewards like Amazon Gift Cards, Free Fire, PUBG, and cash rewards.">
+    <title>AstraSpin - Spin & Win Coins Game</title>
     
-    <!-- Fonts -->
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Play AstraSpin and win free coins by spinning the wheel! Spin daily, collect coins, and redeem exciting rewards in this fast, fun, and rewarding mobile web game.">
+    <meta name="keywords" content="AstraSpin, Spin and Win, Free Coins Game, Spin Wheel Game, Mobile Web Game, Earn Coins, Reward Game, AstraSpin Game, Free Spin, Online Spin Game, Casual Game, Play and Win">
+    <meta name="author" content="Astrafun">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Mobile Specific Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:title" content="AstraSpin: Spin & Win Free Coins - Mobile Reward Game">
+    <meta property="og:description" content="Spin the wheel, win free coins, and redeem rewards instantly. Play AstraSpin, the best mobile web game for earning coins!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://astraspin.in">
+    <meta property="og:site_name" content="AstraSpin">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AstraSpin: Spin & Win Free Coins - Mobile Reward Game">
+    <meta name="twitter:description" content="Spin the wheel, win free coins, and redeem rewards instantly. Play AstraSpin now!">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300c853'/%3E%3Cpath d='M50 20L58 40H78L62 52L68 72L50 60L32 72L38 52L22 40H42Z' fill='white'/%3E%3C/svg%3E">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Admolo Ads Script -->
+    <script class="admoloScript" src="https://cdn.admolo.com/assets/ads/ad.js"></script>
 
     <style>
         :root {
-            --bg-color: #FFFFFF;
-            --text-primary: #0F172A;
-            --text-secondary: #64748B;
-            --jungle-primary: #10B981;
-            --jungle-dark: #059669;
-            --jungle-light: #D1FAE5;
-            --gold-primary: #F59E0B;
-            --gold-light: #FEF3C7;
-            --accent-purple: #8B5CF6;
-            --accent-pink: #EC4899;
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.5);
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-            --shadow-md: 0 12px 24px -8px rgba(16, 185, 129, 0.12);
-            --shadow-lg: 0 24px 48px -12px rgba(16, 185, 129, 0.18);
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 32px;
-            --header-height: 80px;
+            --bg-primary: #f4fdf6;
+            --bg-secondary: #e8f7ec;
+            --bg-card: #ffffff;
+            --text-dark: #102a1c;
+            --text-medium: #3b5a45;
+            --text-light: #7a9285;
+            --accent-green: #00c853;
+            --accent-green-dark: #009624;
+            --accent-green-light: #5efc82;
+            --gold: #ffb300;
+            --gold-dark: #ff8f00;
+            --shadow-soft: 0 8px 30px rgba(0, 200, 83, 0.08);
+            --shadow-button: 0 6px 0 #00701a, 0 8px 25px rgba(0, 200, 83, 0.3);
+            --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --border-light: #d1e8da;
+            --radius: 24px;
+            --radius-sm: 14px;
+            --safe-top: env(safe-area-inset-top, 0px);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
 
         * {
@@ -39,1834 +63,1298 @@
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
         }
 
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
+        html { height: 100%; overflow: hidden; }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-dark);
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 200, 83, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(94, 252, 130, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .app-wrapper {
+            position: relative;
             width: 100%;
+            height: 100%;
+            z-index: 1;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+        .screen {
+            position: absolute;
+            top: 0; left: 0;
             width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            overflow-y: auto;
+            opacity: 0;
+            transform: scale(0.98);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+        .screen.active {
+            display: flex;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===================== HUB SCREEN ===================== */
+        #hubScreen {
+            background: linear-gradient(180deg, #f0fff4 0%, #ffffff 100%);
+            padding: 20px 16px;
+            padding-top: calc(20px + var(--safe-top));
+            padding-bottom: calc(40px + var(--safe-bottom));
+            justify-content: flex-start;
         }
         
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .hub-container {
+            max-width: 1200px;
             width: 100%;
-            height: var(--header-height);
-            z-index: 1000;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            align-items: center;
+            margin: 0 auto;
         }
 
-        header.hidden {
-            transform: translateY(-100%);
-        }
-
-        header.scrolled {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 10px 20px rgba(0,0,0,0.03);
-        }
-
-        .nav-container {
+        .hub-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+            margin-bottom: 20px;
+            padding: 0 4px;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+        .hub-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 26px;
             font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-        
-        .logo:hover .logo-icon {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--jungle-primary);
-        }
-
-        .btn-download-sm {
-            background: linear-gradient(135deg, var(--jungle-primary), var(--jungle-dark));
-            color: white;
-            padding: 12px 24px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            box-shadow: 0 8px 16px -4px var(--jungle-primary);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-download-sm:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px -4px var(--jungle-primary);
-        }
-
-        .btn-download-sm:active {
-            transform: translateY(0) scale(0.98);
-        }
-        
-        .btn-download-sm.is-loading {
-            pointer-events: none;
-            opacity: 0.8;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            color: var(--text-primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding-top: calc(var(--header-height) + 60px);
-            padding-bottom: 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-bg-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .bg-circle {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-        }
-
-        .bg-circle-1 {
-            width: 400px;
-            height: 400px;
-            background: var(--jungle-light);
-            top: -100px;
-            right: -100px;
-        }
-
-        .bg-circle-2 {
-            width: 300px;
-            height: 300px;
-            background: var(--gold-light);
-            bottom: -50px;
-            left: -50px;
-        }
-
-        .floating-leaf {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--jungle-dark);
-            margin-bottom: 24px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--jungle-dark) 100%);
+            margin: 0;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-green-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 36px;
-            max-width: 500px;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--jungle-primary), var(--jungle-dark));
-            color: white;
-            padding: 16px 32px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            box-shadow: 0 16px 24px -8px var(--jungle-primary);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--text-primary);
-            padding: 16px 32px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(0,0,0,0.04);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-primary:hover, .btn-secondary:hover {
-            transform: translateY(-3px);
-        }
-
-        .btn-primary:active, .btn-secondary:active {
-            transform: translateY(0) scale(0.98);
-        }
-
-        .btn-primary.is-loading {
-            pointer-events: none;
-            opacity: 0.8;
-        }
-
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .phone-mockup {
-            position: relative;
-            width: 280px;
-            height: 580px;
-            background: #000;
-            border-radius: 48px;
-            padding: 12px;
-            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.15), 0 30px 60px -30px rgba(16, 185, 129, 0.3);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            background: var(--jungle-light);
-            border-radius: 36px;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .phone-screen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .floating-coin {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #FBBF24, #F59E0B);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 800;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.5);
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        .coin-1 { top: 10%; right: -10%; animation-delay: 0s; }
-        .coin-2 { bottom: 20%; left: -10%; width: 80px; height: 80px; animation-delay: 1s; }
-
-        /* Sections */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .section-tag {
-            color: var(--jungle-primary);
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 16px;
-        }
-
-        .section-subtitle {
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .feature-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-md);
-            padding: 32px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .card-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .card-1 .card-icon { background: var(--jungle-light); color: var(--jungle-primary); }
-        .card-2 .card-icon { background: var(--gold-light); color: var(--gold-primary); }
-        .card-3 .card-icon { background: #EDE9FE; color: var(--accent-purple); }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-        }
-
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        /* Screenshots Section */
-        .screenshots-slider {
-            position: relative;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-
-        .slider-track {
-            display: flex;
-            gap: 32px;
-            width: max-content;
-            will-change: transform;
-            padding-left: 24px;
-        }
-
-        .screenshot-item {
-            width: 260px;
-            height: 467px;
-            background: #000;
-            border-radius: 32px;
-            padding: 6px;
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .screenshot-screen {
-            width: 100%;
-            height: 100%;
-            border-radius: 26px;
-            overflow: hidden;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .screenshot-screen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Video Section */
-        .video-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
-            overflow: hidden;
-            position: relative;
-            background: #000;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 ratio */
-            height: 0;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .video-facade {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #000;
-            transition: opacity 0.3s ease;
-            z-index: 5;
-        }
-
-        .video-thumb {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.8;
-        }
-
-        .play-btn {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            transition: transform 0.2s ease, background 0.2s ease;
-            z-index: 6;
-        }
-
-        .play-btn:hover {
-            transform: scale(1.1);
-            background: var(--jungle-primary);
-        }
-        
-        .play-btn:hover svg path {
-            fill: white;
-        }
-
-        .video-loading {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255,255,255,0.3);
-            border-top-color: #fff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        .video-error {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1a1a1a;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            z-index: 20;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-            z-index: 15;
-        }
-
-        .rewards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-        }
-
-        .reward-card {
-            background: white;
-            border: 1px solid #F1F5F9;
-            border-radius: var(--radius-md);
-            padding: 28px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .reward-card:hover {
-            border-color: transparent;
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .reward-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-            background: var(--jungle-light);
-            color: var(--jungle-primary);
-        }
-
-        .reward-card:nth-child(2) .reward-icon { background: var(--gold-light); color: var(--gold-primary); }
-        .reward-card:nth-child(3) .reward-icon { background: #EDE9FE; color: var(--accent-purple); }
-        .reward-card:nth-child(4) .reward-icon { background: #FCE7F3; color: var(--accent-pink); }
-        .reward-card:nth-child(5) .reward-icon { background: var(--jungle-light); color: var(--jungle-primary); }
-        .reward-card:nth-child(6) .reward-icon { background: var(--gold-light); color: var(--gold-primary); }
-        .reward-card:nth-child(7) .reward-icon { background: #EDE9FE; color: var(--accent-purple); }
-        .reward-card:nth-child(8) .reward-icon { background: #FCE7F3; color: var(--accent-pink); }
-
-        .reward-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .reward-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* Play Games Section */
-        .play-games-section {
-            background: #F8FAFC;
-            padding: 80px 0;
-        }
-
-        .featured-banner-slider {
-            position: relative;
-            overflow: hidden;
-            border-radius: 24px;
-            margin-bottom: 48px;
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
-            -webkit-user-select: none;
-            user-select: none;
-            touch-action: pan-y;
-        }
-
-        .banner-track {
-            display: flex;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            width: 100%;
-        }
-
-        .banner-slide {
-            min-width: 100%;
-            height: 300px;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .banner-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            pointer-events: none;
-        }
-
-        .banner-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 32px;
-        }
-
-        .banner-title {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .banner-subtitle {
-            color: rgba(255,255,255,0.9);
+        .hub-subtitle {
+            font-size: 12px;
+            color: var(--text-light);
+            margin: 0;
             font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(4px);
-            padding: 6px 12px;
-            border-radius: 8px;
-            width: fit-content;
         }
 
-        .banner-dots {
-            position: absolute;
-            bottom: 16px;
-            right: 24px;
+        .global-settings-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
             display: flex;
-            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.2s ease;
+        }
+
+        .global-settings-btn:active { transform: scale(0.9); }
+        .global-settings-btn svg { width: 22px; height: 22px; color: var(--text-medium); }
+
+        /* Carousel */
+        .carousel-container {
+            position: relative;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-soft);
+            height: 110px;
+            background: #eee;
+        }
+
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            will-change: transform;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            display: block;
+            text-decoration: none;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 6px;
             z-index: 2;
         }
 
         .dot {
-            width: 8px;
-            height: 8px;
-            background: rgba(255,255,255,0.4);
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 50%;
+            transition: all 0.3s ease;
             cursor: pointer;
-            transition: background 0.3s ease;
         }
 
         .dot.active {
-            background: white;
-            width: 24px;
-            border-radius: 4px;
+            background: #fff;
+            width: 18px;
+            border-radius: 3px;
         }
 
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            padding-left: 4px;
         }
+
+        .featured-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+        }
+
+        .featured-thumb {
+            width: 72px;
+            height: 72px;
+            border-radius: var(--radius-sm);
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .featured-info { flex: 1; min-width: 0; }
+
+        .featured-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0 0 4px 0;
+        }
+
+        .featured-desc {
+            font-size: 12px;
+            color: var(--text-light);
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .play-btn-circle {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(145deg, #5efc82, var(--accent-green-dark));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 15px rgba(0, 200, 83, 0.4);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .play-btn-circle:active { transform: scale(0.9); }
+
+        /* ===================== GAME GRID (PREMIUM DESIGN) ===================== */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Mobile: 2 cols */
+            gap: 16px;
+            padding-bottom: 20px;
+        }
+
+        @media (min-width: 600px) { .games-grid { grid-template-columns: repeat(3, 1fr); } } /* Tablet: 3 cols */
+        @media (min-width: 900px) { .games-grid { grid-template-columns: repeat(4, 1fr); } } /* Desktop: 4 cols */
+        @media (min-width: 1200px) { .games-grid { grid-template-columns: repeat(5, 1fr); } } /* Large Desktop: 5 cols */
 
         .game-card {
-            background: white;
+            background: var(--bg-card);
             border-radius: 16px;
-            border: 1px solid #E2E8F0;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-light);
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+            position: relative;
         }
 
         .game-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.15);
-            border-color: transparent;
+            transform: scale(1.05);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.15);
             z-index: 5;
         }
 
-        .game-thumbnail {
-            width: 100%;
-            aspect-ratio: 4/3;
-            position: relative;
-            overflow: hidden;
-            background: #f1f5f9;
+        .game-card:active {
+            transform: scale(0.98);
         }
 
-        .game-thumbnail img {
+        .game-thumb {
             width: 100%;
-            height: 100%;
+            height: 120px; /* Fixed height */
             object-fit: cover;
+            display: block;
+            background: #f0f0f0;
         }
 
-        .game-info {
-            padding: 14px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .game-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 8px;
+        .game-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-medium);
+            padding: 10px 8px;
+            text-align: center;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        .play-now-btn {
-            margin-top: auto;
-            background: var(--jungle-light);
-            color: var(--jungle-dark);
-            border: none;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            cursor: pointer;
+        /* ===================== GAME SCREEN ===================== */
+        #gameScreen {
+            background: var(--bg-primary);
+            justify-content: flex-start;
+        }
+
+        .game-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            gap: 6px;
-            transition: background 0.2s ease, color 0.2s ease;
+            padding: 16px 20px;
+            padding-top: calc(16px + var(--safe-top));
+            flex-shrink: 0;
         }
 
-        .game-card:hover .play-now-btn {
-            background: var(--jungle-primary);
-            color: white;
-        }
-
-        /* Game Viewer Overlay */
-        #gameViewer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: #000;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
-        }
-
-        #gameViewer.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        #gameFrame {
-            width: 100%;
-            height: 100%;
-            border: none;
-            background: #000;
-        }
-
-        #closeGameBtn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .back-btn {
             width: 48px;
             height: 48px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
+            border-radius: var(--radius-sm);
+            background: var(--bg-card);
+            border: 2px solid var(--border-light);
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: opacity 0.4s ease, transform 0.2s ease, background 0.2s ease;
-            z-index: 10000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        #closeGameBtn:hover {
-            background: rgba(255,255,255,0.25);
-        }
-
-        #closeGameBtn.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        /* Footer - Clean Minimal Layout */
-        footer {
-            background: #FFFFFF;
-            border-top: 1px solid #F1F5F9;
-            padding: 48px 24px;
-            text-align: center;
-        }
-
-        .footer-nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px 32px;
-            margin-bottom: 24px;
-        }
-
-        .footer-nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            transition: color 0.2s ease, transform 0.2s ease;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .footer-nav a:hover {
-            color: var(--jungle-primary);
-            text-decoration: underline;
-        }
-        
-        .footer-nav a:active {
-            transform: scale(0.95);
-        }
-
-        .footer-copyright {
-            color: #94A3B8;
-            font-size: 0.85rem;
-            line-height: 1.6;
-        }
-        
-        .footer-copyright p {
-            margin: 0;
-        }
-
-        /* Back to Top Button */
-        #backToTop {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--jungle-primary);
-            color: white;
-            border: none;
             cursor: pointer;
+            box-shadow: var(--shadow-card);
+        }
+        .back-btn svg { width: 20px; height: 20px; color: var(--text-medium); }
+        .back-btn:active { transform: scale(0.95); }
+
+        .wallet-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-light);
+            border-radius: 50px;
+            box-shadow: var(--shadow-soft);
+            cursor: pointer;
+        }
+        .wallet-container:active { transform: scale(0.98); }
+
+        .wallet-icon-box {
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(145deg, #ffcc00, #ffb300);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.2s ease;
-            z-index: 999;
+            box-shadow: 0 3px 10px rgba(255, 179, 0, 0.3);
         }
+        .wallet-icon-box svg { width: 18px; height: 18px; fill: white; }
+        .wallet-info { display: flex; flex-direction: column; }
+        .wallet-label { font-size: 10px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+        .coin-amount { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 800; color: var(--gold-dark); line-height: 1.1; }
+        .coin-amount.animate { animation: coinPop 0.4s ease; }
+        @keyframes coinPop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
 
-        #backToTop.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        #backToTop:hover {
-            background: var(--jungle-dark);
-        }
-
-        /* Mobile Navigation */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 80%;
-            max-width: 320px;
-            height: 100vh;
-            background: white;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-            z-index: 1001;
-            padding: 80px 32px;
-            transform: translateX(100%);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .mobile-nav.open {
-            transform: translateX(0);
-        }
-
-        .mobile-nav ul {
-            list-style: none;
+        .wheel-section {
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            min-height: 0;
         }
 
-        .mobile-nav a {
-            text-decoration: none;
-            color: var(--text-primary);
-            font-size: 1.2rem;
-            font-weight: 600;
+        .wheel-wrapper {
+            position: relative;
+            width: min(78vw, 78vh, 310px);
+            height: min(78vw, 78vh, 310px);
         }
 
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .wheel-glow {
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            background: radial-gradient(circle, rgba(0, 200, 83, 0.15) 0%, transparent 60%);
+            border-radius: 50%;
+            animation: glowPulse 2.5s ease-in-out infinite;
+        }
+        @keyframes glowPulse { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+
+        .wheel-pointer {
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            animation: pointerBounce 0.8s ease-in-out infinite;
+        }
+        @keyframes pointerBounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-5px); } }
+        .wheel-pointer svg { width: 34px; height: 44px; fill: var(--text-dark); }
+
+        #spinWheel {
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.4);
+            border-radius: 50%;
+            box-shadow: 0 0 0 7px var(--bg-primary), 0 0 0 11px var(--accent-green), 0 25px 50px rgba(0,0,0,0.12);
+            transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        }
+        #spinWheel.spinning { filter: blur(1px); }
+
+        .wheel-center {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75px; height: 75px;
+            background: var(--bg-primary);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-soft);
+            z-index: 15; pointer-events: none;
+        }
+        .wheel-center-text { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; color: var(--accent-green); letter-spacing: 1px; }
+
+        .controls-section {
+            padding: 20px;
+            padding-bottom: calc(20px + var(--safe-bottom));
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .spin-btn {
+            width: 100%;
+            max-width: 300px;
+            padding: 18px;
+            border-radius: var(--radius);
+            border: none;
+            background: linear-gradient(145deg, #5efc82 0%, #00c853 50%, #009624 100%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 7px 0 #00701a, 0 10px 25px rgba(0, 200, 83, 0.25);
+            transition: all 0.15s ease;
+        }
+        .spin-btn::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50%; background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 100%); }
+        .spin-btn:not(:disabled):active { transform: translateY(5px); box-shadow: 0 2px 0 #00701a, 0 4px 15px rgba(0, 200, 83, 0.25); }
+        .spin-btn:disabled { background: linear-gradient(145deg, #aaaaaa 0%, #888888 100%); cursor: not-allowed; box-shadow: 0 5px 0 #666666; }
+
+        .cooldown-display { text-align: center; font-weight: 600; font-size: 14px; color: var(--text-medium); min-height: 22px; }
+
+        /* ===================== MODALS ===================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(16, 42, 28, 0.6);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            padding: 20px;
+        }
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: var(--bg-primary);
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 400px;
+            max-height: 88vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            animation: modalSlide 0.35s ease;
+            margin: auto;
+        }
+        @keyframes modalSlide { from { opacity: 0; transform: translateY(30px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--border-light);
+            flex-shrink: 0;
+            background: var(--bg-secondary);
+        }
+        .modal-title { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; color: var(--text-dark); }
+        .modal-close {
+            width: 38px; height: 38px;
+            border-radius: 10px;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-light);
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+        }
+        .modal-close svg { width: 16px; height: 16px; color: var(--text-medium); }
+        .modal-close:active { transform: scale(0.92); }
+
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
+            background: var(--bg-primary);
+        }
+
+        .settings-section { margin-bottom: 22px; }
+        .settings-section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 11px; font-weight: 800; color: var(--accent-green-dark); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+        .data-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 10px; border: 1px solid var(--border-light); }
+        .data-label { font-size: 12px; font-weight: 600; color: var(--text-light); margin-bottom: 4px; }
+        .data-value { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: var(--text-dark); }
+        .data-value.small { font-size: 13px; font-weight: 500; color: var(--text-medium); word-break: break-all; }
+
+        .wallet-panel-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 18px; border: 1px solid var(--border-light); margin-bottom: 12px; }
+        .wallet-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border-light); }
+        .wallet-panel-title { font-size: 13px; font-weight: 600; color: var(--text-medium); }
+        .wallet-panel-amount { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 800; color: var(--gold-dark); }
+        .wallet-progress-bar { width: 100%; height: 10px; background: #d1e8da; border-radius: 10px; overflow: hidden; margin-bottom: 12px; }
+        .wallet-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-green), var(--accent-green-light)); border-radius: 10px; transition: width 0.5s ease; }
+        .wallet-status { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 10px; font-size: 12px; font-weight: 600; border: 1px solid; }
+        .wallet-status.pending { background: #fff9e6; color: var(--gold-dark); border-color: var(--gold); }
+        .wallet-status.ready { background: #e8f7ec; color: var(--accent-green-dark); border-color: var(--accent-green-light); }
+
+        .action-card-btn { width: 100%; padding: 14px; border-radius: var(--radius-sm); border: none; background: linear-gradient(145deg, #5efc82 0%, #00c853 100%); color: white; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 5px 0 #00701a, 0 6px 15px rgba(0, 200, 83, 0.2); margin-top: 10px; }
+        .action-card-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #00701a; }
+        .action-card-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: var(--bg-secondary); border-radius: var(--radius-sm); margin-bottom: 8px; border: 1px solid var(--border-light); }
+        .toggle-label { font-weight: 600; font-size: 14px; color: var(--text-dark); }
+        .toggle-switch { position: relative; width: 48px; height: 26px; }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+        .toggle-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #ddd; border-radius: 26px; transition: 0.3s; }
+        .toggle-slider::before { content: ''; position: absolute; height: 20px; width: 20px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
+        .toggle-switch input:checked + .toggle-slider { background: var(--accent-green); }
+        .toggle-switch input:checked + .toggle-slider::before { transform: translateX(22px); }
+
+        .link-btn { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 14px; background: var(--bg-secondary); border: 1px solid var(--border-light); border-radius: var(--radius-sm); color: var(--text-dark); font-weight: 600; font-size: 14px; cursor: pointer; margin-bottom: 8px; text-decoration: none; }
+        .link-btn:active { transform: scale(0.98); }
+        .link-btn svg { width: 20px; height: 20px; color: var(--accent-green); }
+
+        .reset-btn { width: 100%; padding: 14px; background: transparent; border: 2px solid #d32f2f; border-radius: var(--radius-sm); color: #d32f2f; font-weight: 700; font-size: 14px; cursor: pointer; }
+        .reset-btn:active { background: #d32f2f; color: white; }
+
+        .legal-content { font-size: 13px; color: var(--text-medium); line-height: 1.8; padding: 10px 0; }
+        .legal-content h4 { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700; color: var(--text-dark); margin: 16px 0 6px 0; }
+        .legal-content p { margin-bottom: 10px; }
+        .legal-content ul { margin: 10px 0; padding-left: 20px; }
+
+        /* Result Modal */
+        .result-content { padding: 36px 24px; text-align: center; }
+        .result-icon { width: 90px; height: 90px; margin: 0 auto 24px; background: linear-gradient(145deg, #5efc82, #00c853); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0, 200, 83, 0.25); animation: resultPulse 0.8s ease-in-out infinite; }
+        @keyframes resultPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+        .result-icon svg { width: 44px; height: 44px; color: white; }
+        .result-title { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+        .result-amount { font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 900; color: var(--gold-dark); margin-bottom: 28px; }
+        .claim-btn { width: 100%; padding: 16px; border-radius: var(--radius); border: none; background: linear-gradient(145deg, #5efc82 0%, #00c853 50%, #009624 100%); color: white; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 1px; cursor: pointer; box-shadow: 0 6px 0 #00701a, 0 8px 20px rgba(0, 200, 83, 0.25); }
+        .claim-btn:not(:disabled):active { transform: translateY(4px); box-shadow: 0 2px 0 #00701a; }
+
+        /* Gift Store */
+        .gift-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .gift-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 12px; border: 1px solid var(--border-light); text-align: center; box-shadow: var(--shadow-card); position: relative; cursor: pointer; }
+        .gift-card.disabled { opacity: 0.5; }
+        .gift-image-container { width: 100%; height: 65px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border-radius: 10px; margin-bottom: 8px; }
+        .gift-emoji-fallback { font-size: 32px; }
+        .gift-name { font-size: 11px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+        .gift-coins { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--gold-dark); margin-bottom: 8px; }
+        .gift-redeem-btn { width: 100%; padding: 8px; border-radius: 8px; border: none; background: linear-gradient(145deg, #5efc82, #00c853); color: white; font-size: 11px; font-weight: 700; cursor: pointer; box-shadow: 0 3px 0 #00701a; }
+        .gift-badge { position: absolute; top: 8px; right: 8px; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 10px; background: var(--accent-green); color: white; }
+
+        /* External Game Modal */
+        #externalGameModal { z-index: 999; background: #000; padding: 0; }
+        #externalGameModal.active { display: block; }
+        .external-modal-content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: #102a1c;
+        }
+        #externalGameFrame { width: 100%; height: 100%; border: none; }
+        .external-close-btn {
+            position: absolute;
+            top: calc(15px + var(--safe-top));
+            left: 15px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
             z-index: 1000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
+        .external-close-btn:active { transform: scale(0.9); background: rgba(211, 47, 47, 0.8); }
 
-        .overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links, .btn-download-sm { display: none; }
-            .mobile-menu-btn { display: block; }
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 48px;
-            }
-            .hero-badge, .btn-group {
-                justify-content: center;
-            }
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-visual {
-                order: -1;
-            }
-            .phone-mockup {
-                width: 220px;
-                height: 450px;
-            }
-            .banner-slide {
-                height: 200px;
-            }
-            .banner-overlay {
-                padding: 16px;
-            }
-            .banner-title {
-                font-size: 1.2rem;
-            }
-            .game-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                gap: 12px;
-            }
-            .screenshot-item {
-                width: 220px;
-                height: 395px;
-            }
-            .footer-nav {
-                gap: 12px 20px;
-            }
-        }
+        /* Reward Ad Popup */
+        #rewardAdModal { z-index: 300; }
+        #rewardAdModal .modal { max-width: 320px; width: 90vw; }
+        .reward-ad-body { text-align: center; padding: 15px; }
+        .reward-ad-label { font-size: 11px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .reward-ad-container { width: 100%; max-width: 300px; height: 300px; margin: 0 auto; overflow: hidden; display: flex; justify-content: center; align-items: center; }
     </style>
+    <meta name="b6a6a8f9ad4a6e8a7a548eef0b3f505c4741636c" content="b6a6a8f9ad4a6e8a7a548eef0b3f505c4741636c" />
+    <meta name="admolo-verification" content="AK6G2UT3QGWOP8UFQKM3OQWYXJSSUA5C">
+    <meta name="kadam-verification" content="kadamce244ced4d479254b2bc3c85465e896f" />
 </head>
 <body>
-
-    <!-- Background Elements -->
-    <div class="hero-bg-elements">
-        <div class="bg-circle bg-circle-1"></div>
-        <div class="bg-circle bg-circle-2"></div>
-        <svg class="floating-leaf" style="top: 20%; left: 10%; transform: rotate(45deg);" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.8.66 17 17 0 0 1-2.49 8.06A7 7 0 0 1 11 20z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
-        <svg class="floating-leaf" style="bottom: 30%; right: 15%; animation-delay: 2s; transform: rotate(-30deg);" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.8.66 17 17 0 0 1-2.49 8.06A7 7 0 0 1 11 20z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
-    </div>
-
-    <!-- Header -->
-    <header id="header">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <img src="https://www.dropbox.com/scl/fi/l5nd55mp7iifueem84n7n/3194018_ico.png?rlkey=hi6cqhhwjnlqxs1q50e14mkoc&st=sq9bmh6y&dl=1" alt="Token Rush App Icon" class="logo-icon">
-                Token Rush
-            </a>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#screenshots">Screenshots</a></li>
-                <li><a href="#rewards">Rewards</a></li>
-                <li><a href="#play-games">Play Games</a></li>
-                <li><a href="#video">Video</a></li>
-            </ul>
-            <a href="https://apk.e-droid.net/apk/app3194018-b81752.apk?v=22" target="_blank" rel="noopener noreferrer" class="btn-download-sm download-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download APK
-            </a>
-            <button class="mobile-menu-btn" id="menuToggle">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
-        </div>
-    </header>
-
-    <!-- Mobile Nav -->
-    <div class="overlay" id="overlay"></div>
-    <nav class="mobile-nav" id="mobileNav">
-        <ul>
-            <li><a href="#features" class="mobile-link">Features</a></li>
-            <li><a href="#screenshots" class="mobile-link">Screenshots</a></li>
-            <li><a href="#rewards" class="mobile-link">Rewards</a></li>
-            <li><a href="#play-games" class="mobile-link">Play Games</a></li>
-            <li><a href="#video" class="mobile-link">Video</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text reveal active">
-                    <div class="hero-badge">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        Made for Indian Gamers • 200+ Fun Games & Exciting Rewards • 2026
+    <div class="app-wrapper">
+        
+        <!-- ===================== HUB SCREEN ===================== -->
+        <div id="hubScreen" class="screen active">
+            <div class="hub-container">
+                <header class="hub-header">
+                    <div>
+                        <h1 class="hub-title">AstraSpin</h1>
+                        <p class="hub-subtitle">Play & Win Rewards</p>
                     </div>
-                    <h1>Token Rush – 200+ Fun Games & Exciting Rewards</h1>
-                    <p>Experience the ultimate gaming platform designed for India. Play casual games, compete in tournaments, and earn real rewards daily.</p>
-                    <div class="btn-group">
-                        <a href="https://apk.e-droid.net/apk/app3194018-b81752.apk?v=22" target="_blank" rel="noopener noreferrer" class="btn-primary download-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            Download APK
-                        </a>
-                        <a href="#video" class="btn-secondary">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                            Watch Video
-                        </a>
-                    </div>
+                    <button class="global-settings-btn" onclick="openModal('settingsModal')" aria-label="Settings">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                    </button>
+                </header>
+
+                <!-- Top Banner Carousel -->
+                <div class="carousel-container" id="carouselContainer">
+                    <div class="carousel-track" id="carouselTrack"></div>
+                    <div class="carousel-dots" id="carouselDots"></div>
                 </div>
-                <div class="hero-visual reveal active" style="animation-delay: 0.2s;">
-                    <div class="phone-mockup">
-                        <div class="phone-screen">
-                            <img src="https://www.dropbox.com/scl/fi/8tchy1oifvagxily4zmdn/file_0000000011608208b954d6fa557846a7.png?rlkey=p8p6r00bqmy82c15rqxznfh4u&st=y1yuvw0y&dl=1" alt="Token Rush Gameplay" loading="eager">
+
+                <!-- Featured Game -->
+                <div class="featured-section">
+                    <h2 class="section-title">Featured Game</h2>
+                    <div class="featured-card">
+                        <img src="https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=400&q=80" class="featured-thumb" alt="AstraSpin">
+                        <div class="featured-info">
+                            <h3 class="featured-title">AstraSpin</h3>
+                            <p class="featured-desc">Spin the wheel and win free coins! Redeem exciting rewards daily.</p>
                         </div>
-                    </div>
-                    <div class="floating-coin coin-1">10</div>
-                    <div class="floating-coin coin-2">50</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section" id="features">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Premium Gaming</span>
-                <h2 class="section-title">Why Choose Token Rush?</h2>
-                <p class="section-subtitle">A modern platform built for performance, fun, and real earnings.</p>
-            </div>
-            <div class="cards-grid">
-                <div class="feature-card card-1 reveal">
-                    <div class="card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-                    </div>
-                    <h3>200+ Fun Games</h3>
-                    <p>Access a massive library of casual and competitive games updated weekly.</p>
-                </div>
-                <div class="feature-card card-2 reveal" style="transition-delay: 0.1s;">
-                    <div class="card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
-                    </div>
-                    <h3>Real Cash Earnings</h3>
-                    <p>Convert your gaming tokens into real cash and withdraw instantly.</p>
-                </div>
-                <div class="feature-card card-3 reveal" style="transition-delay: 0.2s;">
-                    <div class="card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3>Referral Program</h3>
-                    <p>Invite friends and earn lifetime commissions on their gameplay rewards.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Screenshots Section -->
-    <section class="section" id="screenshots" style="background-color: #FFFFFF; overflow: hidden;">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">App Preview</span>
-                <h2 class="section-title">Sleek & Intuitive Interface</h2>
-                <p class="section-subtitle">Explore the premium 2026 UI designed for maximum engagement.</p>
-            </div>
-        </div>
-        <div class="screenshots-slider reveal" id="screenshotSlider">
-            <div class="slider-track" id="screenshotTrack">
-                <div class="screenshot-item">
-                    <div class="screenshot-screen"><img src="https://www.dropbox.com/scl/fi/hsiru5vrmfyy8sa3wvaly/1.jpg?rlkey=dyljnh9nxj00u5o46cpxvy62a&st=zxws07fs&dl=1" alt="Screenshot 1" loading="lazy"></div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-screen"><img src="https://www.dropbox.com/scl/fi/t0xkbl23ekdfhywsrx82r/2.jpg?rlkey=09echu4lvxhvsus8nrmzuvjag&st=no2osbbr&dl=1" alt="Screenshot 2" loading="lazy"></div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-screen"><img src="https://www.dropbox.com/scl/fi/kkmlsrdr0b47ii1duywmh/3.jpg?rlkey=991vo9i97ypjv69r9ghhbo7hc&st=n57m836e&dl=1" alt="Screenshot 3" loading="lazy"></div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-screen"><img src="https://www.dropbox.com/scl/fi/zrrvy1hsiw4gitj8alp8o/4.jpg?rlkey=d2run9vgr0fyzlm5aqv78piin&st=ezjpfdm0&dl=1" alt="Screenshot 4" loading="lazy"></div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-screen"><img src="https://www.dropbox.com/scl/fi/pte08h5ux6rfpw7x0p5kj/5.jpg?rlkey=sa4gljwkkg53vi9sfdvn3v2xe&st=9rff73r2&dl=1" alt="Screenshot 5" loading="lazy"></div>
-                </div>
-
-                <div class="screenshot-item">
-                    <div class="screenshot-screen"><img src="https://www.dropbox.com/scl/fi/hsiru5vrmfyy8sa3wvaly/1.jpg?rlkey=dyljnh9nxj00u5o46cpxvy62a&st=zxws07fs&dl=1" alt="Screenshot 1" loading="lazy"></div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-screen"><img src="https://www.dropbox.com/scl/fi/t0xkbl23ekdfhywsrx82r/2.jpg?rlkey=09echu4lvxhvsus8nrmzuvjag&st=no2osbbr&dl=1" alt="Screenshot 2" loading="lazy"></div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-screen"><img src="https://www.dropbox.com/scl/fi/kkmlsrdr0b47ii1duywmh/3.jpg?rlkey=991vo9i97ypjv69r9ghhbo7hc&st=n57m836e&dl=1" alt="Screenshot 3" loading="lazy"></div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-screen"><img src="https://www.dropbox.com/scl/fi/zrrvy1hsiw4gitj8alp8o/4.jpg?rlkey=d2run9vgr0fyzlm5aqv78piin&st=ezjpfdm0&dl=1" alt="Screenshot 4" loading="lazy"></div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-screen"><img src="https://www.dropbox.com/scl/fi/pte08h5ux6rfpw7x0p5kj/5.jpg?rlkey=sa4gljwkkg53vi9sfdvn3v2xe&st=9rff73r2&dl=1" alt="Screenshot 5" loading="lazy"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rewards Section -->
-    <section class="section" id="rewards">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Earn Big</span>
-                <h2 class="section-title">Exciting Gaming Rewards</h2>
-                <p class="section-subtitle">Win rewards for your favorite games and platforms.</p>
-            </div>
-            <div class="rewards-grid">
-                <div class="reward-card reveal">
-                    <div class="reward-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.5 9.5a1.5 1.5 0 0 0 2.1 0l7.4-7.4a1.5 1.5 0 0 0 0-2.1L12 2Z"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/></svg>
-                    </div>
-                    <h4>Amazon Gift Cards</h4>
-                    <p>Shop endlessly with Amazon pay balance.</p>
-                </div>
-                <div class="reward-card reveal" style="transition-delay: 0.1s;">
-                    <div class="reward-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-                    </div>
-                    <h4>Google Play Rewards</h4>
-                    <p>Get free codes for your favorite apps.</p>
-                </div>
-                <div class="reward-card reveal" style="transition-delay: 0.2s;">
-                    <div class="reward-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-                    </div>
-                    <h4>Free Fire Diamonds</h4>
-                    <p>Top up your Free Fire account instantly.</p>
-                </div>
-                <div class="reward-card reveal" style="transition-delay: 0.3s;">
-                    <div class="reward-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 31.5c0 0-2.5-2.5-2.5-5.5s2.5-5.5 2.5-5.5"/><path d="M19.5 31.5c0 0-2.5-2.5-2.5-5.5s2.5-5.5 2.5-5.5"/><path d="M14.5 31.5c0 0 2.5-2.5 2.5-5.5s-2.5-5.5-2.5-5.5"/><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
-                    </div>
-                    <h4>PUBG UC</h4>
-                    <p>Redeem Unknown Cash for skins and passes.</p>
-                </div>
-                <div class="reward-card reveal">
-                    <div class="reward-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
-                    </div>
-                    <h4>Game Coins</h4>
-                    <p>Earn in-game currency for various platforms.</p>
-                </div>
-                <div class="reward-card reveal" style="transition-delay: 0.1s;">
-                    <div class="reward-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M12 14l2 2 4-4"/></svg>
-                    </div>
-                    <h4>Daily Rewards</h4>
-                    <p>Log in daily to claim your free bonuses.</p>
-                </div>
-                <div class="reward-card reveal" style="transition-delay: 0.2s;">
-                    <div class="reward-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h4>Referral Rewards</h4>
-                    <p>Invite friends and earn lifetime commissions.</p>
-                </div>
-                <div class="reward-card reveal" style="transition-delay: 0.3s;">
-                    <div class="reward-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                    </div>
-                    <h4>Cash Earnings</h4>
-                    <p>Withdraw real cash directly to your account.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Play Games Section -->
-    <section class="play-games-section" id="play-games">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Instant Gaming</span>
-                <h2 class="section-title">🎮 Play Games Instantly</h2>
-                <p class="section-subtitle">Choose your favorite game and start playing instantly without downloading anything.</p>
-            </div>
-
-            <div class="featured-banner-slider reveal" id="featuredSlider">
-                <div class="banner-track" id="bannerTrack"></div>
-                <div class="banner-dots" id="bannerDots"></div>
-            </div>
-
-            <div class="game-grid" id="gameGrid"></div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="section" id="video">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Watch Now</span>
-                <h2 class="section-title">See It In Action</h2>
-                <p class="section-subtitle">Get a sneak peek into the Token Rush gaming experience.</p>
-            </div>
-            <div class="video-container reveal">
-                <div class="video-wrapper" id="videoWrapper">
-                    <div class="video-facade" id="videoFacade">
-                        <img src="https://img.youtube.com/vi/z0NMdW5zgYE/maxresdefault.jpg" alt="Token Rush Video Thumbnail" class="video-thumb" loading="lazy">
-                        <div class="video-loading" id="videoLoading" style="display: none;">
-                            <div class="spinner"></div>
-                        </div>
-                        <button class="play-btn" id="playBtn" aria-label="Play Video">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <button class="play-btn-circle" onclick="playAstraSpin()" aria-label="Play AstraSpin">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
                         </button>
                     </div>
-                    <div class="video-error" id="videoError" style="display: none;">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                        <p>Failed to load video. Please check your connection and try again.</p>
+                </div>
+
+                <!-- All Games Grid -->
+                <div class="games-section">
+                    <h2 class="section-title">All Games</h2>
+                    <div class="games-grid" id="gamesGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================== GAME SCREEN (AstraSpin) ===================== -->
+        <div id="gameScreen" class="screen">
+            <div class="game-header">
+                <button class="back-btn" onclick="goHome()" aria-label="Back">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <div class="wallet-container" onclick="openModal('settingsModal')">
+                    <div class="wallet-icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></div>
+                    <div class="wallet-info">
+                        <span class="wallet-label">Coins</span>
+                        <span class="coin-amount" id="coinDisplay">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wheel-section">
+                <div class="wheel-wrapper">
+                    <div class="wheel-glow"></div>
+                    <div class="wheel-pointer"><svg viewBox="0 0 32 42"><polygon points="16,42 0,0 32,0"/></svg></div>
+                    <canvas id="spinWheel"></canvas>
+                    <div class="wheel-center"><span class="wheel-center-text">SPIN</span></div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <button class="spin-btn" id="spinBtn" onclick="handleSpinClick()">SPIN NOW</button>
+                <p class="cooldown-display" id="cooldownDisplay"></p>
+            </div>
+        </div>
+
+        <!-- ===================== SETTINGS MODAL ===================== -->
+        <div class="modal-overlay" id="settingsModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Settings</h3>
+                    <button class="modal-close" onclick="closeModal('settingsModal')" aria-label="Close">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Daily Reward -->
+                    <div class="settings-section">
+                        <p class="section-label">Daily Reward</p>
+                        <div class="data-card">
+                            <p class="data-label">Daily Bonus</p>
+                            <p class="data-value">100 Coins</p>
+                        </div>
+                        <button class="action-card-btn" id="dailyBtn" onclick="claimDailyBonus()">Claim Daily Bonus</button>
+                    </div>
+
+                    <!-- Redeem Coins -->
+                    <div class="settings-section">
+                        <p class="section-label">Redeem Coins</p>
+                        <div class="wallet-panel-card">
+                            <div class="wallet-panel-header">
+                                <span class="wallet-panel-title">Balance</span>
+                                <span class="wallet-panel-amount" id="settingsCoins">0</span>
+                            </div>
+                            <div class="wallet-progress-section">
+                                <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                                    <span style="font-size:11px;font-weight:600;color:#888;">Progress</span>
+                                    <span style="font-size:11px;font-weight:700;" id="progressValue">0/10,000</span>
+                                </div>
+                                <div class="wallet-progress-bar">
+                                    <div class="wallet-progress-fill" id="progressFill" style="width:0%"></div>
+                                </div>
+                                <div class="wallet-status pending" id="walletStatus">
+                                    <span id="statusText">Keep playing!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="action-card-btn" id="redeemBtn" onclick="openRedeem()" style="background:linear-gradient(145deg,#ffcc00,#ffb300);box-shadow:0 5px 0 #b88a00;">Redeem Coins</button>
+                    </div>
+
+                    <!-- Device Info -->
+                    <div class="settings-section">
+                        <p class="section-label">Device Info</p>
+                        <div class="data-card">
+                            <p class="data-label">Device ID</p>
+                            <p class="data-value small" id="deviceId">Loading...</p>
+                        </div>
+                    </div>
+
+                    <!-- Sound -->
+                    <div class="settings-section">
+                        <p class="section-label">Sound</p>
+                        <div class="toggle-row">
+                            <span class="toggle-label">Music</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="musicToggle" onchange="toggleMusic()">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-row">
+                            <span class="toggle-label">Sound FX</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="soundToggle" checked onchange="toggleSound()">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Gift Store -->
+                    <div class="settings-section">
+                        <p class="section-label">Gift Store</p>
+                        <p style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:10px;">Kids Items</p>
+                        <div class="gift-grid" id="kidsGifts"></div>
+                        <p style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text-dark);margin:14px 0 10px;">Home Items</p>
+                        <div class="gift-grid" id="dailyGifts"></div>
+                        <p style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text-dark);margin:14px 0 10px;">Electronics</p>
+                        <div class="gift-grid" id="electronicsGifts"></div>
+                        <p style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text-dark);margin:14px 0 10px;">Premium</p>
+                        <div class="gift-grid" id="mediumGifts"></div>
+                        <p style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text-dark);margin:14px 0 10px;">Dream Rewards</p>
+                        <div class="gift-grid" id="bigGifts"></div>
+                    </div>
+
+                    <!-- Ads Container -->
+                    <div style="margin-top: 25px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                        <div class="admoloBanner" data-publisher="eyJpdiI6Imw5SDZ6WWp1TEN2bmJBekhSL2tiOGc9PSIsInZhbHVlIjoiYzJVdkJIYzF3Q0hxWDN2eVJwWVM4Zz09IiwibWFjIjoiMTUxMWQ1ZjczODgwNjAzMmRlNDUwNDFkZGNkNTQ1ODc4YmQ2NzZkOGJmOWNjZDMxMmY0MTgyMGMwZmIwYTJkOSIsInRhZyI6IiJ9" data-adsize="320x180" style="width: 100%; max-width: 320px; overflow: hidden;"></div>
+                        <div class="admoloNative" data-publisher="eyJpdiI6IlNqSkZZblN0WVViWG5EMDZ0clZIbEE9PSIsInZhbHVlIjoieUVERnhFRlYyQS8vNW5JdDJvUHlNdz09IiwibWFjIjoiOTYxMzZhYWVhOGM4YWQzNWYyMDRkMWQyYTA0Y2I2MGUyYjg2MWNjYjk5NTAzMGNjMjkyMmY3Zjk1ODIzZDBlZCIsInRhZyI6IiJ9" data-placement="nativeFeed" style="width: 100%; max-width: 320px;"></div>
+                    </div>
+
+                    <!-- Legal & About -->
+                    <div class="settings-section" style="margin-top: 25px;">
+                        <p class="section-label">About & Legal</p>
+                        <a href="javascript:void(0)" onclick="closeModal('settingsModal'); openModal('privacyModal')" class="link-btn">
+                            Privacy Policy
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" onclick="closeModal('settingsModal'); openModal('termsModal')" class="link-btn">
+                            Terms & Conditions
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" onclick="closeModal('settingsModal'); openModal('disclaimerModal')" class="link-btn">
+                            Disclaimer
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </a>
+                        <a href="https://astraspin.in" target="_blank" class="link-btn">
+                            Visit Official Website
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+
+                    <!-- Reset -->
+                    <div class="settings-section">
+                        <button class="reset-btn" onclick="confirmReset()">Reset All Data</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer - Clean Minimal Layout -->
-    <footer>
-        <nav class="footer-nav">
-            <a href="#about-us">About Us</a>
-            <a href="#contact-us">Contact Us</a>
-            <a href="#privacy-policy">Privacy Policy</a>
-            <a href="#terms">Terms & Conditions</a>
-            <a href="#disclaimer">Disclaimer</a>
-            <a href="#cookie-policy">Cookie Policy</a>
-            <a href="#faq">FAQ</a>
-            <a href="#dmca">DMCA</a>
-            <a href="#refund-policy">Refund Policy</a>
-        </nav>
-        <div class="footer-copyright">
-            <p>&copy; 2026 Token Rush. All Rights Reserved.</p>
-            <p>Designed for Indian Gamers.</p>
+        <!-- ===================== LEGAL MODALS ===================== -->
+        <div class="modal-overlay" id="privacyModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Privacy Policy</h3>
+                    <button class="modal-close" onclick="closeModal('privacyModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="legal-content">
+                        <p><strong>Last Updated:</strong> <span id="lastUpdatedPrivacy"></span></p>
+                        <p>AstraSpin is a casual reward-based game. We do not collect any personal data from users. All data such as coins and progress is stored locally on your device using browser storage.</p>
+                        <h4>Advertising Partners</h4>
+                        <p>Our game may display advertisements served by third-party advertising partners. These partners may use cookies, device identifiers, and similar technologies to serve ads based on your prior visits to our game or other websites.</p>
+                        <h4>Contact Information</h4>
+                        <p>Email: imranidrisi78692@gmail.com</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
 
-    <button id="backToTop" aria-label="Back to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-    </button>
+        <div class="modal-overlay" id="termsModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Terms & Conditions</h3>
+                    <button class="modal-close" onclick="closeModal('termsModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="legal-content">
+                        <p><strong>Last Updated:</strong> <span id="lastUpdatedTerms"></span></p>
+                        <p>Welcome to AstraSpin. These Terms and Conditions govern your use of our game. By accessing or using the game, you agree to be bound by these Terms.</p>
+                        <h4>User Responsibilities</h4>
+                        <p>You agree to use the game only for lawful purposes. You must not use the game in a way that could damage, disable, overburden, or impair the game.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <!-- Game Viewer Overlay -->
-    <div id="gameViewer">
-        <button id="closeGameBtn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; gamepad" sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms"></iframe>
+        <div class="modal-overlay" id="disclaimerModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Disclaimer</h3>
+                    <button class="modal-close" onclick="closeModal('disclaimerModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="legal-content">
+                        <p><strong>Last Updated:</strong> <span id="lastUpdatedDisclaimer"></span></p>
+                        <p>AstraSpin is a free-to-play casual game. Virtual coins earned in the game have no real-world monetary value unless explicitly stated by a valid redemption program. We do not guarantee any fixed earnings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================== GAME-SPECIFIC MODALS ===================== -->
+        <div class="modal-overlay" id="resultModal">
+            <div class="modal">
+                <div class="result-content">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 17,14 19,22 12,17 5,22 7,14 2,9 9,9"/></svg>
+                    </div>
+                    <h2 class="result-title">Congratulations</h2>
+                    <p class="result-amount" id="resultAmount">0</p>
+                    <button class="claim-btn" id="claimBtn" onclick="handleClaimClick()">CLAIM REWARD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="rewardAdModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Reward</h3>
+                    <button class="modal-close" onclick="closeRewardAd()" aria-label="Close">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </button>
+                </div>
+                <div class="modal-body reward-ad-body">
+                    <p class="reward-ad-label">Sponsored</p>
+                    <div class="reward-ad-container">
+                        <div class="admoloBanner" data-publisher="eyJpdiI6IktlVnMxcDllK2duU0lIeWNiK0FZMWc9PSIsInZhbHVlIjoibEhUZXJBaEFQaGZOdVJqQ21odEJWUT09IiwibWFjIjoiYWNlNzg4ZTZhOWFjMWE4Yzg1MDNhY2MwMTYxM2M0ZTdlZmEwMzJhMDg5MWZiNjY1OTY4ZGRjZDY4NjJjNWY5OCIsInRhZyI6IiJ9" data-adsize="300x300"></div>
+                    </div>
+                    <button class="action-card-btn" onclick="closeRewardAd()" style="margin-top: 15px;">Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="redeemModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Redeem</h3>
+                    <button class="modal-close" onclick="closeModal('redeemModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="data-card">
+                        <p class="data-label">Balance</p>
+                        <p class="data-value" id="redeemBalance">0</p>
+                    </div>
+                    <div class="data-card">
+                        <p class="data-label">Minimum</p>
+                        <p class="data-value" style="font-size:18px;">10,000</p>
+                    </div>
+                    <button class="claim-btn" id="redeemConfirmBtn" onclick="processRedeem()" style="margin-top:14px;">Redeem via WhatsApp</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="giftConfirmModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Confirm</h3>
+                    <button class="modal-close" onclick="closeModal('giftConfirmModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div style="padding: 24px 20px; text-align: center;">
+                        <div id="giftConfirmImage" style="width: 90px; height: 90px; margin: 0 auto 14px; background: var(--bg-secondary); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center;"></div>
+                        <h3 id="giftConfirmName" style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;margin-bottom:6px;">Item</h3>
+                        <p style="font-size:13px;color:var(--text-medium);margin-bottom:18px;">Cost: <strong id="giftConfirmCoins">0</strong></p>
+                        <div style="display: flex; gap: 12px;">
+                            <button class="action-card-btn" onclick="closeModal('giftConfirmModal')" style="background:var(--bg-secondary);color:var(--text-dark);box-shadow:0 5px 0 #ccc;">Cancel</button>
+                            <button class="action-card-btn" onclick="confirmGiftRedeem()">Redeem</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="confirmModal">
+            <div class="modal">
+                <div style="padding: 28px 20px; text-align: center;">
+                    <div style="width:70px;height:70px;margin:0 auto 18px;background:#ffebee;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    </div>
+                    <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;margin-bottom:8px;">Reset All Data?</h2>
+                    <p style="color:var(--text-medium);font-size:14px;margin-bottom:22px;">This will permanently delete all your coins, progress, and history. This action cannot be undone.</p>
+                    <div style="display: flex; gap: 12px;">
+                        <button class="action-card-btn" onclick="closeModal('confirmModal')" style="background:var(--bg-secondary);color:var(--text-dark);box-shadow:0 5px 0 #ccc;">Cancel</button>
+                        <button class="action-card-btn" onclick="resetAllData()" style="background:#d32f2f;box-shadow:0 5px 0 #b71c1c;">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================== EXTERNAL GAME MODAL ===================== -->
+        <div class="modal-overlay" id="externalGameModal">
+            <div class="external-modal-content">
+                <button class="external-close-btn" onclick="closeExternalGame()" aria-label="Close Game">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+                <iframe id="externalGameFrame" src="" allow="autoplay; fullscreen; gamepad; accelerometer; gyroscope" allowfullscreen="true"></iframe>
+            </div>
+        </div>
+
+        <!-- Hidden Admolo Interstitial Container -->
+        <div class="admoloInterstitial" data-publisher="eyJpdiI6Ik9WYVFNTzlHbXZlUUlWM05XUldSQ2c9PSIsInZhbHVlIjoibnIzYWN5WUx2Nmx6bGRsQnpRZXFpUT09IiwibWFjIjoiNWM4ZjRjOTgxZTBjNGJmNDQ3NTg5YTlmZWUxMzFmZWJkMmFmYmUyZjk3ZjI0MTJhOGJhMTJjOTU2NTc0M2ExOSIsInRhZyI6IiJ9" data-adsize="interstitial" style="display: none;"></div>
+
     </div>
 
     <script>
-        // Game Data
-        const gameUrls = [
-            "https://html5.gamemonetize.games/325h6p6tzaeefiur6a50ype2k3id3rrk/",
-            "https://html5.gamemonetize.games/5g0mc76dxrv2gwcdr9p5yctnru12xdpe/",
-            "https://html5.gamemonetize.games/xwaq928fa1zfi6j3xrwzrfkux7mw0eo4/",
-            "https://html5.gamemonetize.games/p7r8fcbrgcsuxbi1blzqg8hdeh8armks/",
-            "https://html5.gamemonetize.games/nuaat2rdliues9xqaphhoqvss2ay1ohn/",
-            "https://html5.gamemonetize.games/rz9ba6bfxnv8xaujk5p4hhcz58k5cy6j/",
-            "https://html5.gamemonetize.games/fkfno9625kk7y8564cllyqj9vb27bwfi/",
-            "https://html5.gamemonetize.games/66bos2g1jhk2r1ja7d9m1w8bx5in42wm/",
-            "https://html5.gamemonetize.co/8vfho1asm0098j2cmonh52mejbn4wed1/",
-            "https://html5.gamemonetize.games/q8b3ptca79qtunfxcswnjk7nbmff758j/",
-            "https://html5.gamemonetize.games/jybkltxxrz8gpuo138l06twrzi5k969a/",
-            "https://html5.gamemonetize.games/572ceho5rkg6hwtxu4cbbzozhnic7qgp/",
-            "https://html5.gamemonetize.games/kk58533eij7rp0qwzzz4k0zmzkhqxqq9/",
-            "https://html5.gamemonetize.games/5921u29madpu933ts7ntcfelv43c7w4z/",
-            "https://html5.gamemonetize.games/6b0xlr5mm4dc6fhb5vmk0fd0pycakrx4/",
-            "https://html5.gamemonetize.games/ho87h1i7wg0b4z4wn8povt2yp0kpuu2s/",
-            "https://html5.gamemonetize.games/4adbhwgxkorksg0bcpj17xsnm1p7b5x2/",
-            "https://html5.gamemonetize.games/5uxyz8rtoo2zfghu0svgkcgmn7akf4yh/",
-            "https://html5.gamemonetize.games/8wn4vu90rxh6ln82i8s066610snxmoiu/",
-            "https://html5.gamemonetize.games/25r9f4p2wvx39zl81xmfz0s6v6txvyoa/",
-            "https://html5.gamemonetize.games/nrrbcxfrqv6tc74rixopccow45qm8blf/",
-            "https://html5.gamemonetize.games/eevs3wrwe1jwqi87dh1ov6n2opkmdb1y/",
-            "https://html5.gamemonetize.games/fxim8vjv68vmfqt3bqfr62mmhn566t52/",
-            "https://html5.gamemonetize.games/jzxxdr3hvkp7s3zcwhmicrot1q7rmpvi/",
-            "https://html5.gamemonetize.games/9mezx3shlsfag58h6f3qseyxxtmkdfrt/",
-            "https://html5.gamemonetize.games/19bydoh88tudafz8fvhm97llktgt6vih/",
-            "https://html5.gamemonetize.games/svc0a1dfc37v3yl57d78fv9zja6vbrbh/",
-            "https://html5.gamemonetize.games/i3eg65u2gdp73rrxdlycvue65qxik1ha/",
-            "https://html5.gamemonetize.games/ussw9l3ypn90k3dq23xugv25xfde2h0z/",
-            "https://html5.gamemonetize.games/13vb7ekr5qbc07cea99y3gfu1mdl0beb/",
-            "https://html5.gamemonetize.games/pmto5x09kwupuhqxuv893k4209b43sra/",
-            "https://html5.gamemonetize.games/unl2t99qvksbjdrfmns3o8tl9zulikxn/",
-            "https://html5.gamemonetize.games/byup37a0na7wv43exxwl2onzvl3eu10e/",
-            "https://html5.gamemonetize.games/prhu172i8mne9pzmzscopypk1eyrqvve/",
-            "https://html5.gamemonetize.games/6doelx16q7orssbq3ux8a8u1bra89w0c/",
-            "https://html5.gamemonetize.games/awoa5hf68467okwkcqntdqo7kzuvx2bq/",
-            "https://html5.gamemonetize.games/6our5ufbzognhn9cnw3nopxrzhxzg6k9/",
-            "https://html5.gamemonetize.games/655n5q7c9b3lkrt0sj373e9ccvcek2yx/",
-            "https://html5.gamemonetize.games/kubm5wihrxgifm5h0my3cl9eucoiq2v3/",
-            "https://html5.gamemonetize.games/psex0pu8c87epfkv1oyz1udy08443lm7/",
-            "https://html5.gamemonetize.games/1d7if1wi5xc3huco6ti0nr2mbwexqimr/",
-            "https://html5.gamemonetize.games/bzurcjmddtj7xub90bf9puihzlj68i6v/",
-            "https://html5.gamemonetize.games/lf6epuc15f2gnwxjvkk1l78cpdo68krb/",
-            "https://html5.gamemonetize.games/7jvzazw0rfch8xt5yb9t4dqwvrfcnau0/",
-            "https://html5.gamemonetize.games/zyhebe7h94bxl7ig0gw7mcesn9tst3bm/",
-            "https://html5.gamemonetize.games/tark0i208v8u3vh634f5k7p2xffftwgv/",
-            "https://html5.gamemonetize.games/u2m6de7ylbhetfhprgckox2krn5uwkto/",
-            "https://html5.gamemonetize.games/tji0kvqoftggeanohsx75fatit8vb9b8/",
-            "https://html5.gamemonetize.games/ovdr36phl8kni2mh8qop0ml5992qk0iv/"
+        // ============================================
+        // DATA STRUCTURES (49 Games with Titles & Thumbnails)
+        // ============================================
+        const games = [
+            { name: "Wolfoo Maze Adventure", thumbnail: "https://www.dropbox.com/scl/fi/uml1w7f681jtyfti8dk6g/file_00000000196482088c9a6d04bcc8d731.png?rlkey=3oyh9294wr9o0rgz5hgkob77p&st=4q1jpcxp&raw=1", gameUrl: "https://html5.gamemonetize.games/325h6p6tzaeefiur6a50ype2k3id3rrk/" },
+            { name: "Stickboy War", thumbnail: "https://www.dropbox.com/scl/fi/j85uva6nxwmmw5s96juub/file_0000000026b08208afa410ed06532a7f.png?rlkey=5wufbegoie8i7mus2k64i01pm&st=jl435rf6&raw=1", gameUrl: "https://html5.gamemonetize.games/5g0mc76dxrv2gwcdr9p5yctnru12xdpe/" },
+            { name: "Cars Tycoon", thumbnail: "https://www.dropbox.com/scl/fi/d2k3ino1689muqekmzbmj/file_0000000076348208ab73c335172f2bb2.png?rlkey=te51m4xmpc728h1vwsbsskajh&st=oxzzj8bw&raw=1", gameUrl: "https://html5.gamemonetize.games/xwaq928fa1zfi6j3xrwzrfkux7mw0eo4/" },
+            { name: "Snake Puzzle 3D Game", thumbnail: "https://www.dropbox.com/scl/fi/z46m3l8kod69275el76e7/file_0000000047088208aa0fed218685bb45.png?rlkey=fj2qv9gpb5nt3xitk010okhag&st=lrhg4n1c&raw=1", gameUrl: "https://html5.gamemonetize.games/p7r8fcbrgcsuxbi1blzqg8hdeh8armks/" },
+            { name: "BlockStacking", thumbnail: "https://www.dropbox.com/scl/fi/2ogls9ihqccu0eocll3qe/file_00000000873c82089316cd585c7f8671.png?rlkey=etkd5l7bbt0lqcy65uuetgqsl&st=jp2soehl&raw=1", gameUrl: "https://html5.gamemonetize.games/nuaat2rdliues9xqaphhoqvss2ay1ohn/" },
+            { name: "forest dash", thumbnail: "https://www.dropbox.com/scl/fi/ed5a9dhlkc8ilak37gyi5/file_0000000040708208a02b6849162b00b6.png?rlkey=uhcx946gzxfbpakeittz1i8s4&st=gn9uuy6i&raw=1", gameUrl: "https://html5.gamemonetize.games/rz9ba6bfxnv8xaujk5p4hhcz58k5cy6j/" },
+            { name: "Reds Winding Way", thumbnail: "https://www.dropbox.com/scl/fi/umujh830tl8uvll68esbz/file_00000000d5e48208ac7f11a7ca09c9e7.png?rlkey=zb6gjcos6t3pecbcatgm8myr8&st=n1wixcsb&raw=1", gameUrl: "https://html5.gamemonetize.games/fkfno9625kk7y8564cllyqj9vb27bwfi/" },
+            { name: "Undead Walking 3D", thumbnail: "https://www.dropbox.com/scl/fi/5eoapxx4dkc4q53dwby4s/file_00000000e340820899531d27d2f60777.png?rlkey=r4c6qrtih57ig15w693n9uxsr&st=e75i2tqp&raw=1", gameUrl: "https://html5.gamemonetize.games/66bos2g1jhk2r1ja7d9m1w8bx5in42wm/" },
+            { name: "Shadeo", thumbnail: "https://www.dropbox.com/scl/fi/yjmcxjlz5dyk5084plmrn/file_0000000075f082119b0c41ccfa0bebee.png?rlkey=a8k8g6egvx5pq195uv1xiscsy&st=c7qq62lg&raw=1", gameUrl: "https://html5.gamemonetize.co/8vfho1asm0098j2cmonh52mejbn4wed1/" },
+            { name: "Maze Escape Hero", thumbnail: "https://www.dropbox.com/scl/fi/whr516uw59uggmwpzg538/file_00000000a8648208a9ccc11ab296a1bc.png?rlkey=617ebuil48v85y4rwhg2zj19d&st=omqwd7x7&raw=1", gameUrl: "https://html5.gamemonetize.games/q8b3ptca79qtunfxcswnjk7nbmff758j/" },
+            { name: "Wolfoo Tangram", thumbnail: "https://www.dropbox.com/scl/fi/cc1br6rsy9a1bmo34whcx/file_00000000540c8208bc670e9160084f8e.png?rlkey=fejs9wvnyoncomns42a5bram1&st=c9f9yixv&raw=1", gameUrl: "https://html5.gamemonetize.games/jybkltxxrz8gpuo138l06twrzi5k969a/" },
+            { name: "My Army Base", thumbnail: "https://www.dropbox.com/scl/fi/pt900riqkge0urfls1bwp/file_000000008f988208a377f6f1eb2baddd.png?rlkey=jknu80waclrew27jquqb5n9jc&st=uu3cq7l3&raw=1", gameUrl: "https://html5.gamemonetize.games/572ceho5rkg6hwtxu4cbbzozhnic7qgp/" },
+            { name: "Ninja Gorilla Jigsaw Puzzle", thumbnail: "https://www.dropbox.com/scl/fi/736i01vxplxp0szy91705/file_00000000ed00820888f3036c5967d74b.png?rlkey=njmx08nlhd8puhn7407x3k4f2&st=i2c1q7nj&raw=1", gameUrl: "https://html5.gamemonetize.games/kk58533eij7rp0qwzzz4k0zmzkhqxqq9/" },
+            { name: "Border Clash", thumbnail: "https://www.dropbox.com/scl/fi/nkmyi2t274opdj308k9tu/file_0000000043148209a15c1d5d9f704e86.png?rlkey=89e4a8q9b44c0igmllr8bmz0f&st=rv3u0ao9&raw=1", gameUrl: "https://html5.gamemonetize.games/5921u29madpu933ts7ntcfelv43c7w4z/" },
+            { name: "Nokia 3310 Snack Game", thumbnail: "https://www.dropbox.com/scl/fi/onaqt4ylaiubzkcj5c4rd/file_00000000c1c08208a3d2bae2286ebfa5.png?rlkey=r3q1zinadk2mfg45upbzy0txp&st=8viuy0ij&raw=1", gameUrl: "https://html5.gamemonetize.games/6b0xlr5mm4dc6fhb5vmk0fd0pycakrx4/" },
+            { name: "The Greedy Crow", thumbnail: "https://www.dropbox.com/scl/fi/nkmyi2t274opdj308k9tu/file_0000000043148209a15c1d5d9f704e86.png?rlkey=89e4a8q9b44c0igmllr8bmz0f&st=2r424hri&raw=1", gameUrl: "https://html5.gamemonetize.games/ho87h1i7wg0b4z4wn8povt2yp0kpuu2s/" },
+            { name: "Evolution Arena Battle Royale", thumbnail: "https://www.dropbox.com/scl/fi/d3d27rpvfogyot9hkbkb0/file_00000000ab108209b4fc26ee5e1910c4.png?rlkey=qhmm6mfm6n4aec8dkraj4zlo6&st=elps7uob&raw=1", gameUrl: "https://html5.gamemonetize.games/4adbhwgxkorksg0bcpj17xsnm1p7b5x2/" },
+            { name: "Block Crush", thumbnail: "https://www.dropbox.com/scl/fi/ttmur0s4syhz3uatt9fjx/file_00000000fc98821191d6c7e1244ed246.png?rlkey=5oiuwr3khlk06tkxn5cc1ntur&st=cqrurm7l&raw=1", gameUrl: "https://html5.gamemonetize.games/5uxyz8rtoo2zfghu0svgkcgmn7akf4yh/" },
+            { name: "Dragon Power", thumbnail: "https://www.dropbox.com/scl/fi/gustfl7w2gz5vbhdiua75/file_00000000938c8211887171621506b1e0.png?rlkey=6tb889qji4r6uclvm70ahjyb0&st=w2y85ibp&raw=1", gameUrl: "https://html5.gamemonetize.games/8wn4vu90rxh6ln82i8s066610snxmoiu/" },
+            { name: "Merge Royal 2048", thumbnail: "https://www.dropbox.com/scl/fi/hb2c23895bb8k8vm8v5dk/file_0000000026a482088484eddff6d26818.png?rlkey=yqqh81n5uyd9jlkmfi7k7kfnj&st=esoymgtk&raw=1", gameUrl: "https://html5.gamemonetize.games/25r9f4p2wvx39zl81xmfz0s6v6txvyoa/" },
+            { name: "The Last Adventure", thumbnail: "https://www.dropbox.com/scl/fi/tjl39bm5xifmpbvvzq919/file_00000000b3f08211b431a30bb1e74482.png?rlkey=fdezkepexj4p8y1bu51oqmaov&st=j7s4nocw&raw=1", gameUrl: "https://html5.gamemonetize.games/nrrbcxfrqv6tc74rixopccow45qm8blf/" },
+            { name: "Drive and Dodge: Car Racing 3D", thumbnail: "https://www.dropbox.com/scl/fi/1jiwbu89216fw9msuap62/file_0000000027e48211b75c1910748492ab.png?rlkey=n0lw8zmo4skajijwc4r1j9vpb&st=ze5p17gb&raw=1", gameUrl: "https://html5.gamemonetize.games/eevs3wrwe1jwqi87dh1ov6n2opkmdb1y/" },
+            { name: "Splatcha!", thumbnail: "https://www.dropbox.com/scl/fi/vblffwvwwjgbz178a03xd/file_000000006c9081fb9e072e21711ef34d.png?rlkey=x7esaksmkxs4x0zkjnwq5i90m&st=2jo96gxr&raw=1", gameUrl: "https://html5.gamemonetize.games/fxim8vjv68vmfqt3bqfr62mmhn566t52/" },
+            { name: "Obby: Traps And Jumps", thumbnail: "https://www.dropbox.com/scl/fi/r529uaivc16j6tars75w6/file_000000009e2c8230be77e3cbcb752b4f.png?rlkey=rdcpv8x7quivdx7krdgruewze&st=6urh8hhr&raw=1", gameUrl: "https://html5.gamemonetize.games/jzxxdr3hvkp7s3zcwhmicrot1q7rmpvi/" },
+            { name: "Tiger Coloring Book", thumbnail: "https://www.dropbox.com/scl/fi/63s2yuo5kbwhh5uhw63ps/file_00000000266081fdb8c36e1dae72a402.png?rlkey=cqwo7f5v0ny0l9wof4zrhry0t&st=2vmkcwbm&raw=1", gameUrl: "https://html5.gamemonetize.games/9mezx3shlsfag58h6f3qseyxxtmkdfrt/" },
+            { name: "Trio Twist Puzzle", thumbnail: "https://www.dropbox.com/scl/fi/hb2c23895bb8k8vm8v5dk/file_0000000026a482088484eddff6d26818.png?rlkey=yqqh81n5uyd9jlkmfi7k7kfnj&st=hxs9ilew&raw=1", gameUrl: "https://html5.gamemonetize.games/19bydoh88tudafz8fvhm97llktgt6vih/" },
+            { name: "Cute Animal Puzzle Game", thumbnail: "https://www.dropbox.com/scl/fi/3m43lplugkbj13vuhzsd7/file_00000000af4081fbbd5c46b2a1cc42b5.png?rlkey=nirelinhttl2q64l33yo9k0ps&st=1xvx1vgh&raw=1", gameUrl: "https://html5.gamemonetize.games/svc0a1dfc37v3yl57d78fv9zja6vbrbh/" },
+            { name: "Mahjong Bird Tiles", thumbnail: "https://www.dropbox.com/scl/fi/nch2vfo3kw01f3hoq0684/Mahjong-Bird-Tiles-512x512.jpg?rlkey=v2kkrv5041knn4g16q7j51lg0&st=250ud7y6&raw=1", gameUrl: "https://html5.gamemonetize.games/i3eg65u2gdp73rrxdlycvue65qxik1ha/" },
+            { name: "Emoji Line Puzzle", thumbnail: "https://www.dropbox.com/scl/fi/2dyhnhn2v9yaz2cle016a/file_00000000c1308207beec1a07f7d667da.png?rlkey=1p43cc4nlklike3c71zclzg82&st=aq1qj95w&raw=1", gameUrl: "https://html5.gamemonetize.games/ussw9l3ypn90k3dq23xugv25xfde2h0z/" },
+            { name: "Sunny Spell", thumbnail: "https://www.dropbox.com/scl/fi/zgu969w4moef87h9qbr3p/file_0000000076388209b735214ec05a0031.png?rlkey=fle5apubp1f7dctzxk4g05xyq&st=y5oosis2&raw=1", gameUrl: "https://html5.gamemonetize.games/13vb7ekr5qbc07cea99y3gfu1mdl0beb/" },
+            { name: "Taxi Driver Ultimate", thumbnail: "https://www.dropbox.com/scl/fi/fer52zb7osx39etfmd2hb/file_00000000a36081f8a4bf0d415ac351e6.png?rlkey=jd72941t3blwetk7k14oh7z8z&st=jkabepl7&raw=1", gameUrl: "https://html5.gamemonetize.games/pmto5x09kwupuhqxuv893k4209b43sra/" },
+            { name: "Landing Hero", thumbnail: "https://www.dropbox.com/scl/fi/wey3ktewnmos9aa2mna3j/file_0000000005e8820ba611142731fbc4b5.png?rlkey=50ncd18vuq1olw67rcsj5h33u&st=7smte9ld&raw=1", gameUrl: "https://html5.gamemonetize.games/unl2t99qvksbjdrfmns3o8tl9zulikxn/" },
+            { name: "Paws Up", thumbnail: "https://www.dropbox.com/scl/fi/apxdho68w28b00p3tyref/file_00000000081c81fabf6b6764464b3dcf.png?rlkey=8bcxfmvvsgghaf6j0o90yd6q0&st=337nibuy&raw=1", gameUrl: "https://html5.gamemonetize.games/byup37a0na7wv43exxwl2onzvl3eu10e/" },
+            { name: "Zombi Defense", thumbnail: "https://www.dropbox.com/scl/fi/l8bwj6jg8w28f7faq57v6/file_00000000def0823093819caa6699605d.png?rlkey=ixgkbxpq42dbfkv5d6vcmw39d&st=wel3zale&raw=1", gameUrl: "https://html5.gamemonetize.games/prhu172i8mne9pzmzscopypk1eyrqvve/" },
+            { name: "Hero Monster Battle Game", thumbnail: "https://www.dropbox.com/scl/fi/504p6bgnu4f9123apgaxb/file_00000000de9c81fa910ee35317febd70.png?rlkey=9xvx333ek7nooade9lyt9xf5d&st=nw1ffm7h&raw=1", gameUrl: "https://html5.gamemonetize.games/6doelx16q7orssbq3ux8a8u1bra89w0c/" },
+            { name: "Sniper Corps", thumbnail: "https://www.dropbox.com/scl/fi/tp1tp2l3peqrnp4x5rbyo/file_000000001808820bb44f63032ae5723e.png?rlkey=w8u7r6zbo99h73x3pb1gn9yy2&st=v7q9k3qd&raw=1", gameUrl: "https://html5.gamemonetize.games/awoa5hf68467okwkcqntdqo7kzuvx2bq/" },
+            { name: "Dresser Avatar", thumbnail: "https://www.dropbox.com/scl/fi/z30fvry6uj07etqbagkre/file_0000000075848211adf9753c2f3ad03a.png?rlkey=ff8bw4bkqvf2248zqbkz2nfnz&st=agbwxz9u&raw=1", gameUrl: "https://html5.gamemonetize.games/6our5ufbzognhn9cnw3nopxrzhxzg6k9/" },
+            { name: "Bikkings: brothers to valhalla", thumbnail: "https://www.dropbox.com/scl/fi/uzxwvbcamwzgvwdvl72pt/file_000000009fa081faaee3ef9e69098af8.png?rlkey=ic5k7d96glp5hdwelmjoo5p81&st=id8ghgsv&raw=1", gameUrl: "https://html5.gamemonetize.games/655n5q7c9b3lkrt0sj373e9ccvcek2yx/" },
+            { name: "MemoPlay", thumbnail: "https://www.dropbox.com/scl/fi/mwbbphxyup25qsm505tlc/file_0000000067c4820b9ec1a584736f626f.png?rlkey=tqp799ve8mnskroz6l8wtqkjt&st=dyi7jhkt&raw=1", gameUrl: "https://html5.gamemonetize.games/kubm5wihrxgifm5h0my3cl9eucoiq2v3/" },
+            { name: "Chinchilla Trails", thumbnail: "https://www.dropbox.com/scl/fi/bsp8iekt9aeytz72esfkv/file_000000004104820785b08f0ec773bd65.png?rlkey=ms4w9xjne5sjz43nnvaeokpfj&st=9mqrzoy5&raw=1", gameUrl: "https://html5.gamemonetize.games/psex0pu8c87epfkv1oyz1udy08443lm7/" },
+            { name: "Bad Cat Prankster Moms Return", thumbnail: "https://www.dropbox.com/scl/fi/szgvbspndewmao8v5tz0j/file_00000000cdc081faae5b4099e2de2bfe.png?rlkey=j3esyy98g7q8jmh9j74i0730d&st=c9yopntz&raw=1", gameUrl: "https://html5.gamemonetize.games/1d7if1wi5xc3huco6ti0nr2mbwexqimr/" },
+            { name: "Freight", thumbnail: "https://www.dropbox.com/scl/fi/5sj46gh14uzojthjj63b4/file_00000000226c820b8c38783c311e3534.png?rlkey=yhdk2tz0w5w4euu1a1hp3ynip&st=ee9oprv4&raw=1", gameUrl: "https://html5.gamemonetize.games/bzurcjmddtj7xub90bf9puihzlj68i6v/" },
+            { name: "SkyHop!", thumbnail: "https://www.dropbox.com/scl/fi/u726d08gr019gwn7ytma0/file_00000000082481fa901d08cf6fbff595.png?rlkey=ibcdhxzen1ps65zzhaf6p313v&st=moxsmzsn&raw=1", gameUrl: "https://html5.gamemonetize.games/lf6epuc15f2gnwxjvkk1l78cpdo68krb/" },
+            { name: "Bear Go Home", thumbnail: "https://www.dropbox.com/scl/fi/u69oiezh6d26ak75shubd/file_00000000935c820b81609e0692af5e71.png?rlkey=opaea7zvq74lm4l6hjcwry9jn&st=khaom0f0&raw=1", gameUrl: "https://html5.gamemonetize.games/7jvzazw0rfch8xt5yb9t4dqwvrfcnau0/" },
+            { name: "Mountain Bike Xtreme", thumbnail: "https://www.dropbox.com/scl/fi/wihnd4cqclwrojh5hus8v/file_00000000ea608211a99a31644840e1b1.png?rlkey=g2ashkgv7lyozr9miz3lxsaj9&st=3z8762r3&raw=1", gameUrl: "https://html5.gamemonetize.games/zyhebe7h94bxl7ig0gw7mcesn9tst3bm/" },
+            { name: "Zombie Siege", thumbnail: "https://www.dropbox.com/scl/fi/ovj1flghdy0kgnu8beye0/file_00000000d97481faa57edb4a2d477ba5.png?rlkey=sekvld8allzzykmi2x73ibviw&st=ayd11euv&raw=1", gameUrl: "https://html5.gamemonetize.games/tark0i208v8u3vh634f5k7p2xffftwgv/" },
+            { name: "Car Word Hunt", thumbnail: "https://www.dropbox.com/scl/fi/xrkb93qwuafwt8o3p1wh1/file_00000000a618820b992e79b6df087ad2.png?rlkey=487sv0ohs2zvh7u28vic3piox&st=f0oulryq&raw=1", gameUrl: "https://html5.gamemonetize.games/u2m6de7ylbhetfhprgckox2krn5uwkto/" },
+            { name: "Sort Color Water Puzzle", thumbnail: "https://www.dropbox.com/scl/fi/faas6hyyixybiyj2x44ue/file_0000000070e8820683570f0d98c63931.png?rlkey=h2svk45vq5ag0q10wzhippucb&st=49obwg51&raw=1", gameUrl: "https://html5.gamemonetize.games/tji0kvqoftggeanohsx75fatit8vb9b8/" },
+            { name: "Kim Jong Un Backroom", thumbnail: "https://www.dropbox.com/scl/fi/9aqkpvjl15vvdoiwc5rrg/file_000000001b288211b286ea374edc61b3.png?rlkey=ndl46xbel3b15pryk6fu6ip72&st=dvy7wfi8&raw=1", gameUrl: "https://html5.gamemonetize.games/ovdr36phl8kni2mh8qop0ml5992qk0iv/" }
         ];
 
-        const fallbackTitles = [
-            "Jungle Runner", "Coin Dash", "Block Puzzle", "Space Shooter", "Fruit Slice", 
-            "Racing Pro", "Zombie Defense", "Bubble Pop", "Tower Build", "Maze Master", 
-            "Neon Snake", "Sky Jumper", "Math Quiz", "Word Hunt", "Tic Tac Toe", 
-            "Chess Master", "Solitaire", "Minesweeper", "Sudoku Pro", "Pool Master", 
-            "Bowling King", "Golf Extreme", "Tennis Star", "Soccer Cup", "Basketball Pro", 
-            "Cricket Fever", "Fishing Joy", "Hunter Assassin", "Ninja Warrior", "Samurai Sword", 
-            "Robot Clash", "Alien Attack", "Dragon Fire", "Wizard Castle", "Knight Quest", 
-            "Pirate Treasure", "Vampire Night", "Werewolf Hunt", "Zombie Catch", "Ghost House", 
-            "Candy Match", "Pet Rescue", "Farm Hero", "City Builder", "Empire War", 
-            "Galaxy Invaders", "Star Defender", "Planet Explorer", "Cyberpunk Race", "Mystic Quest"
+        const banners = [
+            { image: "https://images.unsplash.com/photo-1614624532983-4ce03382d63d?w=800&q=80", link: "#" },
+            { image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80", link: "#" },
+            { image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80", link: "#" },
+            { image: "https://images.unsplash.com/photo-1556438064-2d7646166914?w=800&q=80", link: "#" },
+            { image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=800&q=80", link: "#" },
+            { image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80", link: "#" }
         ];
-        const colors = ['#10B981', '#F59E0B', '#8B5CF6', '#EC4899', '#3B82F6', '#EF4444', '#14B8A6', '#F97316'];
 
-        const generateThumb = (id) => {
-            const color1 = colors[id % colors.length];
-            const color2 = colors[(id + 3) % colors.length];
-            const svg = `
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
-                    <defs>
-                        <linearGradient id="grad${id}" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:${color1};stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:${color2};stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <rect width="400" height="300" fill="url(#grad${id})"/>
-                    <circle cx="200" cy="150" r="60" fill="rgba(255,255,255,0.2)"/>
-                    <path d="M180 140 h40 v-20 l40 30 l-40 30 v-20 h-40 z" fill="white"/>
-                </svg>
-            `;
-            return 'data:image/svg+xml;base64,' + btoa(svg);
+        // ============================================
+        // STATE VARIABLES (AstraSpin)
+        // ============================================
+        var WHATSAPP_URL = 'https://wa.me/7715952502?text=';
+        var MIN_REDEEM = 10000;
+        var DAILY_BONUS = 100;
+        var SPIN_COOLDOWN = 10000;
+        var segments = [
+            { value: 20, color: '#00e676' }, { value: 30, color: '#ffb300' }, { value: 40, color: '#69f0ae' },
+            { value: 50, color: '#00c853' }, { value: 60, color: '#388e3c' }, { value: 70, color: '#5efc82' },
+            { value: 80, color: '#ffb300' }, { value: 100, color: '#009624' }
+        ];
+        var giftCategories = {
+            kids: [{ name: 'Teddy Bear', coins: 8800, emoji: '🧸', badge: 'popular' }, { name: 'Toy Car', coins: 6600, emoji: '🚗', badge: 'new' }, { name: 'Puzzle', coins: 5500, emoji: '🧩' }],
+            daily: [{ name: 'Spoon Set', coins: 4400, emoji: '🥄' }, { name: 'Glass Set', coins: 5000, emoji: '🥛' }, { name: 'Kitchen Bowl', coins: 6000, emoji: '🥣' }],
+            electronics: [{ name: 'Charger', coins: 11000, emoji: '🔌', badge: 'popular' }, { name: 'Earphones', coins: 16500, emoji: '🎧', badge: 'new' }, { name: 'LED Light', coins: 9000, emoji: '💡' }],
+            medium: [{ name: 'Smart Watch', coins: 88000, emoji: '⌚', badge: 'popular' }, { name: 'Budget Phone', coins: 165000, emoji: '📱' }],
+            big: [{ name: 'Scooter', coins: 1100000, emoji: '🛵', badge: 'dream' }, { name: 'Bike', coins: 2200000, emoji: '🏍️', badge: 'dream' }]
         };
+        var deviceId = null, coins = 0, totalSpins = 0, lastDailyClaim = 0, lastSpinTime = 0, currentRotation = 0, isSpinning = false, currentReward = 0, isOnline = true, cooldownInterval = null, musicEnabled = false, soundEnabled = true, audioContext = null, selectedGift = null, wheelCanvas = null, wheelCtx = null;
 
-        const gameGrid = document.getElementById('gameGrid');
-        const bannerTrack = document.getElementById('bannerTrack');
-        const bannerDots = document.getElementById('bannerDots');
-        
-        const uniqueGameUrls = [...new Set(gameUrls)];
+        // ============================================
+        // DEVICE ID & PERSISTENCE
+        // ============================================
+        function getOrCreateDeviceId() { var storedId = localStorage.getItem("astra_device_id"); if (storedId) return storedId; var newId = "ASTRA-" + Date.now() + "-" + Math.floor(Math.random() * 100000); localStorage.setItem("astra_device_id", newId); return newId; }
+        function loadAllData() { try { deviceId = getOrCreateDeviceId(); var savedCoins = localStorage.getItem("astra_coins"); if (savedCoins !== null && savedCoins !== undefined) { coins = parseInt(savedCoins); if (isNaN(coins)) coins = 0; } var savedSpins = localStorage.getItem("astra_spins"); if (savedSpins !== null) totalSpins = parseInt(savedSpins) || 0; var savedDaily = localStorage.getItem("astra_daily_claim"); if (savedDaily !== null) lastDailyClaim = parseInt(savedDaily) || 0; var savedSpinTime = localStorage.getItem("astra_last_spin_time"); if (savedSpinTime !== null) lastSpinTime = parseInt(savedSpinTime) || 0; var savedRotation = localStorage.getItem("astra_wheel_rotation"); if (savedRotation !== null) currentRotation = parseFloat(savedRotation) || 0; musicEnabled = localStorage.getItem("astra_music") === "true"; soundEnabled = localStorage.getItem("astra_sound") !== "false"; } catch(e) { console.error("Error loading data:", e); } }
+        function saveAllData() { try { if (deviceId) localStorage.setItem("astra_device_id", deviceId); localStorage.setItem("astra_coins", coins.toString()); localStorage.setItem("astra_spins", totalSpins.toString()); localStorage.setItem("astra_daily_claim", lastDailyClaim.toString()); localStorage.setItem("astra_last_spin_time", lastSpinTime.toString()); localStorage.setItem("astra_wheel_rotation", currentRotation.toString()); localStorage.setItem("astra_music", musicEnabled.toString()); localStorage.setItem("astra_sound", soundEnabled.toString()); } catch(e) { console.error("Error saving data:", e); } }
+        function saveSpinState(reward) { try { localStorage.setItem("astra_spin_done", "true"); localStorage.setItem("astra_spin_reward", reward.toString()); } catch(e) {} }
+        function clearSpinState() { try { localStorage.removeItem("astra_spin_done"); localStorage.removeItem("astra_spin_reward"); } catch(e) {} }
+        function getSpinState() { try { return { done: localStorage.getItem("astra_spin_done") === "true", reward: parseInt(localStorage.getItem("astra_spin_reward")) || 0 }; } catch(e) { return { done: false, reward: 0 }; } }
 
-        uniqueGameUrls.forEach((url, index) => {
-            const title = fallbackTitles[index % fallbackTitles.length] + " " + (Math.floor(index / fallbackTitles.length) > 0 ? (Math.floor(index / fallbackTitles.length) + 1) : "");
-            const thumb = generateThumb(index);
+        // ============================================
+        // AUDIO
+        // ============================================
+        function initAudio() { if (!audioContext) { try { audioContext = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) {} } }
+        function playTone(f, d, t) { if (!audioContext || !soundEnabled) return; try { var o = audioContext.createOscillator(); var g = audioContext.createGain(); o.connect(g); g.connect(audioContext.destination); o.frequency.value = f; o.type = t || 'sine'; g.gain.setValueAtTime(0.08, audioContext.currentTime); g.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + d); o.start(); o.stop(audioContext.currentTime + d); } catch(e) {} }
+        function playClick() { playTone(700, 0.07, 'square'); }
+        function playWin() { setTimeout(function(){playTone(520, 0.1, 'sine');}, 0); setTimeout(function(){playTone(650, 0.1, 'sine');}, 70); setTimeout(function(){playTone(780, 0.12, 'sine');}, 140); }
+        function toggleMusic() { initAudio(); musicEnabled = document.getElementById('musicToggle').checked; saveAllData(); }
+        function toggleSound() { soundEnabled = document.getElementById('soundToggle').checked; saveAllData(); }
 
-            const card = document.createElement('div');
-            card.className = 'game-card reveal';
-            card.dataset.url = url;
-            card.innerHTML = `
-                <div class="game-thumbnail">
-                    <img src="${thumb}" alt="${title}" loading="lazy">
-                </div>
-                <div class="game-info">
-                    <div class="game-title">${title}</div>
-                    <button class="play-now-btn">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        Play Now
-                    </button>
-                </div>
-            `;
-            card.addEventListener('click', () => openGameViewer(url));
-            gameGrid.appendChild(card);
+        // ============================================
+        // UI UPDATES
+        // ============================================
+        function updateCoinDisplay() { var el = document.getElementById('coinDisplay'); if (el) { el.classList.add('animate'); el.textContent = coins.toLocaleString(); setTimeout(function(){ el.classList.remove('animate'); }, 400); } document.getElementById('settingsCoins').textContent = coins.toLocaleString(); document.getElementById('redeemBalance').textContent = coins.toLocaleString(); document.getElementById('deviceId').textContent = deviceId || 'Unknown'; document.getElementById('progressValue').textContent = coins.toLocaleString() + '/10,000'; document.getElementById('progressFill').style.width = Math.min(100, (coins / MIN_REDEEM) * 100) + '%'; var st = document.getElementById('walletStatus'); var txt = document.getElementById('statusText'); if (coins >= MIN_REDEEM) { st.className = 'wallet-status ready'; txt.textContent = 'Ready to redeem!'; } else { st.className = 'wallet-status pending'; txt.textContent = 'Keep playing!'; } updateRedeemButton(); renderGiftStore(); }
+        function updateRedeemButton() { var b = document.getElementById('redeemConfirmBtn'); if (b) b.disabled = coins < MIN_REDEEM || !isOnline; }
+        function updateDailyButton() { var b = document.getElementById('dailyBtn'); if (!b) return; var now = Date.now(); var elapsed = now - lastDailyClaim; var cooldown = 86400000; if (!isOnline) { b.disabled = true; b.textContent = 'Offline'; } else if (elapsed >= cooldown) { b.disabled = false; b.textContent = 'Claim Daily Bonus'; } else { b.disabled = true; var r = cooldown - elapsed; b.textContent = Math.floor(r / 3600000) + 'h ' + Math.floor((r % 3600000) / 60000) + 'm left'; } }
 
-            if (index < 6) {
-                const slide = document.createElement('div');
-                slide.className = 'banner-slide';
-                slide.dataset.url = url;
-                slide.innerHTML = `
-                    <img src="${generateThumb(index + 2)}" alt="${title}" loading="lazy">
-                    <div class="banner-overlay">
-                        <div class="banner-title">${title}</div>
-                        <div class="banner-subtitle">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                            Play Instantly
-                        </div>
-                    </div>
-                `;
-                slide.addEventListener('click', () => openGameViewer(url));
-                bannerTrack.appendChild(slide);
+        // ============================================
+        // GIFTS
+        // ============================================
+        function renderGiftStore() { renderGiftCategory('kidsGifts', giftCategories.kids); renderGiftCategory('dailyGifts', giftCategories.daily); renderGiftCategory('electronicsGifts', giftCategories.electronics); renderGiftCategory('mediumGifts', giftCategories.medium); renderGiftCategory('bigGifts', giftCategories.big); }
+        function renderGiftCategory(id, gifts) { var c = document.getElementById(id); if (!c) return; var h = ''; gifts.forEach(function(g, i) { var afford = coins >= g.coins; var badge = g.badge ? '<span class="gift-badge ' + g.badge + '">' + g.badge + '</span>' : ''; h += '<div class="gift-card' + (afford ? '' : ' disabled') + '" onclick="openGiftConfirm(\'' + id + '\',' + i + ')">'; h += badge; h += '<div class="gift-image-container"><span class="gift-emoji-fallback">' + g.emoji + '</span></div>'; h += '<p class="gift-name">' + g.name + '</p>'; h += '<div class="gift-coins">' + g.coins.toLocaleString() + '</div>'; h += '<button class="gift-redeem-btn" ' + (afford ? '' : 'disabled') + '>Redeem</button></div>'; }); c.innerHTML = h; }
+        function openGiftConfirm(cat, idx) { var map = { 'kidsGifts': giftCategories.kids, 'dailyGifts': giftCategories.daily, 'electronicsGifts': giftCategories.electronics, 'mediumGifts': giftCategories.medium, 'bigGifts': giftCategories.big }; var g = map[cat] ? map[cat][idx] : null; if (!g) return; if (coins < g.coins) return; selectedGift = g; playClick(); document.getElementById('giftConfirmName').textContent = g.name; document.getElementById('giftConfirmCoins').textContent = g.coins.toLocaleString(); document.getElementById('giftConfirmImage').innerHTML = '<span class="gift-emoji-fallback" style="font-size:42px;">' + g.emoji + '</span>'; openModal('giftConfirmModal'); }
+        function confirmGiftRedeem() { if (!selectedGift || coins < selectedGift.coins) { closeModal('giftConfirmModal'); return; } coins -= selectedGift.coins; updateCoinDisplay(); saveAllData(); var code = 'GIFT' + Math.floor(100000 + Math.random() * 900000); closeModal('giftConfirmModal'); setTimeout(function() { window.open(WHATSAPP_URL + encodeURIComponent('Gift: ' + selectedGift.name + '\nCode: ' + code + '\nCoins: ' + selectedGift.coins.toLocaleString()), '_blank'); }, 300); showRewardAd(); }
 
-                const dot = document.createElement('div');
-                dot.className = 'dot';
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(index));
-                bannerDots.appendChild(dot);
+        // ============================================
+        // WHEEL & SPIN LOGIC
+        // ============================================
+        function drawWheel() { if (!wheelCanvas || !wheelCtx) return; var s = Math.min(wheelCanvas.width, wheelCanvas.height); var cx = s / 2, cy = s / 2; var r = Math.max(10, s / 2 - 10); var a = (2 * Math.PI) / segments.length; wheelCtx.clearRect(0, 0, s, s); wheelCtx.save(); wheelCtx.translate(cx, cy); wheelCtx.rotate(currentRotation * Math.PI / 180); segments.forEach(function(seg, i) { var sa = i * a - Math.PI / 2; var ea = sa + a; wheelCtx.beginPath(); wheelCtx.moveTo(0, 0); wheelCtx.arc(0, 0, r, sa, ea); wheelCtx.closePath(); wheelCtx.fillStyle = seg.color; wheelCtx.fill(); wheelCtx.strokeStyle = 'rgba(255,255,255,0.5)'; wheelCtx.lineWidth = 3; wheelCtx.stroke(); wheelCtx.save(); wheelCtx.rotate(sa + a / 2); wheelCtx.textAlign = 'right'; wheelCtx.fillStyle = '#FFF'; wheelCtx.font = 'bold ' + Math.max(14, Math.floor(r / 11)) + 'px Poppins'; wheelCtx.shadowColor = 'rgba(0,0,0,0.4)'; wheelCtx.shadowBlur = 3; wheelCtx.fillText(seg.value, r - 16, 5); wheelCtx.restore(); }); wheelCtx.restore(); }
+        function initWheel() { wheelCanvas = document.getElementById('spinWheel'); if (!wheelCanvas) return; var container = wheelCanvas.parentElement; var size = Math.min(container.offsetWidth, container.offsetHeight); wheelCanvas.width = Math.max(100, size); wheelCanvas.height = Math.max(100, size); wheelCtx = wheelCanvas.getContext('2d'); drawWheel(); }
+        function handleSpinClick() { initAudio(); if (!isOnline) return; if (isSpinning) return; if (Date.now() - lastSpinTime < SPIN_COOLDOWN) return; playClick(); startSpinAnimation(); }
+        function startSpinAnimation() { if (isSpinning) return; isSpinning = true; document.getElementById('spinBtn').disabled = true; wheelCanvas.classList.add('spinning'); var rs = Math.floor(Math.random() * segments.length); var sa = 360 / segments.length; var fr = 6 + Math.floor(Math.random() * 3); var ta = 360 - (rs * sa) - (sa / 2); var tr = (fr * 360) + ta; currentRotation += tr; wheelCanvas.style.transform = 'rotate(' + currentRotation + 'deg)'; setTimeout(function() { isSpinning = false; lastSpinTime = Date.now(); totalSpins++; currentReward = segments[rs].value; wheelCanvas.classList.remove('spinning'); saveSpinState(currentReward); saveAllData(); playWin(); showResultAfterPopup(currentReward); }, 4000); }
+        function showResultAfterPopup(r) { document.getElementById('resultAmount').textContent = r + ' Coins'; document.getElementById('claimBtn').disabled = false; openModal('resultModal'); }
+        function handleClaimClick() { initAudio(); coins += currentReward; updateCoinDisplay(); saveAllData(); clearSpinState(); closeModal('resultModal'); startCooldown(); showRewardAd(); }
+        function startCooldown() { var b = document.getElementById('spinBtn'); var d = document.getElementById('cooldownDisplay'); b.disabled = true; var r = SPIN_COOLDOWN / 1000; if (cooldownInterval) clearInterval(cooldownInterval); cooldownInterval = setInterval(function() { r--; d.textContent = 'Wait ' + r + 's'; if (r <= 0) { clearInterval(cooldownInterval); cooldownInterval = null; d.textContent = ''; if (isOnline) b.disabled = false; } }, 1000); }
+
+        // ============================================
+        // DAILY & REDEEM
+        // ============================================
+        function claimDailyBonus() { if (!isOnline) return; var now = Date.now(); if (now - lastDailyClaim < 86400000) { updateDailyButton(); return; } initAudio(); playClick(); lastDailyClaim = now; coins += DAILY_BONUS; updateCoinDisplay(); updateDailyButton(); saveAllData(); playWin(); showRewardAd(); }
+        function processRedeem() { if (!isOnline) return; if (coins < MIN_REDEEM) return; initAudio(); playClick(); var code = 'ASTRA' + Math.floor(100000 + Math.random() * 900000); coins -= MIN_REDEEM; updateCoinDisplay(); saveAllData(); closeModal('redeemModal'); window.open(WHATSAPP_URL + encodeURIComponent('Redeem: ' + code + '\nCoins: 10,000'), '_blank'); showRewardAd(); }
+
+        // ============================================
+        // ADMOLO ADS
+        // ============================================
+        function triggerAdmoloInterstitial() { try { if (window.admolo) { if (typeof window.admolo.showInterstitial === 'function') { window.admolo.showInterstitial(); } else if (typeof window.admolo.requestAd === 'function') { window.admolo.requestAd('interstitial'); } else if (typeof window.admolo.push === 'function') { window.admolo.push(function() { if (window.admolo.showInterstitial) window.admolo.showInterstitial(); }); } } } catch(err) {} }
+        function showRewardAd() { openModal('rewardAdModal'); setTimeout(function() { closeModal('rewardAdModal'); }, 5000); }
+        function closeRewardAd() { closeModal('rewardAdModal'); }
+
+        // ============================================
+        // NAVIGATION & MODALS
+        // ============================================
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+            var t = document.getElementById(id);
+            if (t) t.classList.add('active');
+            if (id === 'gameScreen') {
+                setTimeout(initWheel, 50);
             }
-        });
-
-        if (uniqueGameUrls.length >= 6) {
-            const firstSlide = bannerTrack.children[0].cloneNode(true);
-            firstSlide.dataset.url = uniqueGameUrls[0];
-            firstSlide.addEventListener('click', () => openGameViewer(uniqueGameUrls[0]));
-            bannerTrack.appendChild(firstSlide);
+        }
+        
+        function playAstraSpin() {
+            initAudio();
+            playClick();
+            triggerAdmoloInterstitial();
+            showScreen('gameScreen');
+        }
+        
+        function goHome() {
+            initAudio();
+            playClick();
+            triggerAdmoloInterstitial();
+            showScreen('hubScreen');
         }
 
-        let currentSlide = 0;
-        const totalSlides = Math.min(6, uniqueGameUrls.length);
-        let slideInterval;
-        const dots = document.querySelectorAll('.dot');
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            if (id === 'settingsModal') {
+                updateCoinDisplay();
+                updateDailyButton();
+                document.getElementById('musicToggle').checked = musicEnabled;
+                document.getElementById('soundToggle').checked = soundEnabled;
+            }
+        }
 
-        function updateSliderPosition(animate = true) {
-            bannerTrack.style.transition = animate ? 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
-            bannerTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            dots.forEach((dot, i) => {
-                if (i === (currentSlide % totalSlides)) dot.classList.add('active');
-                else dot.classList.remove('active');
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function openRedeem() {
+            initAudio();
+            playClick();
+            updateCoinDisplay();
+            openModal('redeemModal');
+        }
+
+        function confirmReset() { playClick(); openModal('confirmModal'); }
+        function resetAllData() { playClick(); coins = 0; totalSpins = 0; lastDailyClaim = 0; currentRotation = 0; lastSpinTime = 0; try { localStorage.removeItem("astra_coins"); localStorage.removeItem("astra_spins"); localStorage.removeItem("astra_daily_claim"); localStorage.removeItem("astra_wheel_rotation"); localStorage.removeItem("astra_last_spin_time"); clearSpinState(); } catch(e) {} updateCoinDisplay(); updateDailyButton(); closeModal('confirmModal'); closeModal('settingsModal'); }
+
+        // ============================================
+        // HUB CAROUSEL LOGIC
+        // ============================================
+        const track = document.getElementById('carouselTrack');
+        const dotsContainer = document.getElementById('carouselDots');
+
+        banners.forEach((banner, index) => {
+            const slide = document.createElement('a');
+            slide.href = banner.link;
+            slide.className = 'carousel-slide';
+            slide.innerHTML = `<img src="${banner.image}" alt="Banner ${index + 1}">`;
+            track.appendChild(slide);
+
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            if (index === 0) dot.classList.add('active');
+            dot.onclick = () => goToSlide(index);
+            dotsContainer.appendChild(dot);
+        });
+
+        let currentSlide = 0;
+        const totalSlides = banners.length;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
             });
         }
 
         function nextSlide() {
-            currentSlide++;
-            updateSliderPosition();
-            if (currentSlide === totalSlides) {
-                setTimeout(() => {
-                    currentSlide = 0;
-                    updateSliderPosition(false);
-                }, 600);
-            }
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
         }
 
         function goToSlide(index) {
             currentSlide = index;
-            updateSliderPosition();
-            resetSlideInterval();
+            updateCarousel();
+            resetAutoSlide();
         }
 
-        function resetSlideInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 4500);
-        }
+        let autoSlide = setInterval(nextSlide, 4000);
 
-        if (totalSlides > 0) resetSlideInterval();
+        function resetAutoSlide() {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(nextSlide, 4000);
+        }
 
         let touchStartX = 0;
         let touchEndX = 0;
 
-        bannerTrack.addEventListener('touchstart', e => {
+        track.addEventListener('touchstart', e => {
             touchStartX = e.changedTouches[0].screenX;
-            clearInterval(slideInterval);
-        }, { passive: true });
+            clearInterval(autoSlide);
+        }, {passive: true});
 
-        bannerTrack.addEventListener('touchend', e => {
+        track.addEventListener('touchend', e => {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
-            resetSlideInterval();
-        }, { passive: true });
+            resetAutoSlide();
+        }, {passive: true});
 
         function handleSwipe() {
-            const SWIPE_THRESHOLD = 50;
-            if (touchEndX < touchStartX - SWIPE_THRESHOLD) {
-                nextSlide();
-            } else if (touchEndX > touchStartX + SWIPE_THRESHOLD) {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateSliderPosition();
-            }
-        }
-
-        // Screenshot Slider Logic
-        const sTrack = document.getElementById('screenshotTrack');
-        const sItems = sTrack.querySelectorAll('.screenshot-item');
-        const sTotal = sItems.length / 2; 
-        let sIndex = 0;
-        let sInterval;
-
-        function updateSSlider(animate = true) {
-            sTrack.style.transition = animate ? 'transform 0.5s ease' : 'none';
-            const w = sItems[0].offsetWidth + 32;
-            sTrack.style.transform = `translateX(-${sIndex * w}px)`;
-        }
-
-        function nextSSlide() {
-            sIndex++;
-            updateSSlider();
-            if (sIndex >= sTotal) {
-                setTimeout(() => {
-                    sIndex = 0;
-                    updateSSlider(false);
-                }, 500);
-            }
-        }
-
-        function startSAutoPlay() {
-            sInterval = setInterval(nextSSlide, 3000);
-        }
-
-        let sStartX = 0;
-        let sIsDragging = false;
-
-        sTrack.addEventListener('touchstart', e => {
-            sStartX = e.touches[0].clientX;
-            sIsDragging = true;
-            clearInterval(sInterval);
-            sTrack.style.transition = 'none';
-        }, { passive: true });
-
-        sTrack.addEventListener('touchmove', e => {
-            if (!sIsDragging) return;
-            const currentX = e.touches[0].clientX;
-            const diff = currentX - sStartX;
-            const w = sItems[0].offsetWidth + 32;
-            sTrack.style.transform = `translateX(${-sIndex * w + diff}px)`;
-        }, { passive: true });
-
-        sTrack.addEventListener('touchend', e => {
-            if (!sIsDragging) return;
-            sIsDragging = false;
-            const endX = e.changedTouches[0].clientX;
-            const diff = endX - sStartX;
-            
-            if (diff < -50) {
-                sIndex++;
-            } else if (diff > 50) {
-                sIndex--;
-            }
-            
-            if (sIndex < 0) sIndex = 0;
-            if (sIndex >= sTotal) sIndex = sTotal - 1;
-
-            updateSSlider();
-            startSAutoPlay();
-        }, { passive: true });
-        
-        startSAutoPlay();
-
-        // Game Viewer Logic
-        const gameViewer = document.getElementById('gameViewer');
-        const gameFrame = document.getElementById('gameFrame');
-        const closeBtn = document.getElementById('closeGameBtn');
-        let closeBtnTimeout;
-        let isViewerOpen = false;
-
-        function openGameViewer(url) {
-            if (isViewerOpen) return; // Prevent multiple opens
-            gameFrame.src = url;
-            gameViewer.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            isViewerOpen = true;
-            
-            // Push history state to handle Android/Browser back button
-            history.pushState({ gameViewerOpen: true }, "");
-            
-            resetCloseBtnTimer();
-        }
-
-        function closeGameViewer() {
-            if (!isViewerOpen) return;
-            gameViewer.classList.remove('active');
-            gameFrame.src = '';
-            document.body.style.overflow = '';
-            isViewerOpen = false;
-            clearTimeout(closeBtnTimeout);
-        }
-
-        // Listen for browser/Android back button
-        window.addEventListener('popstate', (e) => {
-            if (isViewerOpen) {
-                closeGameViewer();
-            }
-        });
-
-        // Handle on-screen close button
-        closeBtn.addEventListener('click', () => {
-            if (isViewerOpen) {
-                history.back(); // This will trigger popstate, keeping history clean
-            }
-        });
-
-        function resetCloseBtnTimer() {
-            if (!isViewerOpen) return;
-            closeBtn.classList.remove('hidden');
-            clearTimeout(closeBtnTimeout);
-            closeBtnTimeout = setTimeout(() => {
-                closeBtn.classList.add('hidden');
-            }, 3000);
-        }
-
-        document.addEventListener('mousemove', (e) => {
-            if (isViewerOpen && e.clientY < 100) {
-                resetCloseBtnTimer();
-            }
-        });
-
-        document.addEventListener('touchstart', (e) => {
-            if (isViewerOpen && e.touches[0].clientY < 100) {
-                resetCloseBtnTimer();
-            }
-        }, { passive: true });
-
-        // Video Facade Logic - Option B (Inline Embed)
-        const videoFacade = document.getElementById('videoFacade');
-        const videoWrapper = document.getElementById('videoWrapper');
-
-        function loadVideo() {
-            if (!videoFacade || videoFacade.style.display === 'none') return;
-            
-            // Hide facade immediately to prevent double clicks
-            videoFacade.style.display = 'none';
-            
-            // Create and append the iframe
-            const iframe = document.createElement('iframe');
-            iframe.src = "https://www.youtube.com/embed/z0NMdW5zgYE?autoplay=1&rel=0&playsinline=1";
-            iframe.title = "Token Rush Promo Video";
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-            iframe.allowFullscreen = true;
-            iframe.style.position = 'absolute';
-            iframe.style.top = '0';
-            iframe.style.left = '0';
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.style.border = '0';
-            iframe.style.zIndex = '15';
-            
-            videoWrapper.appendChild(iframe);
-        }
-
-        // Make the whole facade clickable
-        videoFacade.addEventListener('click', loadVideo);
-
-        // Download Button Logic - Prevent rapid clicks
-        document.querySelectorAll('.download-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                if (this.classList.contains('is-loading')) {
-                    e.preventDefault();
-                    return;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    updateCarousel();
                 }
-                this.classList.add('is-loading');
-                setTimeout(() => {
-                    this.classList.remove('is-loading');
-                }, 1500);
+            }
+        }
+
+        // ============================================
+        // HUB GAME GRID & EXTERNAL GAME LOGIC
+        // ============================================
+        const grid = document.getElementById('gamesGrid');
+        games.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'game-card';
+            card.innerHTML = `
+                <img src="${game.thumbnail}" class="game-thumb" alt="${game.name}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x400/102a1c/ffffff?text=Play+Now';">
+                <div class="game-name">${game.name}</div>
+            `;
+            card.onclick = () => openGame(game.gameUrl);
+            grid.appendChild(card);
+        });
+
+        function openGame(gameUrl) {
+            if (!gameUrl) return;
+            const iframe = document.getElementById('externalGameFrame');
+            iframe.src = gameUrl;
+            document.getElementById('externalGameModal').classList.add('active');
+        }
+
+        function closeExternalGame() {
+            document.getElementById('externalGameModal').classList.remove('active');
+            setTimeout(() => {
+                document.getElementById('externalGameFrame').src = '';
+            }, 300);
+        }
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllData();
+            updateCoinDisplay();
+            updateDailyButton();
+            
+            var currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            var lp = document.getElementById('lastUpdatedPrivacy'); if(lp) lp.textContent = currentDate;
+            var lt = document.getElementById('lastUpdatedTerms'); if(lt) lt.textContent = currentDate;
+            var ld = document.getElementById('lastUpdatedDisclaimer'); if(ld) ld.textContent = currentDate;
+
+            window.addEventListener('online', () => { isOnline = true; updateDailyButton(); });
+            window.addEventListener('offline', () => { isOnline = false; updateDailyButton(); });
+            
+            setInterval(updateDailyButton, 60000);
+            
+            // Show Interstitial on first open
+            setTimeout(triggerAdmoloInterstitial, 1500);
+        });
+
+        // Close modals on backdrop click
+        document.querySelectorAll('.modal-overlay').forEach(function(o) {
+            o.addEventListener('click', function(e) {
+                if (e.target === o) o.classList.remove('active');
             });
         });
 
-        // Header Hide/Show & Back to Top
-        const header = document.getElementById('header');
-        const backToTopBtn = document.getElementById('backToTop');
-        let lastScrollTop = 0;
-
-        window.addEventListener('scroll', () => {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-
-            if (scrollTop > lastScrollTop && scrollTop > 200) {
-                header.classList.add('hidden');
-            } else {
-                header.classList.remove('hidden');
-            }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
-            
-            if (scrollTop > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        }, { passive: true });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Mobile Menu
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileNav = document.getElementById('mobileNav');
-        const overlay = document.getElementById('overlay');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        menuToggle.addEventListener('click', () => {
-            mobileNav.classList.add('open');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        const closeMenu = () => {
-            mobileNav.classList.remove('open');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-
-        overlay.addEventListener('click', closeMenu);
-        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
-
-        // Reveal on Scroll
-        const reveals = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        reveals.forEach(reveal => revealObserver.observe(reveal));
-
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
     </script>
 </body>
 </html>
