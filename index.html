@@ -772,28 +772,6 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Single Clean Back Button */
-        #gameBackBtn {
-            position: absolute;
-            top: calc(10px + env(safe-area-inset-top, 0px));
-            left: calc(10px + env(safe-area-inset-left, 0px));
-            width: 40px; 
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.5); 
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1001;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            transition: transform 0.2s, background 0.2s;
-        }
-        #gameBackBtn:active { transform: scale(0.9); background: rgba(211, 47, 47, 0.8); }
-
         /* Reward Ad Popup */
         #rewardAdModal { z-index: 300; }
         #rewardAdModal .modal { max-width: 320px; width: 90vw; }
@@ -916,11 +894,8 @@
         <!-- ===================== GAME SCREEN (AstraSpin) ===================== -->
         <div id="gameScreen" class="screen">
             <div class="game-header">
-                <button class="back-btn" onclick="goHome()" aria-label="Back">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
-                    </svg>
-                </button>
+                <!-- Replaced back button with a spacer to maintain layout -->
+                <div style="width: 48px; height: 48px; flex-shrink: 0;"></div>
                 <div class="wallet-container" onclick="openModal('settingsModal')">
                     <div class="wallet-icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></div>
                     <div class="wallet-info">
@@ -1044,58 +1019,6 @@
             </div>
         </div>
 
-        <!-- ===================== LEGAL MODALS ===================== -->
-        <div class="modal-overlay" id="privacyModal">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">Privacy Policy</h3>
-                    <button class="modal-close" onclick="closeModal('privacyModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-                </div>
-                <div class="modal-body">
-                    <div class="legal-content">
-                        <p><strong>Last Updated:</strong> <span id="lastUpdatedPrivacy"></span></p>
-                        <p>AstraSpin is a casual reward-based game. We do not collect any personal data from users. All data such as coins and progress is stored locally on your device using browser storage.</p>
-                        <h4>Advertising Partners</h4>
-                        <p>Our game may display advertisements served by third-party advertising partners. These partners may use cookies, device identifiers, and similar technologies to serve ads based on your prior visits to our game or other websites.</p>
-                        <h4>Contact Information</h4>
-                        <p>Email: imranidrisi78692@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-overlay" id="termsModal">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">Terms & Conditions</h3>
-                    <button class="modal-close" onclick="closeModal('termsModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-                </div>
-                <div class="modal-body">
-                    <div class="legal-content">
-                        <p><strong>Last Updated:</strong> <span id="lastUpdatedTerms"></span></p>
-                        <p>Welcome to AstraSpin. These Terms and Conditions govern your use of our game. By accessing or using the game, you agree to be bound by these Terms.</p>
-                        <h4>User Responsibilities</h4>
-                        <p>You agree to use the game only for lawful purposes. You must not use the game in a way that could damage, disable, overburden, or impair the game.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-overlay" id="disclaimerModal">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">About</h3>
-                    <button class="modal-close" onclick="closeModal('disclaimerModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-                </div>
-                <div class="modal-body">
-                    <div class="legal-content">
-                        <p><strong>Last Updated:</strong> <span id="lastUpdatedDisclaimer"></span></p>
-                        <p>AstraSpin is a free-to-play casual game. Virtual coins earned in the game have no real-world monetary value unless explicitly stated by a valid redemption program. We do not guarantee any fixed earnings.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- ===================== GAME-SPECIFIC MODALS ===================== -->
         <div class="modal-overlay" id="resultModal">
             <div class="modal">
@@ -1191,11 +1114,6 @@
                     <div class="loader-spinner"></div>
                     <span>Loading Game...</span>
                 </div>
-                
-                <button id="gameBackBtn" onclick="closeExternalGame()" aria-label="Back to Home">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                </button>
-                
                 <iframe id="externalGameFrame" src="" allow="autoplay; fullscreen; gamepad; accelerometer; gyroscope" allowfullscreen="true"></iframe>
             </div>
         </div>
@@ -1205,16 +1123,26 @@
 
     </div>
 
+    <!-- Unified Floating Back Button -->
+    <div id="floatingBackBtn" class="floating-back-btn expanded">
+        <div class="fb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </div>
+        <div class="fb-minimize">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </div>
+    </div>
+
     <script>
         // ============================================
         // EDITABLE LINKS VARIABLE
         // ============================================
         const links = {
             website: "https://tokenrush.online/",
-            privacy: "#privacyModal",
-            terms: "#termsModal",
-            about: "#disclaimerModal",
-            contact: "mailto:imranidrisi78692@gmail.com",
+            privacy: "privacy-policy.html",
+            terms: "terms.html",
+            about: "about.html",
+            contact: "contact.html",
             share: "https://astraspin.in/"
         };
 
@@ -1417,14 +1345,12 @@
         let dynamicBanners = [];
         
         async function initDynamicBanner() {
-            // 1. Add AstraSpin (Main Game)
             dynamicBanners.push({ 
                 image: "https://www.dropbox.com/scl/fi/2yq5ynci8qqk51p5pet3f/file_00000000aa1c81faa781466976d65032.png?rlkey=dn6vyl4x89x01qgtpqn9h3086&st=bp9rfi3m&raw=1", 
                 title: "AstraSpin - Spin & Win", 
                 link: "#" 
             });
             
-            // 2. Add 5 more from the existing games array to ensure at least 6 banners total
             if (games.length > 5) {
                 dynamicBanners.push({ image: games[1].thumbnail, title: games[1].name, link: "#" });
                 dynamicBanners.push({ image: games[2].thumbnail, title: games[2].name, link: "#" });
@@ -1433,7 +1359,6 @@
                 dynamicBanners.push({ image: games[5].thumbnail, title: games[5].name, link: "#" });
             }
             
-            // 3. Fetch top 3 GamePix games and add to banner
             try {
                 const res = await fetch('https://feeds.gamepix.com/v2/json?sid=RP112&pagination=3&page=1');
                 if (res.ok) {
@@ -1571,9 +1496,8 @@
                         if (!loadedGamePixUrls.has(game.url)) {
                             loadedGamePixUrls.add(game.url);
                             
-                            // High-Quality Image Selection (No Fake Placeholders)
                             const imgUrl = game.image || game.thumbnail;
-                            if (!imgUrl) return; // Hide card if no valid image
+                            if (!imgUrl) return;
                             
                             const card = document.createElement('div');
                             card.className = 'game-card';
@@ -1640,6 +1564,7 @@
             triggerAdmoloInterstitial();
             triggerGamePixInterstitial();
             showScreen('gameScreen');
+            showBackBtn(); // Show floating back button
         }
         
         function goHome() {
@@ -1648,6 +1573,7 @@
             triggerAdmoloInterstitial();
             triggerGamePixInterstitial();
             showScreen('hubScreen');
+            hideBackBtn(); // Hide floating back button
         }
 
         function openModal(id) {
@@ -1658,10 +1584,23 @@
                 document.getElementById('musicToggle').checked = musicEnabled;
                 document.getElementById('soundToggle').checked = soundEnabled;
             }
+            // Hide floating btn visual if a modal is open over the game
+            const fb = document.getElementById('floatingBackBtn');
+            if (fb) {
+                fb.style.opacity = '0';
+                fb.style.pointerEvents = 'none';
+            }
         }
 
         function closeModal(id) {
             document.getElementById(id).classList.remove('active');
+            // Restore floating btn if game is still active
+            const fb = document.getElementById('floatingBackBtn');
+            if (fb && (document.getElementById('gameScreen').classList.contains('active') || document.getElementById('externalGameModal').classList.contains('active'))) {
+                fb.style.opacity = '';
+                fb.style.pointerEvents = '';
+                resetBackBtnTimer();
+            }
         }
 
         function openRedeem() {
@@ -1688,7 +1627,6 @@
                 <div class="game-name">${game.name}</div>
             `;
             
-            // Intercept click to trigger internal AstraSpin game if the flag is set
             if (game.isAstraSpin) {
                 card.onclick = () => playAstraSpin();
             } else {
@@ -1714,6 +1652,7 @@
             
             document.getElementById('externalGameModal').classList.add('active');
             requestAutoFullscreen();
+            showBackBtn(); // Show floating back button
         }
         
         function requestAutoFullscreen() {
@@ -1756,8 +1695,8 @@
 
         function closeExternalGame() {
             document.getElementById('externalGameModal').classList.remove('active');
+            hideBackBtn(); // Hide floating back button
             
-            // Exit fullscreen if active
             if (document.fullscreenElement) {
                 if (document.exitFullscreen) document.exitFullscreen().catch(()=>{});
                 else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
@@ -1769,6 +1708,133 @@
                 document.getElementById('iframeLoader').innerHTML = '<div class="loader-spinner"></div><span>Loading Game...</span>';
             }, 300);
         }
+
+        // ============================================
+        // FLOATING BACK BUTTON LOGIC
+        // ============================================
+        let backBtnTimer = null;
+        let isDragging = false;
+        let hasMoved = false;
+        let startX, startY, offsetX, offsetY;
+        let activePointerId = null;
+
+        function showBackBtn() {
+            const btn = document.getElementById('floatingBackBtn');
+            btn.style.left = `calc(15px + env(safe-area-inset-left, 0px))`;
+            btn.style.top = `calc(15px + env(safe-area-inset-top, 0px))`;
+            btn.classList.add('active', 'expanded');
+            btn.classList.remove('minimized', 'hidden');
+            resetBackBtnTimer();
+        }
+
+        function hideBackBtn() {
+            const btn = document.getElementById('floatingBackBtn');
+            btn.classList.remove('active');
+            clearTimeout(backBtnTimer);
+        }
+
+        function resetBackBtnTimer() {
+            const btn = document.getElementById('floatingBackBtn');
+            if (!btn.classList.contains('active')) return;
+            btn.classList.remove('hidden');
+            clearTimeout(backBtnTimer);
+            backBtnTimer = setTimeout(() => {
+                btn.classList.add('hidden');
+            }, 3000);
+        }
+
+        function closeCurrentGame() {
+            if (document.getElementById('externalGameModal').classList.contains('active')) {
+                closeExternalGame();
+            } else if (document.getElementById('gameScreen').classList.contains('active')) {
+                goHome();
+            }
+        }
+
+        const fbBtn = document.getElementById('floatingBackBtn');
+
+        fbBtn.addEventListener('pointerdown', (e) => {
+            if (activePointerId !== null) return;
+            activePointerId = e.pointerId;
+            isDragging = true;
+            hasMoved = false;
+            startX = e.clientX;
+            startY = e.clientY;
+            const rect = fbBtn.getBoundingClientRect();
+            offsetX = e.clientX - rect.left;
+            offsetY = e.clientY - rect.top;
+            fbBtn.setPointerCapture(e.pointerId);
+            resetBackBtnTimer();
+        });
+
+        fbBtn.addEventListener('pointermove', (e) => {
+            if (e.pointerId !== activePointerId || !isDragging) return;
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+            if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+                hasMoved = true;
+                fbBtn.style.transition = 'none';
+            }
+            if (hasMoved) {
+                let x = e.clientX - offsetX;
+                let y = e.clientY - offsetY;
+                const w = window.innerWidth;
+                const h = window.innerHeight;
+                const btnW = fbBtn.offsetWidth;
+                const btnH = fbBtn.offsetHeight;
+                const safeTop = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--safe-top')) || 0;
+                const safeBottom = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--safe-bottom')) || 0;
+                
+                x = Math.max(5, Math.min(x, w - btnW - 5));
+                y = Math.max(5 + safeTop, Math.min(y, h - btnH - 5 - safeBottom));
+                
+                fbBtn.style.left = `${x}px`;
+                fbBtn.style.top = `${y}px`;
+            }
+        });
+
+        fbBtn.addEventListener('pointerup', (e) => {
+            if (e.pointerId !== activePointerId) return;
+            activePointerId = null;
+            isDragging = false;
+            fbBtn.style.transition = 'opacity 0.3s ease, transform 0.2s ease, width 0.2s ease, height 0.2s ease';
+            
+            if (!hasMoved) {
+                if (e.target.closest('.fb-minimize')) {
+                    fbBtn.classList.add('minimized');
+                    fbBtn.classList.remove('expanded');
+                } else if (fbBtn.classList.contains('minimized')) {
+                    fbBtn.classList.remove('minimized');
+                    fbBtn.classList.add('expanded');
+                } else {
+                    closeCurrentGame();
+                }
+            }
+        });
+
+        fbBtn.addEventListener('pointercancel', (e) => {
+            if (e.pointerId === activePointerId) {
+                activePointerId = null;
+                isDragging = false;
+            }
+        });
+
+        // Global listeners for auto-hide behavior
+        window.addEventListener('blur', () => {
+            if (document.getElementById('gameScreen').classList.contains('active') || document.getElementById('externalGameModal').classList.contains('active')) {
+                resetBackBtnTimer();
+            }
+        });
+        document.addEventListener('pointerdown', (e) => {
+            if (document.getElementById('gameScreen').classList.contains('active') || document.getElementById('externalGameModal').classList.contains('active')) {
+                resetBackBtnTimer();
+            }
+        });
+        document.addEventListener('pointermove', (e) => {
+            if (document.getElementById('gameScreen').classList.contains('active') || document.getElementById('externalGameModal').classList.contains('active')) {
+                resetBackBtnTimer();
+            }
+        });
 
         // ============================================
         // INITIALIZATION
