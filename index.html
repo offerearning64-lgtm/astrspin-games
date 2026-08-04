@@ -706,10 +706,26 @@
         .reset-btn { width: 100%; padding: 14px; background: transparent; border: 2px solid #d32f2f; border-radius: var(--radius-sm); color: #d32f2f; font-weight: 700; font-size: 14px; cursor: pointer; }
         .reset-btn:active { background: #d32f2f; color: white; }
 
-        .legal-content { font-size: 13px; color: var(--text-medium); line-height: 1.8; padding: 10px 0; }
-        .legal-content h4 { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700; color: var(--text-dark); margin: 16px 0 6px 0; }
-        .legal-content p { margin-bottom: 10px; }
-        .legal-content ul { margin: 10px 0; padding-left: 20px; }
+        /* Share Modal */
+        .share-modal-content { text-align: center; }
+        .share-btn { 
+            display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px; 
+            background: var(--bg-secondary); border: 1px solid var(--border-light); 
+            border-radius: 14px; color: var(--text-dark); font-weight: 600; font-size: 15px; 
+            cursor: pointer; margin-bottom: 10px; text-decoration: none; transition: all 0.2s ease;
+        }
+        .share-btn:active { transform: scale(0.98); background: #fff; }
+        .share-btn svg { width: 20px; height: 20px; }
+
+        /* Copy Toast */
+        #copyToast {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            background: #102a1c; color: #fff; padding: 12px 24px; border-radius: 30px; 
+            font-size: 14px; font-weight: 600; z-index: 9999; opacity: 0; 
+            transition: opacity 0.3s ease; pointer-events: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        #copyToast.show { opacity: 1; }
 
         /* Result Modal */
         .result-content { padding: 36px 24px; text-align: center; }
@@ -772,6 +788,34 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
+        /* Floating Back Button */
+        .floating-back-btn {
+            position: fixed;
+            z-index: 10001;
+            top: calc(15px + env(safe-area-inset-top, 0px));
+            left: calc(15px + env(safe-area-inset-left, 0px));
+            width: 36px; 
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            touch-action: none;
+            transition: opacity 0.3s ease, transform 0.2s ease;
+            user-select: none;
+            -webkit-user-select: none;
+            opacity: 1;
+        }
+        .floating-back-btn.active { display: flex; }
+        .floating-back-btn.hidden { opacity: 0.15; pointer-events: none; }
+        .floating-back-btn:active { transform: scale(0.9); }
+
         /* Reward Ad Popup */
         #rewardAdModal { z-index: 300; }
         #rewardAdModal .modal { max-width: 320px; width: 90vw; }
@@ -826,6 +870,11 @@
 <body>
     <div class="app-wrapper">
         
+        <!-- Unified Floating Back Button -->
+        <div id="floatingBackBtn" class="floating-back-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </div>
+
         <!-- ===================== HUB SCREEN ===================== -->
         <div id="hubScreen" class="screen active">
             <div class="hub-container">
@@ -1019,6 +1068,99 @@
             </div>
         </div>
 
+        <!-- Share Modal -->
+        <div class="modal-overlay" id="shareModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Share Website</h3>
+                    <button class="modal-close" onclick="closeModal('shareModal')" aria-label="Close">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </button>
+                </div>
+                <div class="modal-body share-modal-content">
+                    <button class="share-btn" onclick="copyShareLink()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green-dark)" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        Copy Link
+                    </button>
+                    <a href="https://wa.me/?text=Check%20out%20AstraSpin:%20https://astraspin.in/" target="_blank" class="share-btn" style="color:#25D366;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        WhatsApp
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://astraspin.in/" target="_blank" class="share-btn" style="color:#1877F2;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20AstraSpin:%20https://astraspin.in/" target="_blank" class="share-btn" style="color:#000;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        X (Twitter)
+                    </a>
+                    <a href="https://t.me/share/url?url=https://astraspin.in/&text=Check%20out%20AstraSpin!" target="_blank" class="share-btn" style="color:#0088cc;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.322-.437.887-.662 3.478-1.514 5.797-2.51 6.956-2.986 3.316-1.38 4.008-1.618 4.458-1.626z"/></svg>
+                        Telegram
+                    </a>
+                    <a href="mailto:?subject=Check%20out%20AstraSpin!&body=I%20found%20this%20cool%20game%20website:%20https://astraspin.in/" target="_blank" class="share-btn" style="color:#EA4335;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copy Toast -->
+        <div id="copyToast">Link Copied!</div>
+
+        <!-- ===================== LEGAL MODALS ===================== -->
+        <div class="modal-overlay" id="privacyModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Privacy Policy</h3>
+                    <button class="modal-close" onclick="closeModal('privacyModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="legal-content">
+                        <p><strong>Last Updated:</strong> <span id="lastUpdatedPrivacy"></span></p>
+                        <p>AstraSpin is a casual reward-based game. We do not collect any personal data from users. All data such as coins and progress is stored locally on your device using browser storage.</p>
+                        <h4>Advertising Partners</h4>
+                        <p>Our game may display advertisements served by third-party advertising partners. These partners may use cookies, device identifiers, and similar technologies to serve ads based on your prior visits to our game or other websites.</p>
+                        <h4>Contact Information</h4>
+                        <p>Email: imranidrisi78692@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="termsModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Terms & Conditions</h3>
+                    <button class="modal-close" onclick="closeModal('termsModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="legal-content">
+                        <p><strong>Last Updated:</strong> <span id="lastUpdatedTerms"></span></p>
+                        <p>Welcome to AstraSpin. These Terms and Conditions govern your use of our game. By accessing or using the game, you agree to be bound by these Terms.</p>
+                        <h4>User Responsibilities</h4>
+                        <p>You agree to use the game only for lawful purposes. You must not use the game in a way that could damage, disable, overburden, or impair the game.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="disclaimerModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">About</h3>
+                    <button class="modal-close" onclick="closeModal('disclaimerModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="legal-content">
+                        <p><strong>Last Updated:</strong> <span id="lastUpdatedDisclaimer"></span></p>
+                        <p>AstraSpin is a free-to-play casual game. Virtual coins earned in the game have no real-world monetary value unless explicitly stated by a valid redemption program. We do not guarantee any fixed earnings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- ===================== GAME-SPECIFIC MODALS ===================== -->
         <div class="modal-overlay" id="resultModal">
             <div class="modal">
@@ -1123,16 +1265,6 @@
 
     </div>
 
-    <!-- Unified Floating Back Button -->
-    <div id="floatingBackBtn" class="floating-back-btn expanded">
-        <div class="fb-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        </div>
-        <div class="fb-minimize">
-            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-        </div>
-    </div>
-
     <script>
         // ============================================
         // EDITABLE LINKS VARIABLE
@@ -1143,6 +1275,7 @@
             terms: "terms.html",
             about: "about.html",
             contact: "contact.html",
+            disclaimer: "disclaimer.html",
             share: "https://astraspin.in/"
         };
 
@@ -1150,6 +1283,7 @@
             { key: 'website', label: 'Official Website', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>' },
             { key: 'privacy', label: 'Privacy Policy', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>' },
             { key: 'terms', label: 'Terms & Conditions', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>' },
+            { key: 'disclaimer', label: 'Disclaimer', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>' },
             { key: 'about', label: 'About', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>' },
             { key: 'contact', label: 'Contact', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>' },
             { key: 'share', label: 'Share Website', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>' }
@@ -1160,17 +1294,19 @@
             container.innerHTML = '';
             linkItems.forEach(item => {
                 const url = links[item.key];
-                const isModal = url.startsWith('#');
-                const tag = 'a';
-                const onclickAttr = isModal ? `onclick="closeModal('settingsModal'); setTimeout(() => openModal('${url.substring(1)}'), 300);"` : '';
-                const hrefAttr = isModal ? 'javascript:void(0)' : url;
-                const targetAttr = isModal ? '' : '_blank';
-                
-                const el = document.createElement(tag);
+                const el = document.createElement('a');
                 el.className = 'settings-list-item';
-                el.href = hrefAttr;
-                el.target = targetAttr;
-                if (onclickAttr) el.setAttribute('onclick', onclickAttr);
+                
+                if (item.key === 'share') {
+                    el.href = 'javascript:void(0)';
+                    el.onclick = (e) => {
+                        e.preventDefault();
+                        handleShareClick();
+                    };
+                } else {
+                    el.href = url;
+                    el.target = '_blank';
+                }
                 
                 el.innerHTML = `
                     <div class="list-icon-box">${item.icon}</div>
@@ -1182,13 +1318,48 @@
         }
 
         // ============================================
+        // SHARE LOGIC
+        // ============================================
+        function handleShareClick() {
+            const shareUrl = window.location.href;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'AstraSpin - Play & Win Rewards',
+                    text: 'Check out AstraSpin, a fun mobile web game!',
+                    url: shareUrl
+                }).catch(err => console.log('Error sharing:', err));
+            } else {
+                openModal('shareModal');
+            }
+        }
+
+        function copyShareLink() {
+            const shareUrl = window.location.href;
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                showToast('Link Copied!');
+            }).catch(err => {
+                const textArea = document.createElement('textarea');
+                textArea.value = shareUrl;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Link Copied!');
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('copyToast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+
+        // ============================================
         // DATA STRUCTURES (49 Games with Titles & Thumbnails)
         // ============================================
         const games = [
-            // 1. AstraSpin (Main Game) - Added as the first card
             { name: "AstraSpin", thumbnail: "https://www.dropbox.com/scl/fi/2yq5ynci8qqk51p5pet3f/file_00000000aa1c81faa781466976d65032.png?rlkey=dn6vyl4x89x01qgtpqn9h3086&st=bp9rfi3m&raw=1", isAstraSpin: true },
-            
-            // 49 GameMonetize Games
             { name: "Wolfoo Maze Adventure", thumbnail: "https://www.dropbox.com/scl/fi/uml1w7f681jtyfti8dk6g/file_00000000196482088c9a6d04bcc8d731.png?rlkey=3oyh9294wr9o0rgz5hgkob77p&st=4q1jpcxp&raw=1", gameUrl: "https://html5.gamemonetize.games/325h6p6tzaeefiur6a50ype2k3id3rrk/" },
             { name: "Stickboy War", thumbnail: "https://www.dropbox.com/scl/fi/j85uva6nxwmmw5s96juub/file_0000000026b08208afa410ed06532a7f.png?rlkey=5wufbegoie8i7mus2k64i01pm&st=jl435rf6&raw=1", gameUrl: "https://html5.gamemonetize.games/5g0mc76dxrv2gwcdr9p5yctnru12xdpe/" },
             { name: "Cars Tycoon", thumbnail: "https://www.dropbox.com/scl/fi/d2k3ino1689muqekmzbmj/file_0000000076348208ab73c335172f2bb2.png?rlkey=te51m4xmpc728h1vwsbsskajh&st=oxzzj8bw&raw=1", gameUrl: "https://html5.gamemonetize.games/xwaq928fa1zfi6j3xrwzrfkux7mw0eo4/" },
@@ -1564,7 +1735,7 @@
             triggerAdmoloInterstitial();
             triggerGamePixInterstitial();
             showScreen('gameScreen');
-            showBackBtn(); // Show floating back button
+            showBackBtn();
         }
         
         function goHome() {
@@ -1573,7 +1744,7 @@
             triggerAdmoloInterstitial();
             triggerGamePixInterstitial();
             showScreen('hubScreen');
-            hideBackBtn(); // Hide floating back button
+            hideBackBtn();
         }
 
         function openModal(id) {
@@ -1584,7 +1755,6 @@
                 document.getElementById('musicToggle').checked = musicEnabled;
                 document.getElementById('soundToggle').checked = soundEnabled;
             }
-            // Hide floating btn visual if a modal is open over the game
             const fb = document.getElementById('floatingBackBtn');
             if (fb) {
                 fb.style.opacity = '0';
@@ -1594,7 +1764,6 @@
 
         function closeModal(id) {
             document.getElementById(id).classList.remove('active');
-            // Restore floating btn if game is still active
             const fb = document.getElementById('floatingBackBtn');
             if (fb && (document.getElementById('gameScreen').classList.contains('active') || document.getElementById('externalGameModal').classList.contains('active'))) {
                 fb.style.opacity = '';
@@ -1652,7 +1821,7 @@
             
             document.getElementById('externalGameModal').classList.add('active');
             requestAutoFullscreen();
-            showBackBtn(); // Show floating back button
+            showBackBtn();
         }
         
         function requestAutoFullscreen() {
@@ -1695,7 +1864,7 @@
 
         function closeExternalGame() {
             document.getElementById('externalGameModal').classList.remove('active');
-            hideBackBtn(); // Hide floating back button
+            hideBackBtn();
             
             if (document.fullscreenElement) {
                 if (document.exitFullscreen) document.exitFullscreen().catch(()=>{});
@@ -1722,8 +1891,9 @@
             const btn = document.getElementById('floatingBackBtn');
             btn.style.left = `calc(15px + env(safe-area-inset-left, 0px))`;
             btn.style.top = `calc(15px + env(safe-area-inset-top, 0px))`;
-            btn.classList.add('active', 'expanded');
-            btn.classList.remove('minimized', 'hidden');
+            btn.classList.add('active');
+            btn.classList.remove('hidden');
+            btn.style.pointerEvents = 'auto';
             resetBackBtnTimer();
         }
 
@@ -1737,9 +1907,11 @@
             const btn = document.getElementById('floatingBackBtn');
             if (!btn.classList.contains('active')) return;
             btn.classList.remove('hidden');
+            btn.style.pointerEvents = 'auto';
             clearTimeout(backBtnTimer);
             backBtnTimer = setTimeout(() => {
                 btn.classList.add('hidden');
+                btn.style.pointerEvents = 'none';
             }, 3000);
         }
 
@@ -1765,6 +1937,7 @@
             offsetY = e.clientY - rect.top;
             fbBtn.setPointerCapture(e.pointerId);
             resetBackBtnTimer();
+            e.preventDefault();
         });
 
         fbBtn.addEventListener('pointermove', (e) => {
@@ -1782,11 +1955,9 @@
                 const h = window.innerHeight;
                 const btnW = fbBtn.offsetWidth;
                 const btnH = fbBtn.offsetHeight;
-                const safeTop = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--safe-top')) || 0;
-                const safeBottom = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--safe-bottom')) || 0;
                 
                 x = Math.max(5, Math.min(x, w - btnW - 5));
-                y = Math.max(5 + safeTop, Math.min(y, h - btnH - 5 - safeBottom));
+                y = Math.max(5, Math.min(y, h - btnH - 5));
                 
                 fbBtn.style.left = `${x}px`;
                 fbBtn.style.top = `${y}px`;
@@ -1797,18 +1968,10 @@
             if (e.pointerId !== activePointerId) return;
             activePointerId = null;
             isDragging = false;
-            fbBtn.style.transition = 'opacity 0.3s ease, transform 0.2s ease, width 0.2s ease, height 0.2s ease';
+            fbBtn.style.transition = 'opacity 0.3s ease, transform 0.2s ease';
             
             if (!hasMoved) {
-                if (e.target.closest('.fb-minimize')) {
-                    fbBtn.classList.add('minimized');
-                    fbBtn.classList.remove('expanded');
-                } else if (fbBtn.classList.contains('minimized')) {
-                    fbBtn.classList.remove('minimized');
-                    fbBtn.classList.add('expanded');
-                } else {
-                    closeCurrentGame();
-                }
+                closeCurrentGame();
             }
         });
 
@@ -1819,7 +1982,6 @@
             }
         });
 
-        // Global listeners for auto-hide behavior
         window.addEventListener('blur', () => {
             if (document.getElementById('gameScreen').classList.contains('active') || document.getElementById('externalGameModal').classList.contains('active')) {
                 resetBackBtnTimer();
