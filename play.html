@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Play AstraSpin - Spin & Win Coins Game</title>
-    <meta name="description" content="Play AstraSpin and win free coins by spinning the wheel! Spin daily, collect coins, and redeem exciting rewards in this fast, fun, and rewarding mobile web game.">
+    <!-- Updated SEO Meta Tags -->
+    <title>Play AstraSpin - Spin & Win Coins Game Online</title>
+    <meta name="description" content="Play AstraSpin online! Spin the wheel to win free coins, collect daily rewards, and enjoy premium spin and win games directly in your browser.">
     <meta name="keywords" content="AstraSpin, Spin and Win, Free Coins Game, Spin Wheel Game, Mobile Web Game, Earn Coins, Reward Game, AstraSpin Game, Free Spin, Online Spin Game, Casual Game, Play and Win">
     <meta name="author" content="Astrafun">
     <meta name="robots" content="index, follow">
@@ -16,6 +17,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://astraspin.in/play.html">
     <meta property="og:site_name" content="AstraSpin">
+    <meta property="og:image" content="https://www.dropbox.com/scl/fi/1kej9ujtvb2uq6z85xx44/20260812_140819.jpg?rlkey=ntsfkcksp34ltp4jluhks9imh&raw=1">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AstraSpin: Spin & Win Free Coins - Mobile Reward Game">
+    <meta name="twitter:description" content="Spin the wheel, win free coins, and redeem rewards instantly. Play AstraSpin now!">
+    <meta name="twitter:image" content="https://www.dropbox.com/scl/fi/1kej9ujtvb2uq6z85xx44/20260812_140819.jpg?rlkey=ntsfkcksp34ltp4jluhks9imh&raw=1">
     
     <script type="application/ld+json">
     { "@context": "https://schema.org", "@type": "WebApplication", "name": "AstraSpin", "url": "https://astraspin.in/play.html", "description": "Play AstraSpin and win free coins by spinning the wheel! Spin daily, collect coins, and redeem exciting rewards in this fast, fun, and rewarding mobile web game.", "applicationCategory": "GameApplication", "operatingSystem": "Any (Web Browser)", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }
@@ -26,41 +33,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
     <script class="admoloScript" src="https://cdn.admolo.com/assets/ads/ad.js"></script>
     <script type="text/javascript" src="https://api.gamepix.com/v1/sdk.js"></script>
 
     <style>
         :root {
-            --bg-primary: #ffffff; /* Pure White iOS Background */
-            --bg-secondary: #f2f2f7; /* iOS Light Gray */
-            --bg-card: #ffffff;
-            --text-dark: #1c1c1e; /* iOS Black */
-            --text-medium: #3c3c43;
-            --text-light: #8e8e93; /* iOS Gray */
-            --accent-green: #34c759; /* iOS Green */
-            --accent-green-dark: #248a3d;
-            --accent-blue: #007aff; /* iOS Blue */
-            --gold: #ffb300;
-            --gold-dark: #ff9500; /* iOS Orange */
-            --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.04);
-            --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
-            --border-light: #e5e5ea; /* iOS Border */
-            --radius: 20px;
-            --radius-sm: 12px;
-            --safe-top: env(safe-area-inset-top, 0px);
-            --safe-bottom: env(safe-area-inset-bottom, 0px);
+            --bg-primary: #ffffff; --bg-secondary: #f2f2f7; --bg-card: #ffffff;
+            --text-dark: #1c1c1e; --text-medium: #3c3c43; --text-light: #8e8e93;
+            --accent-green: #34c759; --accent-green-dark: #248a3d; --accent-blue: #007aff;
+            --gold: #ffb300; --gold-dark: #ff9500;
+            --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.04); --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --border-light: #e5e5ea; --radius: 20px; --radius-sm: 12px;
+            --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; user-select: none; }
         html { height: 100%; overflow: hidden; }
         body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-dark); height: 100vh; height: 100dvh; overflow: hidden; position: fixed; top: 0; left: 0; right: 0; bottom: 0; -webkit-font-smoothing: antialiased; line-height: 1.5; }
         .app-wrapper { position: relative; width: 100%; height: 100%; z-index: 1; display: flex; flex-direction: column; }
-
-        /* Premium Clean Header */
         .game-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; padding-top: calc(16px + var(--safe-top)); flex-shrink: 0; }
         .share-btn-top { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s; }
         .share-btn-top:active { transform: scale(0.9); }
         .share-btn-top svg { width: 18px; height: 18px; color: var(--text-dark); }
-        
         .wallet-container { display: flex; align-items: center; gap: 10px; padding: 8px 16px; background: var(--bg-secondary); border-radius: 20px; cursor: pointer; transition: transform 0.2s; }
         .wallet-container:active { transform: scale(0.96); }
         .wallet-icon-box { width: 28px; height: 28px; background: var(--gold-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
@@ -70,31 +64,20 @@
         .coin-amount { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: var(--text-dark); }
         .coin-amount.animate { animation: coinPop 0.4s ease; }
         @keyframes coinPop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
-
-        /* Premium Wheel Section */
         .wheel-section { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 20px; min-height: 0; }
         .wheel-wrapper { position: relative; width: min(82vw, 82vh, 320px); height: min(82vw, 82vh, 320px); }
-        
-        /* Stable, non-rotating soft glow */
         .wheel-glow { position: absolute; top: -15px; left: -15px; right: -15px; bottom: -15px; background: radial-gradient(circle, rgba(0, 122, 255, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; }
-        
         .wheel-pointer { position: absolute; top: -2px; left: 50%; transform: translateX(-50%); z-index: 20; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
         .wheel-pointer svg { width: 28px; height: 36px; fill: var(--text-dark); }
-        
-        /* iOS-style Wheel Ring & Shadow */
         #spinWheel { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05), 0 0 0 6px #fff, 0 0 0 8px var(--border-light); transition: transform 4.5s cubic-bezier(0.17, 0.67, 0.12, 0.99); }
         #spinWheel.spinning { filter: blur(1px); }
         .wheel-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: #fff; border: 2px solid var(--border-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); z-index: 15; pointer-events: none; }
         .wheel-center-text { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700; color: var(--text-dark); letter-spacing: 1px; }
-
-        /* Premium iOS Button */
         .controls-section { padding: 20px; padding-bottom: calc(20px + var(--safe-bottom)); flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
         .spin-btn { width: 100%; max-width: 320px; padding: 16px; border-radius: var(--radius-sm); border: none; background: var(--accent-green); color: white; font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(52, 199, 89, 0.2); transition: all 0.15s ease; }
         .spin-btn:not(:disabled):active { transform: scale(0.97); opacity: 0.9; }
         .spin-btn:disabled { background: #d1d1d6; cursor: not-allowed; box-shadow: none; }
         .cooldown-display { text-align: center; font-weight: 500; font-size: 14px; color: var(--text-light); min-height: 20px; }
-
-        /* iOS-style Modals */
         .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: none; justify-content: center; align-items: center; z-index: 200; padding: 20px; }
         .modal-overlay.active { display: flex; }
         .modal { background: var(--bg-primary); border-radius: var(--radius); width: 100%; max-width: 400px; max-height: 88vh; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 50px rgba(0,0,0,0.2); animation: modalSlide 0.3s ease; margin: auto; }
@@ -104,7 +87,6 @@
         .modal-close { width: 30px; height: 30px; border-radius: 50%; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; cursor: pointer; }
         .modal-close svg { width: 14px; height: 14px; color: var(--text-light); }
         .modal-body { padding: 20px; overflow-y: auto; flex: 1; -webkit-overflow-scrolling: touch; }
-
         .settings-section { margin-bottom: 24px; } .settings-section:last-child { margin-bottom: 0; }
         .section-label { font-size: 13px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; padding-left: 4px; }
         .data-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 10px; }
@@ -129,7 +111,6 @@
         .toggle-slider::before { content: ''; position: absolute; height: 22px; width: 22px; left: 2px; bottom: 2px; background: white; border-radius: 50%; transition: 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .toggle-switch input:checked + .toggle-slider { background: var(--accent-green); }
         .toggle-switch input:checked + .toggle-slider::before { transform: translateX(18px); }
-
         .settings-list-item { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 16px; background: var(--bg-secondary); border-radius: var(--radius-sm); color: var(--text-dark); font-weight: 500; font-size: 16px; cursor: pointer; text-decoration: none; margin-bottom: 8px; transition: transform 0.15s; }
         .settings-list-item:active { transform: scale(0.98); }
         .list-icon-box { width: 32px; height: 32px; border-radius: 8px; background: #e5e5ea; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -138,8 +119,6 @@
         .list-chevron svg { width: 18px; height: 18px; color: var(--text-light); }
         .reset-btn { width: 100%; padding: 14px; background: var(--bg-secondary); border: none; border-radius: var(--radius-sm); color: #ff3b30; font-weight: 600; font-size: 16px; cursor: pointer; }
         .reset-btn:active { opacity: 0.7; }
-
-        /* iOS-style Result Card */
         .result-content { padding: 30px 20px; text-align: center; background: #fff; border-radius: var(--radius); }
         .result-icon { width: 70px; height: 70px; margin: 0 auto 20px; background: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(52, 199, 89, 0.3); animation: resultPulse 0.6s ease-in-out infinite; }
         @keyframes resultPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
@@ -148,7 +127,6 @@
         .result-amount { font-family: 'Poppins', sans-serif; font-size: 48px; font-weight: 800; color: var(--text-dark); margin-bottom: 24px; }
         .claim-btn { width: 100%; padding: 16px; border-radius: var(--radius-sm); border: none; background: var(--accent-green); color: white; font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(52, 199, 89, 0.2); transition: transform 0.15s; }
         .claim-btn:not(:disabled):active { transform: scale(0.97); }
-
         .gift-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
         .gift-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 14px; text-align: center; position: relative; cursor: pointer; transition: transform 0.15s; }
         .gift-card:active { transform: scale(0.98); }
@@ -177,7 +155,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="wheel-section">
                 <div class="wheel-wrapper">
                     <div class="wheel-glow"></div>
@@ -186,13 +163,11 @@
                     <div class="wheel-center"><span class="wheel-center-text">SPIN</span></div>
                 </div>
             </div>
-
             <div class="controls-section">
                 <button class="spin-btn" id="spinBtn" onclick="handleSpinClick()">SPIN NOW</button>
                 <p class="cooldown-display" id="cooldownDisplay"></p>
             </div>
         </div>
-
         <div class="modal-overlay" id="settingsModal">
             <div class="modal">
                 <div class="modal-header"><h3 class="modal-title">Settings</h3><button class="modal-close" onclick="closeModal('settingsModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
@@ -223,15 +198,12 @@
                 </div>
             </div>
         </div>
-
         <div class="modal-overlay" id="resultModal"><div class="modal"><div class="result-content"><div class="result-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 17,14 19,22 12,17 5,22 7,14 2,9 9,9"/></svg></div><h2 class="result-title">Congratulations</h2><p class="result-amount" id="resultAmount">0</p><button class="claim-btn" id="claimBtn" onclick="handleClaimClick()">CLAIM REWARD</button></div></div></div>
         <div class="modal-overlay" id="redeemModal"><div class="modal"><div class="modal-header"><h3 class="modal-title">Redeem</h3><button class="modal-close" onclick="closeModal('redeemModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div><div class="modal-body"><div class="data-card"><p class="data-label">Balance</p><p class="data-value" id="redeemBalance">0</p></div><div class="data-card"><p class="data-label">Minimum (₹20)</p><p class="data-value" style="font-size:18px;">20,000</p></div><button class="claim-btn" id="redeemConfirmBtn" onclick="processRedeem()" style="margin-top:14px;">Redeem via WhatsApp</button></div></div></div>
         <div class="modal-overlay" id="giftConfirmModal"><div class="modal"><div class="modal-header"><h3 class="modal-title">Confirm Claim</h3><button class="modal-close" onclick="closeModal('giftConfirmModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div><div class="modal-body"><div style="padding: 24px 20px; text-align: center;"><div id="giftConfirmImage" style="width: 80px; height: 80px; margin: 0 auto 14px; background: var(--bg-secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center;"></div><h3 id="giftConfirmName" style="font-family:'Inter',sans-serif;font-size:18px;font-weight:600;margin-bottom:6px;">Item</h3><p style="font-size:13px;color:var(--text-medium);margin-bottom:8px;">Approx. Value: <strong id="giftConfirmVal">₹0</strong></p><p style="font-size:13px;color:var(--text-medium);margin-bottom:18px;">Required: <strong id="giftConfirmCoins">0</strong> Coins</p><div style="display: flex; gap: 12px;"><button class="action-card-btn" onclick="closeModal('giftConfirmModal')" style="background:var(--bg-secondary);color:var(--text-dark);box-shadow:none;">Cancel</button><button class="action-card-btn" id="giftConfirmRedeemBtn" onclick="confirmGiftRedeem()">Claim Now</button></div></div></div></div></div>
         <div class="modal-overlay" id="confirmModal"><div class="modal"><div style="padding: 28px 20px; text-align: center;"><div style="width:60px;height:60px;margin:0 auto 18px;background:#ffecd2;border-radius:50%;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div><h2 style="font-family:'Inter',sans-serif;font-size:20px;font-weight:600;margin-bottom:8px;">Reset All Data?</h2><p style="color:var(--text-medium);font-size:14px;margin-bottom:22px;">This will permanently delete all your coins, progress, and history. This action cannot be undone.</p><div style="display: flex; gap: 12px;"><button class="action-card-btn" onclick="closeModal('confirmModal')" style="background:var(--bg-secondary);color:var(--text-dark);box-shadow:none;">Cancel</button><button class="action-card-btn" onclick="resetAllData()" style="background:#ff3b30;box-shadow:none;">Reset</button></div></div></div></div>
-
         <div class="admoloInterstitial" data-publisher="eyJpdiI6Ik9WYVFNTzlHbXZlUUlWM05XUldSQ2c9PSIsInZhbHVlIjoibnIzYWN5WUx2Nmx6bGRsQnpRZXFpUT09IiwibWFjIjoiNWM4ZjRjOTgxZTBjNGJmNDQ3NTg5YTlmZWUxMzFmZWJkMmFmYmUyZjk3ZjI0MTJhOGJhMTJjOTU2NTc0M2ExOSIsInRhZyI6IiJ9" data-adsize="interstitial" style="display: none;"></div>
     </div>
-
     <script>
         const links = { home: "index.html", games49: "games49.html", coins: "coins-rewards.html", website: "https://tokenrush.online/", share: "https://astraspin.in/" };
         const linkItems = [
@@ -241,73 +213,17 @@
             { key: 'website', label: 'Official Website', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>' },
             { key: 'share', label: 'Share Website', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>' }
         ];
-
-        function renderSettingsLinks() {
-            const container = document.getElementById('settingsLinksList'); container.innerHTML = '';
-            linkItems.forEach(item => {
-                const url = links[item.key]; const el = document.createElement('a'); el.className = 'settings-list-item';
-                if (item.key === 'share') { el.href = 'javascript:void(0)'; el.onclick = (e) => { e.preventDefault(); handleShareClick(); }; } else { el.href = url; }
-                el.innerHTML = `<div class="list-icon-box">${item.icon}</div><div class="list-text">${item.label}</div><div class="list-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>`;
-                container.appendChild(el);
-            });
-        }
-
+        function renderSettingsLinks() { const container = document.getElementById('settingsLinksList'); container.innerHTML = ''; linkItems.forEach(item => { const url = links[item.key]; const el = document.createElement('a'); el.className = 'settings-list-item'; if (item.key === 'share') { el.href = 'javascript:void(0)'; el.onclick = (e) => { e.preventDefault(); handleShareClick(); }; } else { el.href = url; } el.innerHTML = `<div class="list-icon-box">${item.icon}</div><div class="list-text">${item.label}</div><div class="list-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>`; container.appendChild(el); }); }
         function handleShareClick() { const shareUrl = window.location.href; if (navigator.share) { navigator.share({ title: 'AstraSpin - Play & Win Rewards', text: 'Check out AstraSpin, a fun mobile web game!', url: shareUrl }).catch(err => {}); } }
         function shareGame() { handleShareClick(); }
-
-        var WHATSAPP_URL = 'https://wa.me/917715952502?text='; 
-        var MIN_REDEEM = 20000; 
-        var SPIN_COOLDOWN = 10000;
+        var WHATSAPP_URL = 'https://wa.me/917715952502?text='; var MIN_REDEEM = 20000; var SPIN_COOLDOWN = 10000;
         var dailyRewards = [100, 150, 250, 400, 600, 1000, 2000];
-        
-        // iOS-Style Darker, Sophisticated Wheel Colors
-        var segments = [
-            { value: 0, color: '#e5e5ea', weight: 300 }, // Light Gray
-            { value: 10, color: '#34c759', weight: 250 }, // Green
-            { value: 20, color: '#007aff', weight: 200 }, // Blue
-            { value: 50, color: '#af52de', weight: 150 }, // Purple
-            { value: 60, color: '#ff9500', weight: 100 }, // Orange
-            { value: 100, color: '#ff3b30', weight: 50 }, // Red
-            { value: 500, color: '#5856d6', weight: 40 }, // Indigo
-            { value: 2000, color: '#ffd60a', weight: 10 }, // Yellow
-            { value: 5000, color: '#1c1c1e', weight: 1 } // Black
-        ];
-
-        var giftCategories = {
-            kids: [
-                { name: 'Teddy Bear', approx_val: '₹80', coins: 80000, emoji: '🧸', badge: 'popular', available: true },
-                { name: 'Toy Car', approx_val: '₹60', coins: 60000, emoji: '🚗', badge: 'new', available: true },
-                { name: 'Puzzle', approx_val: '₹50', coins: 50000, emoji: '🧩', available: true },
-                { name: 'Notebook', approx_val: '₹20', coins: 20000, emoji: '📒', available: true }
-            ],
-            daily: [
-                { name: 'Spoon Set', approx_val: '₹40', coins: 40000, emoji: '🥄', available: true },
-                { name: 'Glass Set', approx_val: '₹50', coins: 50000, emoji: '🥛', available: false }, 
-                { name: 'Keychain', approx_val: '₹10', coins: 10000, emoji: '🔑', available: true },
-                { name: 'Small Bowl', approx_val: '₹30', coins: 30000, emoji: '🥣', available: true }
-            ],
-            electronics: [
-                { name: 'Cable', approx_val: '₹70', coins: 70000, emoji: '🔌', badge: 'popular', available: true },
-                { name: 'Phone Stand', approx_val: '₹90', coins: 90000, emoji: '📱', badge: 'new', available: true },
-                { name: 'Pen Set', approx_val: '₹20', coins: 20000, emoji: '🖊️', available: true },
-                { name: 'LED Light', approx_val: '₹40', coins: 40000, emoji: '💡', available: true }
-            ]
-        };
+        var segments = [ { value: 0, color: '#e5e5ea', weight: 300 }, { value: 10, color: '#34c759', weight: 250 }, { value: 20, color: '#007aff', weight: 200 }, { value: 50, color: '#af52de', weight: 150 }, { value: 60, color: '#ff9500', weight: 100 }, { value: 100, color: '#ff3b30', weight: 50 }, { value: 500, color: '#5856d6', weight: 40 }, { value: 2000, color: '#ffd60a', weight: 10 }, { value: 5000, color: '#1c1c1e', weight: 1 } ];
+        var giftCategories = { kids: [ { name: 'Teddy Bear', approx_val: '₹80', coins: 80000, emoji: '🧸', badge: 'popular', available: true }, { name: 'Toy Car', approx_val: '₹60', coins: 60000, emoji: '🚗', badge: 'new', available: true }, { name: 'Puzzle', approx_val: '₹50', coins: 50000, emoji: '🧩', available: true }, { name: 'Notebook', approx_val: '₹20', coins: 20000, emoji: '📒', available: true } ], daily: [ { name: 'Spoon Set', approx_val: '₹40', coins: 40000, emoji: '🥄', available: true }, { name: 'Glass Set', approx_val: '₹50', coins: 50000, emoji: '🥛', available: false }, { name: 'Keychain', approx_val: '₹10', coins: 10000, emoji: '🔑', available: true }, { name: 'Small Bowl', approx_val: '₹30', coins: 30000, emoji: '🥣', available: true } ], electronics: [ { name: 'Cable', approx_val: '₹70', coins: 70000, emoji: '🔌', badge: 'popular', available: true }, { name: 'Phone Stand', approx_val: '₹90', coins: 90000, emoji: '📱', badge: 'new', available: true }, { name: 'Pen Set', approx_val: '₹20', coins: 20000, emoji: '🖊️', available: true }, { name: 'LED Light', approx_val: '₹40', coins: 40000, emoji: '💡', available: true } ] };
         var deviceId = null, coins = 0, totalSpins = 0, lastDailyClaim = 0, currentStreak = 1, lastSpinTime = 0, currentRotation = 0, isSpinning = false, currentReward = 0, isOnline = true, cooldownInterval = null, musicEnabled = false, soundEnabled = true, audioContext = null, selectedGift = null, wheelCanvas = null, wheelCtx = null, isClaimingGift = false;
-
         function getOrCreateDeviceId() { var storedId = localStorage.getItem("astra_device_id"); if (storedId) return storedId; var newId = "ASTRA-" + Date.now() + "-" + Math.floor(Math.random() * 100000); localStorage.setItem("astra_device_id", newId); return newId; }
-        function loadAllData() { 
-            try { 
-                deviceId = getOrCreateDeviceId(); 
-                var savedCoins = localStorage.getItem("astra_coins"); if (savedCoins !== null && savedCoins !== undefined) { coins = parseInt(savedCoins); if (isNaN(coins)) coins = 0; } 
-                var savedDaily = localStorage.getItem("astra_daily_claim"); if (savedDaily !== null) lastDailyClaim = parseInt(savedDaily) || 0; 
-                var savedStreak = localStorage.getItem("astra_daily_streak"); if (savedStreak !== null) currentStreak = parseInt(savedStreak) || 1; 
-                if (Date.now() - lastDailyClaim > 172800000 && currentStreak > 1) currentStreak = 1;
-                musicEnabled = localStorage.getItem("astra_music") === "true"; soundEnabled = localStorage.getItem("astra_sound") !== "false"; 
-            } catch(e) {} 
-        }
+        function loadAllData() { try { deviceId = getOrCreateDeviceId(); var savedCoins = localStorage.getItem("astra_coins"); if (savedCoins !== null && savedCoins !== undefined) { coins = parseInt(savedCoins); if (isNaN(coins)) coins = 0; } var savedDaily = localStorage.getItem("astra_daily_claim"); if (savedDaily !== null) lastDailyClaim = parseInt(savedDaily) || 0; var savedStreak = localStorage.getItem("astra_daily_streak"); if (savedStreak !== null) currentStreak = parseInt(savedStreak) || 1; if (Date.now() - lastDailyClaim > 172800000 && currentStreak > 1) currentStreak = 1; musicEnabled = localStorage.getItem("astra_music") === "true"; soundEnabled = localStorage.getItem("astra_sound") !== "false"; } catch(e) {} }
         function saveAllData() { try { if (deviceId) localStorage.setItem("astra_device_id", deviceId); localStorage.setItem("astra_coins", coins.toString()); localStorage.setItem("astra_daily_claim", lastDailyClaim.toString()); localStorage.setItem("astra_daily_streak", currentStreak.toString()); localStorage.setItem("astra_music", musicEnabled.toString()); localStorage.setItem("astra_sound", soundEnabled.toString()); } catch(e) {} }
-
         function initAudio() { if (!audioContext) { try { audioContext = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) {} } }
         function playTone(f, d, t) { if (!audioContext || !soundEnabled) return; try { var o = audioContext.createOscillator(); var g = audioContext.createGain(); o.connect(g); g.connect(audioContext.destination); o.frequency.value = f; o.type = t || 'sine'; g.gain.setValueAtTime(0.08, audioContext.currentTime); g.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + d); o.start(); o.stop(audioContext.currentTime + d); } catch(e) {} }
         function playClick() { playTone(700, 0.07, 'square'); }
@@ -315,173 +231,34 @@
         function playTick() { playTone(1200, 0.02, 'square'); }
         function toggleMusic() { initAudio(); musicEnabled = document.getElementById('musicToggle').checked; saveAllData(); }
         function toggleSound() { soundEnabled = document.getElementById('soundToggle').checked; saveAllData(); }
-
         function updateCoinDisplay() { var el = document.getElementById('coinDisplay'); if (el) { el.classList.add('animate'); el.textContent = coins.toLocaleString(); setTimeout(function(){ el.classList.remove('animate'); }, 400); } document.getElementById('settingsCoins').textContent = coins.toLocaleString(); document.getElementById('redeemBalance').textContent = coins.toLocaleString(); document.getElementById('deviceId').textContent = deviceId || 'Unknown'; document.getElementById('progressValue').textContent = coins.toLocaleString() + '/20,000'; document.getElementById('progressFill').style.width = Math.min(100, (coins / MIN_REDEEM) * 100) + '%'; var st = document.getElementById('walletStatus'); var txt = document.getElementById('statusText'); if (coins >= MIN_REDEEM) { st.className = 'wallet-status ready'; txt.textContent = 'Ready to redeem!'; } else { st.className = 'wallet-status pending'; txt.textContent = 'Keep playing!'; } updateRedeemButton(); renderGiftStore(); }
         function updateRedeemButton() { var b = document.getElementById('redeemConfirmBtn'); if (b) b.disabled = coins < MIN_REDEEM || !isOnline; }
-        function updateDailyButton() { 
-            var b = document.getElementById('dailyBtn'); if (!b) return; 
-            var disp = document.getElementById('dailyRewardDisplay');
-            var now = Date.now(); var elapsed = now - lastDailyClaim; var cooldown = 86400000; 
-            if (disp) disp.textContent = dailyRewards[currentStreak - 1] + " Coins";
-            if (!isOnline) { b.disabled = true; b.textContent = 'Offline'; } 
-            else if (elapsed >= cooldown) { b.disabled = false; b.textContent = 'Claim Day ' + currentStreak + ' (' + dailyRewards[currentStreak-1] + ' Coins)'; } 
-            else { b.disabled = true; var r = cooldown - elapsed; b.textContent = 'Next in ' + Math.floor(r / 3600000) + 'h ' + Math.floor((r % 3600000) / 60000) + 'm'; } 
-        }
-
+        function updateDailyButton() { var b = document.getElementById('dailyBtn'); if (!b) return; var disp = document.getElementById('dailyRewardDisplay'); var now = Date.now(); var elapsed = now - lastDailyClaim; var cooldown = 86400000; if (disp) disp.textContent = dailyRewards[currentStreak - 1] + " Coins"; if (!isOnline) { b.disabled = true; b.textContent = 'Offline'; } else if (elapsed >= cooldown) { b.disabled = false; b.textContent = 'Claim Day ' + currentStreak + ' (' + dailyRewards[currentStreak-1] + ' Coins)'; } else { b.disabled = true; var r = cooldown - elapsed; b.textContent = 'Next in ' + Math.floor(r / 3600000) + 'h ' + Math.floor((r % 3600000) / 60000) + 'm'; } }
         function renderGiftStore() { renderGiftCategory('kidsGifts', giftCategories.kids); renderGiftCategory('dailyGifts', giftCategories.daily); renderGiftCategory('electronicsGifts', giftCategories.electronics); }
-        function renderGiftCategory(id, gifts) { 
-            var c = document.getElementById(id); if (!c) return; var h = ''; 
-            gifts.forEach(function(g, i) { 
-                var afford = coins >= g.coins;
-                var badge = g.badge ? '<span class="gift-badge ' + g.badge + '">' + g.badge + '</span>' : ''; 
-                var stockOut = !g.available ? '<span class="gift-stock-out">Out of Stock</span>' : '';
-                var btnHtml = g.available ? '<button class="gift-redeem-btn" ' + (afford ? '' : 'disabled') + ' onclick="event.stopPropagation(); openGiftConfirm(\'' + id + '\',' + i + ')">Claim</button>' : '<button class="gift-redeem-btn" disabled>Unavailable</button>';
-                h += '<div class="gift-card' + (afford && g.available ? '' : ' disabled') + '" onclick="' + (g.available && afford ? 'openGiftConfirm(\'' + id + '\',' + i + ')' : '') + '">'; 
-                h += badge + stockOut; 
-                h += '<div class="gift-image-container"><span class="gift-emoji-fallback">' + g.emoji + '</span></div>'; 
-                h += '<p class="gift-name">' + g.name + '</p>'; 
-                h += '<p class="gift-approx">Approx. Value: ' + g.approx_val + '</p>'; 
-                h += '<div class="gift-coins">' + g.coins.toLocaleString() + ' Coins</div>'; 
-                h += btnHtml + '</div>'; 
-            }); 
-            c.innerHTML = h; 
-        }
-        function openGiftConfirm(cat, idx) { 
-            var map = { 'kidsGifts': giftCategories.kids, 'dailyGifts': giftCategories.daily, 'electronicsGifts': giftCategories.electronics }; 
-            var g = map[cat] ? map[cat][idx] : null; 
-            if (!g || !g.available) return; 
-            if (coins < g.coins) return; 
-            selectedGift = g; playClick(); 
-            document.getElementById('giftConfirmName').textContent = g.name; 
-            document.getElementById('giftConfirmVal').textContent = g.approx_val; 
-            document.getElementById('giftConfirmCoins').textContent = g.coins.toLocaleString(); 
-            document.getElementById('giftConfirmImage').innerHTML = '<span class="gift-emoji-fallback" style="font-size:42px;">' + g.emoji + '</span>'; 
-            var rdmBtn = document.getElementById('giftConfirmRedeemBtn');
-            rdmBtn.disabled = false; rdmBtn.textContent = 'Claim Now';
-            openModal('giftConfirmModal'); 
-        }
-        function confirmGiftRedeem() { 
-            if (isClaimingGift) return; 
-            if (!selectedGift || coins < selectedGift.coins) { closeModal('giftConfirmModal'); return; } 
-            isClaimingGift = true;
-            var rdmBtn = document.getElementById('giftConfirmRedeemBtn');
-            rdmBtn.disabled = true; rdmBtn.textContent = 'Processing...';
-            coins -= selectedGift.coins; 
-            updateCoinDisplay(); 
-            saveAllData(); 
-            var code = 'ASTRA' + Math.floor(100000 + Math.random() * 900000); 
-            var msg = 'Hello AstraSpin Team,\n\nI would like to claim my reward.\n\nGift: ' + selectedGift.name + '\nApprox Value: ' + selectedGift.approx_val + '\nCoins: ' + selectedGift.coins.toLocaleString() + '\nClaim ID: ' + code + '\n\nPlease let me know the next steps.';
-            setTimeout(function() { 
-                window.open(WHATSAPP_URL + encodeURIComponent(msg), '_blank'); 
-                closeModal('giftConfirmModal');
-                isClaimingGift = false;
-                triggerAdmoloInterstitial(); 
-            }, 800); 
-        }
-
-        function drawWheel() { 
-            if (!wheelCanvas || !wheelCtx) return; 
-            var s = Math.min(wheelCanvas.width, wheelCanvas.height); 
-            var cx = s / 2, cy = s / 2; 
-            var r = Math.max(10, s / 2 - 10); 
-            var a = (2 * Math.PI) / segments.length; 
-            wheelCtx.clearRect(0, 0, s, s); 
-            wheelCtx.save(); 
-            wheelCtx.translate(cx, cy); 
-            segments.forEach(function(seg, i) { 
-                var sa = i * a - Math.PI / 2; 
-                var ea = sa + a; 
-                wheelCtx.beginPath(); 
-                wheelCtx.moveTo(0, 0); 
-                wheelCtx.arc(0, 0, r, sa, ea); 
-                wheelCtx.closePath(); 
-                wheelCtx.fillStyle = seg.color; 
-                wheelCtx.fill(); 
-                wheelCtx.strokeStyle = 'rgba(255,255,255,0.3)'; 
-                wheelCtx.lineWidth = 2; 
-                wheelCtx.stroke(); 
-                wheelCtx.save(); 
-                wheelCtx.rotate(sa + a / 2); 
-                wheelCtx.textAlign = 'right'; 
-                wheelCtx.fillStyle = seg.color === '#ffd60a' || seg.color === '#e5e5ea' ? '#1c1c1e' : '#ffffff'; 
-                wheelCtx.font = 'bold ' + Math.max(14, Math.floor(r / 11)) + 'px Poppins'; 
-                wheelCtx.fillText(seg.value, r - 16, 5); 
-                wheelCtx.restore(); 
-            }); 
-            wheelCtx.restore(); 
-        }
+        function renderGiftCategory(id, gifts) { var c = document.getElementById(id); if (!c) return; var h = ''; gifts.forEach(function(g, i) { var afford = coins >= g.coins; var badge = g.badge ? '<span class="gift-badge ' + g.badge + '">' + g.badge + '</span>' : ''; var stockOut = !g.available ? '<span class="gift-stock-out">Out of Stock</span>' : ''; var btnHtml = g.available ? '<button class="gift-redeem-btn" ' + (afford ? '' : 'disabled') + ' onclick="event.stopPropagation(); openGiftConfirm(\'' + id + '\',' + i + ')">Claim</button>' : '<button class="gift-redeem-btn" disabled>Unavailable</button>'; h += '<div class="gift-card' + (afford && g.available ? '' : ' disabled') + '" onclick="' + (g.available && afford ? 'openGiftConfirm(\'' + id + '\',' + i + ')' : '') + '">'; h += badge + stockOut; h += '<div class="gift-image-container"><span class="gift-emoji-fallback">' + g.emoji + '</span></div>'; h += '<p class="gift-name">' + g.name + '</p>'; h += '<p class="gift-approx">Approx. Value: ' + g.approx_val + '</p>'; h += '<div class="gift-coins">' + g.coins.toLocaleString() + ' Coins</div>'; h += btnHtml + '</div>'; }); c.innerHTML = h; }
+        function openGiftConfirm(cat, idx) { var map = { 'kidsGifts': giftCategories.kids, 'dailyGifts': giftCategories.daily, 'electronicsGifts': giftCategories.electronics }; var g = map[cat] ? map[cat][idx] : null; if (!g || !g.available) return; if (coins < g.coins) return; selectedGift = g; playClick(); document.getElementById('giftConfirmName').textContent = g.name; document.getElementById('giftConfirmVal').textContent = g.approx_val; document.getElementById('giftConfirmCoins').textContent = g.coins.toLocaleString(); document.getElementById('giftConfirmImage').innerHTML = '<span class="gift-emoji-fallback" style="font-size:42px;">' + g.emoji + '</span>'; var rdmBtn = document.getElementById('giftConfirmRedeemBtn'); rdmBtn.disabled = false; rdmBtn.textContent = 'Claim Now'; openModal('giftConfirmModal'); }
+        function confirmGiftRedeem() { if (isClaimingGift) return; if (!selectedGift || coins < selectedGift.coins) { closeModal('giftConfirmModal'); return; } isClaimingGift = true; var rdmBtn = document.getElementById('giftConfirmRedeemBtn'); rdmBtn.disabled = true; rdmBtn.textContent = 'Processing...'; coins -= selectedGift.coins; updateCoinDisplay(); saveAllData(); var code = 'ASTRA' + Math.floor(100000 + Math.random() * 900000); var msg = 'Hello AstraSpin Team,\n\nI would like to claim my reward.\n\nGift: ' + selectedGift.name + '\nApprox Value: ' + selectedGift.approx_val + '\nCoins: ' + selectedGift.coins.toLocaleString() + '\nClaim ID: ' + code + '\n\nPlease let me know the next steps.'; setTimeout(function() { window.open(WHATSAPP_URL + encodeURIComponent(msg), '_blank'); closeModal('giftConfirmModal'); isClaimingGift = false; triggerAdmoloInterstitial(); }, 800); }
+        function drawWheel() { if (!wheelCanvas || !wheelCtx) return; var s = Math.min(wheelCanvas.width, wheelCanvas.height); var cx = s / 2, cy = s / 2; var r = Math.max(10, s / 2 - 10); var a = (2 * Math.PI) / segments.length; wheelCtx.clearRect(0, 0, s, s); wheelCtx.save(); wheelCtx.translate(cx, cy); segments.forEach(function(seg, i) { var sa = i * a - Math.PI / 2; var ea = sa + a; wheelCtx.beginPath(); wheelCtx.moveTo(0, 0); wheelCtx.arc(0, 0, r, sa, ea); wheelCtx.closePath(); wheelCtx.fillStyle = seg.color; wheelCtx.fill(); wheelCtx.strokeStyle = 'rgba(255,255,255,0.3)'; wheelCtx.lineWidth = 2; wheelCtx.stroke(); wheelCtx.save(); wheelCtx.rotate(sa + a / 2); wheelCtx.textAlign = 'right'; wheelCtx.fillStyle = seg.color === '#ffd60a' || seg.color === '#e5e5ea' ? '#1c1c1e' : '#ffffff'; wheelCtx.font = 'bold ' + Math.max(14, Math.floor(r / 11)) + 'px Poppins'; wheelCtx.fillText(seg.value, r - 16, 5); wheelCtx.restore(); }); wheelCtx.restore(); }
         function initWheel() { wheelCanvas = document.getElementById('spinWheel'); if (!wheelCanvas) return; var container = wheelCanvas.parentElement; var size = Math.min(container.offsetWidth, container.offsetHeight); wheelCanvas.width = Math.max(100, size); wheelCanvas.height = Math.max(100, size); wheelCtx = wheelCanvas.getContext('2d'); drawWheel(); }
         function getWeightedRandomSegment() { let totalWeight = segments.reduce((sum, seg) => sum + seg.weight, 0); let random = Math.random() * totalWeight; for(let i = 0; i < segments.length; i++) { random -= segments[i].weight; if(random <= 0) return i; } return segments.length - 1; }
         function handleSpinClick() { initAudio(); if (!isOnline) return; if (isSpinning) return; if (Date.now() - lastSpinTime < SPIN_COOLDOWN) return; playClick(); startSpinAnimation(); }
-        function startSpinAnimation() { 
-            if (isSpinning) return; 
-            isSpinning = true; 
-            document.getElementById('spinBtn').disabled = true; 
-            wheelCanvas.classList.add('spinning'); 
-            let selectedIndex = getWeightedRandomSegment();
-            let segAngle = 360 / segments.length; 
-            let targetAngle = 360 - (selectedIndex * segAngle + segAngle / 2); 
-            let offset = (Math.random() - 0.5) * (segAngle * 0.6); 
-            targetAngle += offset; 
-            let fullSpins = 6 + Math.floor(Math.random() * 4); 
-            let currentNormalized = currentRotation % 360; 
-            let delta = targetAngle - currentNormalized; 
-            if (delta < 0) delta += 360; 
-            currentRotation += delta + (fullSpins * 360); 
-            wheelCanvas.style.transform = 'rotate(' + currentRotation + 'deg)'; 
-            let duration = 4500; let elapsed = 0; let delay = 50; 
-            function tickLoop() { if(elapsed >= duration) return; playTick(); elapsed += delay; delay *= 1.08; setTimeout(tickLoop, delay); } 
-            tickLoop(); 
-            setTimeout(function() { 
-                isSpinning = false; 
-                lastSpinTime = Date.now(); 
-                totalSpins++; 
-                currentReward = segments[selectedIndex].value; 
-                wheelCanvas.classList.remove('spinning'); 
-                saveAllData(); 
-                playWin(); 
-                showResultAfterPopup(currentReward); 
-            }, 4500); 
-        }
+        function startSpinAnimation() { if (isSpinning) return; isSpinning = true; document.getElementById('spinBtn').disabled = true; wheelCanvas.classList.add('spinning'); let selectedIndex = getWeightedRandomSegment(); let segAngle = 360 / segments.length; let targetAngle = 360 - (selectedIndex * segAngle + segAngle / 2); let offset = (Math.random() - 0.5) * (segAngle * 0.6); targetAngle += offset; let fullSpins = 6 + Math.floor(Math.random() * 4); let currentNormalized = currentRotation % 360; let delta = targetAngle - currentNormalized; if (delta < 0) delta += 360; currentRotation += delta + (fullSpins * 360); wheelCanvas.style.transform = 'rotate(' + currentRotation + 'deg)'; let duration = 4500; let elapsed = 0; let delay = 50; function tickLoop() { if(elapsed >= duration) return; playTick(); elapsed += delay; delay *= 1.08; setTimeout(tickLoop, delay); } tickLoop(); setTimeout(function() { isSpinning = false; lastSpinTime = Date.now(); totalSpins++; currentReward = segments[selectedIndex].value; wheelCanvas.classList.remove('spinning'); saveAllData(); playWin(); showResultAfterPopup(currentReward); }, 4500); }
         function showResultAfterPopup(r) { document.getElementById('resultAmount').textContent = r + " Coins"; document.getElementById('claimBtn').disabled = false; openModal('resultModal'); }
         function handleClaimClick() { initAudio(); coins += currentReward; updateCoinDisplay(); saveAllData(); closeModal('resultModal'); startCooldown(); triggerAdmoloInterstitial(); } 
         function startCooldown() { var b = document.getElementById('spinBtn'); var d = document.getElementById('cooldownDisplay'); b.disabled = true; var r = SPIN_COOLDOWN / 1000; if (cooldownInterval) clearInterval(cooldownInterval); cooldownInterval = setInterval(function() { r--; d.textContent = 'Wait ' + r + 's'; if (r <= 0) { clearInterval(cooldownInterval); cooldownInterval = null; d.textContent = ''; if (isOnline) b.disabled = false; } }, 1000); }
-
-        function claimDailyBonus() { 
-            if (!isOnline) return; 
-            var now = Date.now(); 
-            if (now - lastDailyClaim < 86400000) return; 
-            initAudio(); playClick(); 
-            lastDailyClaim = now; 
-            var reward = dailyRewards[currentStreak - 1];
-            coins += reward; 
-            if (currentStreak < 7) { currentStreak++; } else { currentStreak = 1; } 
-            updateCoinDisplay(); 
-            updateDailyButton(); 
-            saveAllData(); 
-            playWin(); 
-            triggerAdmoloInterstitial(); 
-        }
+        function claimDailyBonus() { if (!isOnline) return; var now = Date.now(); if (now - lastDailyClaim < 86400000) return; initAudio(); playClick(); lastDailyClaim = now; var reward = dailyRewards[currentStreak - 1]; coins += reward; if (currentStreak < 7) { currentStreak++; } else { currentStreak = 1; } updateCoinDisplay(); updateDailyButton(); saveAllData(); playWin(); triggerAdmoloInterstitial(); }
         function processRedeem() { if (!isOnline) return; if (coins < MIN_REDEEM) return; initAudio(); playClick(); var code = 'ASTRA' + Math.floor(100000 + Math.random() * 900000); coins -= MIN_REDEEM; updateCoinDisplay(); saveAllData(); closeModal('redeemModal'); window.open(WHATSAPP_URL + encodeURIComponent('Hello AstraSpin Team,\n\nI would like to redeem my coins.\n\nCoins: 20,000\nAmount: ₹20\nRedeem ID: ' + code + '\n\nPlease let me know the next steps.'), '_blank'); triggerAdmoloInterstitial(); }
-
         function triggerAdmoloInterstitial() { try { if (window.admolo) { if (typeof window.admolo.showInterstitial === 'function') { window.admolo.showInterstitial(); } else if (typeof window.admolo.requestAd === 'function') { window.admolo.requestAd('interstitial'); } else if (typeof window.admolo.push === 'function') { window.admolo.push(function() { if (window.admolo.showInterstitial) window.admolo.showInterstitial(); }); } } } catch(err) {} }
         function triggerGamePixInterstitial() { try { if (window.GamePix && typeof window.GamePix.showInterstitial === 'function') { GamePix.showInterstitial(); } } catch(e) {} }
-
         function openModal(id) { document.getElementById(id).classList.add('active'); if (id === 'settingsModal') { updateCoinDisplay(); updateDailyButton(); document.getElementById('musicToggle').checked = musicEnabled; document.getElementById('soundToggle').checked = soundEnabled; } }
         function closeModal(id) { document.getElementById(id).classList.remove('active'); }
         function openRedeem() { initAudio(); playClick(); updateCoinDisplay(); openModal('redeemModal'); }
         function confirmReset() { playClick(); openModal('confirmModal'); }
         function resetAllData() { playClick(); coins = 0; lastDailyClaim = 0; currentStreak = 1; currentRotation = 0; lastSpinTime = 0; try { localStorage.removeItem("astra_coins"); localStorage.removeItem("astra_daily_claim"); localStorage.removeItem("astra_daily_streak"); localStorage.removeItem("astra_wheel_rotation"); localStorage.removeItem("astra_last_spin_time"); } catch(e) {} updateCoinDisplay(); updateDailyButton(); closeModal('confirmModal'); closeModal('settingsModal'); }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            loadAllData(); updateCoinDisplay(); updateDailyButton(); renderSettingsLinks();
-            window.addEventListener('online', () => { isOnline = true; updateDailyButton(); });
-            window.addEventListener('offline', () => { isOnline = false; updateDailyButton(); });
-            setInterval(updateDailyButton, 60000); initWheel();
-            setTimeout(function() { triggerAdmoloInterstitial(); triggerGamePixInterstitial(); }, 1500);
-        });
+        document.addEventListener('DOMContentLoaded', function() { loadAllData(); updateCoinDisplay(); updateDailyButton(); renderSettingsLinks(); window.addEventListener('online', () => { isOnline = true; updateDailyButton(); }); window.addEventListener('offline', () => { isOnline = false; updateDailyButton(); }); setInterval(updateDailyButton, 60000); initWheel(); setTimeout(function() { triggerAdmoloInterstitial(); triggerGamePixInterstitial(); }, 1500); });
         document.querySelectorAll('.modal-overlay').forEach(function(o) { o.addEventListener('click', function(e) { if (e.target === o) o.classList.remove('active'); }); });
         document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+        try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
     </script>
 </body>
 </html>
