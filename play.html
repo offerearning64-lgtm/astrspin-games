@@ -3,476 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <title>Play AstraSpin - Spin & Win Coins Game</title>
-    
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Play AstraSpin and win free coins by spinning the wheel! Spin daily, collect coins, and redeem exciting rewards in this fast, fun, and rewarding mobile web game.">
     <meta name="keywords" content="AstraSpin, Spin and Win, Free Coins Game, Spin Wheel Game, Mobile Web Game, Earn Coins, Reward Game, AstraSpin Game, Free Spin, Online Spin Game, Casual Game, Play and Win">
     <meta name="author" content="Astrafun">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
-    
-    <!-- Canonical URL Fix -->
     <link rel="canonical" href="https://astraspin.in/play.html" />
-    
-    <!-- Mobile Specific Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
-    <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:title" content="AstraSpin: Spin & Win Free Coins - Mobile Reward Game">
     <meta property="og:description" content="Spin the wheel, win free coins, and redeem rewards instantly. Play AstraSpin, the best mobile web game for earning coins!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://astraspin.in/play.html">
     <meta property="og:site_name" content="AstraSpin">
     
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AstraSpin: Spin & Win Free Coins - Mobile Reward Game">
-    <meta name="twitter:description" content="Spin the wheel, win free coins, and redeem rewards instantly. Play AstraSpin now!">
-    
-    <!-- Structured Data (JSON-LD) for SEO Domain Verification -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "AstraSpin",
-      "url": "https://astraspin.in/play.html",
-      "description": "Play AstraSpin and win free coins by spinning the wheel! Spin daily, collect coins, and redeem exciting rewards in this fast, fun, and rewarding mobile web game.",
-      "applicationCategory": "GameApplication",
-      "operatingSystem": "Any (Web Browser)",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
+    { "@context": "https://schema.org", "@type": "WebApplication", "name": "AstraSpin", "url": "https://astraspin.in/play.html", "description": "Play AstraSpin and win free coins by spinning the wheel! Spin daily, collect coins, and redeem exciting rewards in this fast, fun, and rewarding mobile web game.", "applicationCategory": "GameApplication", "operatingSystem": "Any (Web Browser)", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }
     </script>
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300c853'/%3E%3Cpath d='M50 20L58 40H78L62 52L68 72L50 60L32 72L38 52L22 40H42Z' fill='white'/%3E%3C/svg%3E">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Admolo Ads Script -->
     <script class="admoloScript" src="https://cdn.admolo.com/assets/ads/ad.js"></script>
-    
-    <!-- GamePix Monetization SDK -->
     <script type="text/javascript" src="https://api.gamepix.com/v1/sdk.js"></script>
 
     <style>
         :root {
-            --bg-primary: #f4fdf6;
-            --bg-secondary: #e8f7ec;
+            --bg-primary: #ffffff; /* Pure White iOS Background */
+            --bg-secondary: #f2f2f7; /* iOS Light Gray */
             --bg-card: #ffffff;
-            --text-dark: #102a1c;
-            --text-medium: #3b5a45;
-            --text-light: #7a9285;
-            --accent-green: #00c853;
-            --accent-green-dark: #009624;
-            --accent-green-light: #5efc82;
+            --text-dark: #1c1c1e; /* iOS Black */
+            --text-medium: #3c3c43;
+            --text-light: #8e8e93; /* iOS Gray */
+            --accent-green: #34c759; /* iOS Green */
+            --accent-green-dark: #248a3d;
+            --accent-blue: #007aff; /* iOS Blue */
             --gold: #ffb300;
-            --gold-dark: #ff8f00;
-            --shadow-soft: 0 8px 30px rgba(0, 200, 83, 0.08);
-            --shadow-button: 0 6px 0 #00701a, 0 8px 25px rgba(0, 200, 83, 0.3);
-            --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
-            --border-light: #d1e8da;
-            --radius: 24px;
-            --radius-sm: 14px;
+            --gold-dark: #ff9500; /* iOS Orange */
+            --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.04);
+            --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --border-light: #e5e5ea; /* iOS Border */
+            --radius: 20px;
+            --radius-sm: 12px;
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            user-select: none;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; user-select: none; }
         html { height: 100%; overflow: hidden; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-dark); height: 100vh; height: 100dvh; overflow: hidden; position: fixed; top: 0; left: 0; right: 0; bottom: 0; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+        .app-wrapper { position: relative; width: 100%; height: 100%; z-index: 1; display: flex; flex-direction: column; }
 
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-dark);
-            height: 100vh;
-            height: 100dvh;
-            overflow: hidden;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.5;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(0, 200, 83, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(94, 252, 130, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .app-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .screen {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-            flex-direction: column;
-            overflow-y: auto;
-            opacity: 0;
-            transform: scale(0.98);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .screen.active {
-            display: flex;
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* ===================== GAME SCREEN ===================== */
-        #gameScreen {
-            background: var(--bg-primary);
-            justify-content: flex-start;
-        }
-
-        .game-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 20px;
-            padding-top: calc(16px + var(--safe-top));
-            flex-shrink: 0;
-        }
-
-        .back-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: var(--radius-sm);
-            background: var(--bg-card);
-            border: 2px solid var(--border-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: var(--shadow-card);
-        }
-        .back-btn svg { width: 20px; height: 20px; color: var(--text-medium); }
-        .back-btn:active { transform: scale(0.95); }
-
-        .wallet-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
-            background: var(--bg-card);
-            border: 2px solid var(--border-light);
-            border-radius: 50px;
-            box-shadow: var(--shadow-soft);
-            cursor: pointer;
-        }
-        .wallet-container:active { transform: scale(0.98); }
-
-        .wallet-icon-box {
-            width: 34px;
-            height: 34px;
-            background: linear-gradient(145deg, #ffcc00, #ffb300);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 10px rgba(255, 179, 0, 0.3);
-        }
-        .wallet-icon-box svg { width: 18px; height: 18px; fill: white; }
-        .wallet-info { display: flex; flex-direction: column; }
-        .wallet-label { font-size: 10px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
-        .coin-amount { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 800; color: var(--gold-dark); line-height: 1.1; }
+        /* Premium Clean Header */
+        .game-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; padding-top: calc(16px + var(--safe-top)); flex-shrink: 0; }
+        .share-btn-top { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s; }
+        .share-btn-top:active { transform: scale(0.9); }
+        .share-btn-top svg { width: 18px; height: 18px; color: var(--text-dark); }
+        
+        .wallet-container { display: flex; align-items: center; gap: 10px; padding: 8px 16px; background: var(--bg-secondary); border-radius: 20px; cursor: pointer; transition: transform 0.2s; }
+        .wallet-container:active { transform: scale(0.96); }
+        .wallet-icon-box { width: 28px; height: 28px; background: var(--gold-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .wallet-icon-box svg { width: 16px; height: 16px; fill: white; }
+        .wallet-info { display: flex; flex-direction: column; line-height: 1.1; }
+        .wallet-label { font-size: 10px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+        .coin-amount { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: var(--text-dark); }
         .coin-amount.animate { animation: coinPop 0.4s ease; }
         @keyframes coinPop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
 
-        .wheel-section {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 20px;
-            min-height: 0;
-        }
-
-        .wheel-wrapper {
-            position: relative;
-            width: min(78vw, 78vh, 310px);
-            height: min(78vw, 78vh, 310px);
-        }
-
-        .wheel-glow {
-            position: absolute;
-            top: -20px; left: -20px; right: -20px; bottom: -20px;
-            background: radial-gradient(circle, rgba(0, 200, 83, 0.15) 0%, transparent 60%);
-            border-radius: 50%;
-            animation: glowPulse 2.5s ease-in-out infinite;
-        }
-        @keyframes glowPulse { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
-
-        .wheel-pointer {
-            position: absolute;
-            top: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 20;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-            animation: pointerBounce 0.8s ease-in-out infinite;
-        }
-        @keyframes pointerBounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-5px); } }
-        .wheel-pointer svg { width: 34px; height: 44px; fill: var(--text-dark); }
-
-        #spinWheel {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            box-shadow: 0 0 0 7px var(--bg-primary), 0 0 0 11px var(--accent-green), 0 25px 50px rgba(0,0,0,0.12);
-            transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
-        }
+        /* Premium Wheel Section */
+        .wheel-section { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 20px; min-height: 0; }
+        .wheel-wrapper { position: relative; width: min(82vw, 82vh, 320px); height: min(82vw, 82vh, 320px); }
+        
+        /* Stable, non-rotating soft glow */
+        .wheel-glow { position: absolute; top: -15px; left: -15px; right: -15px; bottom: -15px; background: radial-gradient(circle, rgba(0, 122, 255, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; }
+        
+        .wheel-pointer { position: absolute; top: -2px; left: 50%; transform: translateX(-50%); z-index: 20; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+        .wheel-pointer svg { width: 28px; height: 36px; fill: var(--text-dark); }
+        
+        /* iOS-style Wheel Ring & Shadow */
+        #spinWheel { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05), 0 0 0 6px #fff, 0 0 0 8px var(--border-light); transition: transform 4.5s cubic-bezier(0.17, 0.67, 0.12, 0.99); }
         #spinWheel.spinning { filter: blur(1px); }
+        .wheel-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: #fff; border: 2px solid var(--border-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); z-index: 15; pointer-events: none; }
+        .wheel-center-text { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700; color: var(--text-dark); letter-spacing: 1px; }
 
-        .wheel-center {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 75px; height: 75px;
-            background: var(--bg-primary);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: var(--shadow-soft);
-            z-index: 15; pointer-events: none;
-        }
-        .wheel-center-text { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; color: var(--accent-green); letter-spacing: 1px; }
+        /* Premium iOS Button */
+        .controls-section { padding: 20px; padding-bottom: calc(20px + var(--safe-bottom)); flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .spin-btn { width: 100%; max-width: 320px; padding: 16px; border-radius: var(--radius-sm); border: none; background: var(--accent-green); color: white; font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(52, 199, 89, 0.2); transition: all 0.15s ease; }
+        .spin-btn:not(:disabled):active { transform: scale(0.97); opacity: 0.9; }
+        .spin-btn:disabled { background: #d1d1d6; cursor: not-allowed; box-shadow: none; }
+        .cooldown-display { text-align: center; font-weight: 500; font-size: 14px; color: var(--text-light); min-height: 20px; }
 
-        .controls-section {
-            padding: 20px;
-            padding-bottom: calc(20px + var(--safe-bottom));
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .spin-btn {
-            width: 100%;
-            max-width: 300px;
-            padding: 18px;
-            border-radius: var(--radius);
-            border: none;
-            background: linear-gradient(145deg, #5efc82 0%, #00c853 50%, #009624 100%);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            font-size: 17px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 7px 0 #00701a, 0 10px 25px rgba(0, 200, 83, 0.25);
-            transition: all 0.15s ease;
-        }
-        .spin-btn::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50%; background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 100%); }
-        .spin-btn:not(:disabled):active { transform: translateY(5px); box-shadow: 0 2px 0 #00701a, 0 4px 15px rgba(0, 200, 83, 0.25); }
-        .spin-btn:disabled { background: linear-gradient(145deg, #aaaaaa 0%, #888888 100%); cursor: not-allowed; box-shadow: 0 5px 0 #666666; }
-
-        .cooldown-display { text-align: center; font-weight: 600; font-size: 14px; color: var(--text-medium); min-height: 22px; }
-
-        /* ===================== MODALS ===================== */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(16, 42, 28, 0.6);
-            backdrop-filter: blur(8px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 200;
-            padding: 20px;
-        }
+        /* iOS-style Modals */
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: none; justify-content: center; align-items: center; z-index: 200; padding: 20px; }
         .modal-overlay.active { display: flex; }
+        .modal { background: var(--bg-primary); border-radius: var(--radius); width: 100%; max-width: 400px; max-height: 88vh; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 50px rgba(0,0,0,0.2); animation: modalSlide 0.3s ease; margin: auto; }
+        @keyframes modalSlide { from { opacity: 0; transform: translateY(20px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border-light); flex-shrink: 0; }
+        .modal-title { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 600; color: var(--text-dark); }
+        .modal-close { width: 30px; height: 30px; border-radius: 50%; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .modal-close svg { width: 14px; height: 14px; color: var(--text-light); }
+        .modal-body { padding: 20px; overflow-y: auto; flex: 1; -webkit-overflow-scrolling: touch; }
 
-        .modal {
-            background: var(--bg-primary);
-            border-radius: var(--radius);
-            width: 100%;
-            max-width: 400px;
-            max-height: 88vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            animation: modalSlide 0.35s ease;
-            margin: auto;
-        }
-        @keyframes modalSlide { from { opacity: 0; transform: translateY(30px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid var(--border-light);
-            flex-shrink: 0;
-            background: var(--bg-secondary);
-        }
-        .modal-title { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; color: var(--text-dark); }
-        .modal-close {
-            width: 38px; height: 38px;
-            border-radius: 10px;
-            background: var(--bg-primary);
-            border: 2px solid var(--border-light);
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer;
-        }
-        .modal-close svg { width: 16px; height: 16px; color: var(--text-medium); }
-        .modal-close:active { transform: scale(0.92); }
-
-        .modal-body {
-            padding: 20px;
-            overflow-y: auto;
-            flex: 1;
-            background: var(--bg-primary);
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .settings-section { margin-bottom: 22px; }
-        .settings-section:last-child { margin-bottom: 0; }
-        .section-label { font-size: 11px; font-weight: 800; color: var(--accent-green-dark); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
-        .data-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 10px; border: 1px solid var(--border-light); }
-        .data-label { font-size: 12px; font-weight: 600; color: var(--text-light); margin-bottom: 4px; }
-        .data-value { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: var(--text-dark); }
-        .data-value.small { font-size: 13px; font-weight: 500; color: var(--text-medium); word-break: break-all; }
-
-        .wallet-panel-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 18px; border: 1px solid var(--border-light); margin-bottom: 12px; }
-        .wallet-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border-light); }
-        .wallet-panel-title { font-size: 13px; font-weight: 600; color: var(--text-medium); }
-        .wallet-panel-amount { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 800; color: var(--gold-dark); }
-        .wallet-progress-bar { width: 100%; height: 10px; background: #d1e8da; border-radius: 10px; overflow: hidden; margin-bottom: 12px; }
-        .wallet-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-green), var(--accent-green-light)); border-radius: 10px; transition: width 0.5s ease; }
-        .wallet-status { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 10px; font-size: 12px; font-weight: 600; border: 1px solid; }
-        .wallet-status.pending { background: #fff9e6; color: var(--gold-dark); border-color: var(--gold); }
-        .wallet-status.ready { background: #e8f7ec; color: var(--accent-green-dark); border-color: var(--accent-green-light); }
-
-        .action-card-btn { width: 100%; padding: 14px; border-radius: var(--radius-sm); border: none; background: linear-gradient(145deg, #5efc82 0%, #00c853 100%); color: white; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 5px 0 #00701a, 0 6px 15px rgba(0, 200, 83, 0.2); margin-top: 10px; }
-        .action-card-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #00701a; }
-        .action-card-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-        .toggle-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: var(--bg-secondary); border-radius: var(--radius-sm); margin-bottom: 8px; border: 1px solid var(--border-light); }
-        .toggle-label { font-weight: 600; font-size: 14px; color: var(--text-dark); }
-        .toggle-switch { position: relative; width: 48px; height: 26px; }
+        .settings-section { margin-bottom: 24px; } .settings-section:last-child { margin-bottom: 0; }
+        .section-label { font-size: 13px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; padding-left: 4px; }
+        .data-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 10px; }
+        .data-label { font-size: 13px; font-weight: 500; color: var(--text-light); margin-bottom: 2px; }
+        .data-value { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; color: var(--text-dark); }
+        .wallet-panel-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 16px; margin-bottom: 12px; }
+        .wallet-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border-light); }
+        .wallet-panel-title { font-size: 14px; font-weight: 500; color: var(--text-medium); }
+        .wallet-panel-amount { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; color: var(--text-dark); }
+        .wallet-progress-bar { width: 100%; height: 8px; background: #d1d1d6; border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+        .wallet-progress-fill { height: 100%; background: var(--accent-green); border-radius: 4px; transition: width 0.5s ease; }
+        .wallet-status { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; }
+        .wallet-status.pending { background: #ffecd2; color: var(--gold-dark); }
+        .wallet-status.ready { background: #d1f4dd; color: var(--accent-green-dark); }
+        .action-card-btn { width: 100%; padding: 14px; border-radius: var(--radius-sm); border: none; background: var(--accent-green); color: white; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 10px rgba(52, 199, 89, 0.2); margin-top: 8px; transition: transform 0.15s; }
+        .action-card-btn:active { transform: scale(0.97); }
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: var(--bg-secondary); border-radius: var(--radius-sm); margin-bottom: 8px; }
+        .toggle-label { font-weight: 500; font-size: 16px; color: var(--text-dark); }
+        .toggle-switch { position: relative; width: 44px; height: 26px; }
         .toggle-switch input { opacity: 0; width: 0; height: 0; }
-        .toggle-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #ddd; border-radius: 26px; transition: 0.3s; }
-        .toggle-slider::before { content: ''; position: absolute; height: 20px; width: 20px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
+        .toggle-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #d1d1d6; border-radius: 26px; transition: 0.3s; }
+        .toggle-slider::before { content: ''; position: absolute; height: 22px; width: 22px; left: 2px; bottom: 2px; background: white; border-radius: 50%; transition: 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .toggle-switch input:checked + .toggle-slider { background: var(--accent-green); }
-        .toggle-switch input:checked + .toggle-slider::before { transform: translateX(22px); }
+        .toggle-switch input:checked + .toggle-slider::before { transform: translateX(18px); }
 
-        /* Premium Settings List */
-        .settings-list-item {
-            display: flex; align-items: center; gap: 12px;
-            width: 100%; padding: 14px; background: var(--bg-secondary);
-            border: 1px solid var(--border-light); border-radius: 14px;
-            color: var(--text-dark); font-weight: 600; font-size: 15px;
-            cursor: pointer; text-decoration: none; margin-bottom: 10px;
-            transition: all 0.2s ease;
-        }
-        .settings-list-item:active { transform: scale(0.98); background: #fff; }
-        .list-icon-box {
-            width: 36px; height: 36px; border-radius: 10px;
-            background: rgba(0, 200, 83, 0.1); color: var(--accent-green-dark);
-            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-        }
-        .list-icon-box svg { width: 18px; height: 18px; }
+        .settings-list-item { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 16px; background: var(--bg-secondary); border-radius: var(--radius-sm); color: var(--text-dark); font-weight: 500; font-size: 16px; cursor: pointer; text-decoration: none; margin-bottom: 8px; transition: transform 0.15s; }
+        .settings-list-item:active { transform: scale(0.98); }
+        .list-icon-box { width: 32px; height: 32px; border-radius: 8px; background: #e5e5ea; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .list-icon-box svg { width: 16px; height: 16px; color: var(--accent-blue); }
         .list-text { flex: 1; text-align: left; }
-        .list-chevron { color: var(--text-light); }
-        .list-chevron svg { width: 18px; height: 18px; }
+        .list-chevron svg { width: 18px; height: 18px; color: var(--text-light); }
+        .reset-btn { width: 100%; padding: 14px; background: var(--bg-secondary); border: none; border-radius: var(--radius-sm); color: #ff3b30; font-weight: 600; font-size: 16px; cursor: pointer; }
+        .reset-btn:active { opacity: 0.7; }
 
-        .reset-btn { width: 100%; padding: 14px; background: transparent; border: 2px solid #d32f2f; border-radius: var(--radius-sm); color: #d32f2f; font-weight: 700; font-size: 14px; cursor: pointer; }
-        .reset-btn:active { background: #d32f2f; color: white; }
+        /* iOS-style Result Card */
+        .result-content { padding: 30px 20px; text-align: center; background: #fff; border-radius: var(--radius); }
+        .result-icon { width: 70px; height: 70px; margin: 0 auto 20px; background: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(52, 199, 89, 0.3); animation: resultPulse 0.6s ease-in-out infinite; }
+        @keyframes resultPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .result-icon svg { width: 36px; height: 36px; color: white; }
+        .result-title { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+        .result-amount { font-family: 'Poppins', sans-serif; font-size: 48px; font-weight: 800; color: var(--text-dark); margin-bottom: 24px; }
+        .claim-btn { width: 100%; padding: 16px; border-radius: var(--radius-sm); border: none; background: var(--accent-green); color: white; font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(52, 199, 89, 0.2); transition: transform 0.15s; }
+        .claim-btn:not(:disabled):active { transform: scale(0.97); }
 
-        /* Share Modal */
-        .share-modal-content { text-align: center; }
-        .share-btn { 
-            display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px; 
-            background: var(--bg-secondary); border: 1px solid var(--border-light); 
-            border-radius: 14px; color: var(--text-dark); font-weight: 600; font-size: 15px; 
-            cursor: pointer; margin-bottom: 10px; text-decoration: none; transition: all 0.2s ease;
-        }
-        .share-btn:active { transform: scale(0.98); background: #fff; }
-        .share-btn svg { width: 20px; height: 20px; }
-
-        /* Copy Toast */
-        #copyToast {
-            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-            background: #102a1c; color: #fff; padding: 12px 24px; border-radius: 30px; 
-            font-size: 14px; font-weight: 600; z-index: 9999; opacity: 0; 
-            transition: opacity 0.3s ease; pointer-events: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        #copyToast.show { opacity: 1; }
-
-        /* Result Modal */
-        .result-content { padding: 36px 24px; text-align: center; }
-        .result-icon { width: 90px; height: 90px; margin: 0 auto 24px; background: linear-gradient(145deg, #5efc82, #00c853); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0, 200, 83, 0.25); animation: resultPulse 0.8s ease-in-out infinite; }
-        @keyframes resultPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
-        .result-icon svg { width: 44px; height: 44px; color: white; }
-        .result-title { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
-        .result-amount { font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 900; color: var(--gold-dark); margin-bottom: 28px; }
-        .claim-btn { width: 100%; padding: 16px; border-radius: var(--radius); border: none; background: linear-gradient(145deg, #5efc82 0%, #00c853 50%, #009624 100%); color: white; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 1px; cursor: pointer; box-shadow: 0 6px 0 #00701a, 0 8px 20px rgba(0, 200, 83, 0.25); }
-        .claim-btn:not(:disabled):active { transform: translateY(4px); box-shadow: 0 2px 0 #00701a; }
-
-        /* Gift Store */
-        .gift-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .gift-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 12px; border: 1px solid var(--border-light); text-align: center; box-shadow: var(--shadow-card); position: relative; cursor: pointer; }
-        .gift-card.disabled { opacity: 0.5; }
-        .gift-image-container { width: 100%; height: 65px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border-radius: 10px; margin-bottom: 8px; }
+        .gift-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .gift-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 14px; text-align: center; position: relative; cursor: pointer; transition: transform 0.15s; }
+        .gift-card:active { transform: scale(0.98); }
+        .gift-card.disabled { opacity: 0.6; cursor: not-allowed; }
+        .gift-image-container { width: 100%; height: 60px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 8px; margin-bottom: 10px; }
         .gift-emoji-fallback { font-size: 32px; }
-        .gift-name { font-size: 11px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
-        .gift-coins { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--gold-dark); margin-bottom: 8px; }
-        .gift-redeem-btn { width: 100%; padding: 8px; border-radius: 8px; border: none; background: linear-gradient(145deg, #5efc82, #00c853); color: white; font-size: 11px; font-weight: 700; cursor: pointer; box-shadow: 0 3px 0 #00701a; }
-        .gift-badge { position: absolute; top: 8px; right: 8px; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 10px; background: var(--accent-green); color: white; }
-
-        /* Reward Ad Popup */
-        #rewardAdModal { z-index: 300; }
-        #rewardAdModal .modal { max-width: 320px; width: 90vw; }
-        .reward-ad-body { text-align: center; padding: 15px; }
-        .reward-ad-label { font-size: 11px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .reward-ad-container { width: 100%; max-width: 300px; height: 300px; margin: 0 auto; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+        .gift-name { font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+        .gift-approx { font-size: 12px; color: var(--text-light); margin-bottom: 4px; }
+        .gift-coins { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent-blue); margin-bottom: 10px; }
+        .gift-redeem-btn { width: 100%; padding: 8px; border-radius: 8px; border: none; background: var(--accent-green); color: white; font-size: 12px; font-weight: 600; cursor: pointer; }
+        .gift-redeem-btn:disabled { background: #d1d1d6; color: #8e8e93; cursor: not-allowed; }
+        .gift-badge { position: absolute; top: 8px; right: 8px; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 6px; background: var(--accent-blue); color: white; text-transform: uppercase; }
+        .gift-stock-out { position: absolute; top: 8px; left: 8px; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 6px; background: #ff3b30; color: white; text-transform: uppercase; }
     </style>
-    <meta name="b6a6a8f9ad4a6e8a7a548eef0b3f505c4741636c" content="b6a6a8f9ad4a6e8a7a548eef0b3f505c4741636c" />
-    <meta name="admolo-verification" content="AK6G2UT3QGWOP8UFQKM3OQWYXJSSUA5C">
-    <meta name="kadam-verification" content="kadamce244ced4d479254b2bc3c85465e896f" />
 </head>
 <body>
     <div class="app-wrapper">
-        
-        <!-- ===================== GAME SCREEN (AstraSpin) ===================== -->
-        <div id="gameScreen" class="screen active">
+        <div id="gameScreen" class="screen active" style="display: flex; flex-direction: column; height: 100%;">
             <div class="game-header">
-                <button class="back-btn" onclick="goHome()" aria-label="Back">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
-                    </svg>
-                </button>
+                <div class="share-btn-top" onclick="shareGame()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></div>
                 <div class="wallet-container" onclick="openModal('settingsModal')">
                     <div class="wallet-icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></div>
                     <div class="wallet-info">
@@ -497,544 +193,294 @@
             </div>
         </div>
 
-        <!-- ===================== SETTINGS MODAL ===================== -->
         <div class="modal-overlay" id="settingsModal">
             <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">Settings</h3>
-                    <button class="modal-close" onclick="closeModal('settingsModal')" aria-label="Close">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                    </button>
-                </div>
+                <div class="modal-header"><h3 class="modal-title">Settings</h3><button class="modal-close" onclick="closeModal('settingsModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
                 <div class="modal-body">
+                    <div class="settings-section"><p class="section-label">Daily Reward (7-Day Streak)</p><div class="data-card"><p class="data-label">Today's Bonus</p><p class="data-value" id="dailyRewardDisplay">100 Coins</p></div><button class="action-card-btn" id="dailyBtn" onclick="claimDailyBonus()">Claim Daily Bonus</button></div>
                     <div class="settings-section">
-                        <p class="section-label">Daily Reward</p>
-                        <div class="data-card">
-                            <p class="data-label">Daily Bonus</p>
-                            <p class="data-value">100 Coins</p>
-                        </div>
-                        <button class="action-card-btn" id="dailyBtn" onclick="claimDailyBonus()">Claim Daily Bonus</button>
-                    </div>
-
-                    <div class="settings-section">
-                        <p class="section-label">Redeem Coins</p>
+                        <p class="section-label">Redeem Coins (20,000 = ₹20)</p>
                         <div class="wallet-panel-card">
-                            <div class="wallet-panel-header">
-                                <span class="wallet-panel-title">Balance</span>
-                                <span class="wallet-panel-amount" id="settingsCoins">0</span>
-                            </div>
+                            <div class="wallet-panel-header"><span class="wallet-panel-title">Balance</span><span class="wallet-panel-amount" id="settingsCoins">0</span></div>
                             <div class="wallet-progress-section">
-                                <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-                                    <span style="font-size:11px;font-weight:600;color:#888;">Progress</span>
-                                    <span style="font-size:11px;font-weight:700;" id="progressValue">0/10,000</span>
-                                </div>
-                                <div class="wallet-progress-bar">
-                                    <div class="wallet-progress-fill" id="progressFill" style="width:0%"></div>
-                                </div>
-                                <div class="wallet-status pending" id="walletStatus">
-                                    <span id="statusText">Keep playing!</span>
-                                </div>
+                                <div style="display:flex;justify-content:space-between;margin-bottom:6px;"><span style="font-size:11px;font-weight:600;color:var(--text-light);">Progress</span><span style="font-size:11px;font-weight:700;color:var(--text-dark);" id="progressValue">0/20,000</span></div>
+                                <div class="wallet-progress-bar"><div class="wallet-progress-fill" id="progressFill" style="width:0%"></div></div>
+                                <div class="wallet-status pending" id="walletStatus"><span id="statusText">Keep playing!</span></div>
                             </div>
                         </div>
-                        <button class="action-card-btn" id="redeemBtn" onclick="openRedeem()" style="background:linear-gradient(145deg,#ffcc00,#ffb300);box-shadow:0 5px 0 #b88a00;">Redeem Coins</button>
+                        <button class="action-card-btn" id="redeemBtn" onclick="openRedeem()" style="background:var(--accent-blue);box-shadow:0 4px 10px rgba(0, 122, 255, 0.2);">Redeem Coins</button>
                     </div>
-
+                    <div class="settings-section"><p class="section-label">Device Info</p><div class="data-card"><p class="data-label">Device ID</p><p class="data-value small" id="deviceId" style="font-size: 13px; font-weight: 500; color: var(--text-medium); word-break: break-all;">Loading...</p></div></div>
+                    <div class="settings-section"><p class="section-label">Sound</p><div class="toggle-row"><span class="toggle-label">Music</span><label class="toggle-switch"><input type="checkbox" id="musicToggle" onchange="toggleMusic()"><span class="toggle-slider"></span></label></div><div class="toggle-row"><span class="toggle-label">Sound FX</span><label class="toggle-switch"><input type="checkbox" id="soundToggle" checked onchange="toggleSound()"><span class="toggle-slider"></span></label></div></div>
                     <div class="settings-section">
-                        <p class="section-label">Device Info</p>
-                        <div class="data-card">
-                            <p class="data-label">Device ID</p>
-                            <p class="data-value small" id="deviceId">Loading...</p>
-                        </div>
+                        <p class="section-label">Gift Store (1,000 Coins = ₹1)</p>
+                        <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:var(--text-dark);margin-bottom:10px;">Kids Items</p><div class="gift-grid" id="kidsGifts"></div>
+                        <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:var(--text-dark);margin:14px 0 10px;">Home Items</p><div class="gift-grid" id="dailyGifts"></div>
+                        <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:var(--text-dark);margin:14px 0 10px;">Useful Items</p><div class="gift-grid" id="electronicsGifts"></div>
                     </div>
-
-                    <div class="settings-section">
-                        <p class="section-label">Sound</p>
-                        <div class="toggle-row">
-                            <span class="toggle-label">Music</span>
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="musicToggle" onchange="toggleMusic()">
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div class="toggle-row">
-                            <span class="toggle-label">Sound FX</span>
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="soundToggle" checked onchange="toggleSound()">
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="settings-section">
-                        <p class="section-label">Gift Store</p>
-                        <p style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:10px;">Kids Items</p>
-                        <div class="gift-grid" id="kidsGifts"></div>
-                        <p style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text-dark);margin:14px 0 10px;">Home Items</p>
-                        <div class="gift-grid" id="dailyGifts"></div>
-                        <p style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text-dark);margin:14px 0 10px;">Electronics</p>
-                        <div class="gift-grid" id="electronicsGifts"></div>
-                        <p style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text-dark);margin:14px 0 10px;">Premium</p>
-                        <div class="gift-grid" id="mediumGifts"></div>
-                        <p style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text-dark);margin:14px 0 10px;">Dream Rewards</p>
-                        <div class="gift-grid" id="bigGifts"></div>
-                    </div>
-
-                    <div style="margin-top: 25px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px;">
-                        <div class="admoloBanner" data-publisher="eyJpdiI6Imw5SDZ6WWp1TEN2bmJBekhSL2tiOGc9PSIsInZhbHVlIjoiYzJVdkJIYzF3Q0hxWDN2eVJwWVM4Zz09IiwibWFjIjoiMTUxMWQ1ZjczODgwNjAzMmRlNDUwNDFkZGNkNTQ1ODc4YmQ2NzZkOGJmOWNjZDMxMmY0MTgyMGMwZmIwYTJkOSIsInRhZyI6IiJ9" data-adsize="320x180" style="width: 100%; max-width: 320px; overflow: hidden;"></div>
-                        <div class="admoloNative" data-publisher="eyJpdiI6IlNqSkZZblN0WVViWG5EMDZ0clZIbEE9PSIsInZhbHVlIjoieUVERnhFRlYyQS8vNW5JdDJvUHlNdz09IiwibWFjIjoiOTYxMzZhYWVhOGM4YWQzNWYyMDRkMWQyYTA0Y2I2MGUyYjg2MWNjYjk5NTAzMGNjMjkyMmY3Zjk1ODIzZDBlZCIsInRhZyI6IiJ9" data-placement="nativeFeed" style="width: 100%; max-width: 320px;"></div>
-                    </div>
-
-                    <div class="settings-section" style="margin-top: 25px;">
-                        <p class="section-label">About & Links</p>
-                        <div id="settingsLinksList"></div>
-                    </div>
-
-                    <div class="settings-section">
-                        <button class="reset-btn" onclick="confirmReset()">Reset All Data</button>
-                    </div>
+                    <div class="settings-section" style="margin-top: 25px;"><p class="section-label">Navigation</p><div id="settingsLinksList"></div></div>
+                    <div class="settings-section"><button class="reset-btn" onclick="confirmReset()">Reset All Data</button></div>
                 </div>
             </div>
         </div>
 
-        <!-- Share Modal -->
-        <div class="modal-overlay" id="shareModal">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">Share Website</h3>
-                    <button class="modal-close" onclick="closeModal('shareModal')" aria-label="Close">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                    </button>
-                </div>
-                <div class="modal-body share-modal-content">
-                    <button class="share-btn" onclick="copyShareLink()">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green-dark)" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                        Copy Link
-                    </button>
-                    <a href="https://wa.me/?text=Check%20out%20AstraSpin:%20https://astraspin.in/" target="_blank" class="share-btn" style="color:#25D366;">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        WhatsApp
-                    </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://astraspin.in/" target="_blank" class="share-btn" style="color:#1877F2;">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        Facebook
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20AstraSpin:%20https://astraspin.in/" target="_blank" class="share-btn" style="color:#000;">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        X (Twitter)
-                    </a>
-                    <a href="https://t.me/share/url?url=https://astraspin.in/&text=Check%20out%20AstraSpin!" target="_blank" class="share-btn" style="color:#0088cc;">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.322-.437.887-.662 3.478-1.514 5.797-2.51 6.956-2.986 3.316-1.38 4.008-1.618 4.458-1.626z"/></svg>
-                        Telegram
-                    </a>
-                    <a href="mailto:?subject=Check%20out%20AstraSpin!&body=I%20found%20this%20cool%20game%20website:%20https://astraspin.in/" target="_blank" class="share-btn" style="color:#EA4335;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        Email
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Copy Toast -->
-        <div id="copyToast">Link Copied!</div>
+        <div class="modal-overlay" id="resultModal"><div class="modal"><div class="result-content"><div class="result-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 17,14 19,22 12,17 5,22 7,14 2,9 9,9"/></svg></div><h2 class="result-title">Congratulations</h2><p class="result-amount" id="resultAmount">0</p><button class="claim-btn" id="claimBtn" onclick="handleClaimClick()">CLAIM REWARD</button></div></div></div>
+        <div class="modal-overlay" id="redeemModal"><div class="modal"><div class="modal-header"><h3 class="modal-title">Redeem</h3><button class="modal-close" onclick="closeModal('redeemModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div><div class="modal-body"><div class="data-card"><p class="data-label">Balance</p><p class="data-value" id="redeemBalance">0</p></div><div class="data-card"><p class="data-label">Minimum (₹20)</p><p class="data-value" style="font-size:18px;">20,000</p></div><button class="claim-btn" id="redeemConfirmBtn" onclick="processRedeem()" style="margin-top:14px;">Redeem via WhatsApp</button></div></div></div>
+        <div class="modal-overlay" id="giftConfirmModal"><div class="modal"><div class="modal-header"><h3 class="modal-title">Confirm Claim</h3><button class="modal-close" onclick="closeModal('giftConfirmModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div><div class="modal-body"><div style="padding: 24px 20px; text-align: center;"><div id="giftConfirmImage" style="width: 80px; height: 80px; margin: 0 auto 14px; background: var(--bg-secondary); border-radius: 12px; display: flex; align-items: center; justify-content: center;"></div><h3 id="giftConfirmName" style="font-family:'Inter',sans-serif;font-size:18px;font-weight:600;margin-bottom:6px;">Item</h3><p style="font-size:13px;color:var(--text-medium);margin-bottom:8px;">Approx. Value: <strong id="giftConfirmVal">₹0</strong></p><p style="font-size:13px;color:var(--text-medium);margin-bottom:18px;">Required: <strong id="giftConfirmCoins">0</strong> Coins</p><div style="display: flex; gap: 12px;"><button class="action-card-btn" onclick="closeModal('giftConfirmModal')" style="background:var(--bg-secondary);color:var(--text-dark);box-shadow:none;">Cancel</button><button class="action-card-btn" id="giftConfirmRedeemBtn" onclick="confirmGiftRedeem()">Claim Now</button></div></div></div></div></div>
+        <div class="modal-overlay" id="confirmModal"><div class="modal"><div style="padding: 28px 20px; text-align: center;"><div style="width:60px;height:60px;margin:0 auto 18px;background:#ffecd2;border-radius:50%;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div><h2 style="font-family:'Inter',sans-serif;font-size:20px;font-weight:600;margin-bottom:8px;">Reset All Data?</h2><p style="color:var(--text-medium);font-size:14px;margin-bottom:22px;">This will permanently delete all your coins, progress, and history. This action cannot be undone.</p><div style="display: flex; gap: 12px;"><button class="action-card-btn" onclick="closeModal('confirmModal')" style="background:var(--bg-secondary);color:var(--text-dark);box-shadow:none;">Cancel</button><button class="action-card-btn" onclick="resetAllData()" style="background:#ff3b30;box-shadow:none;">Reset</button></div></div></div></div>
 
-        <!-- ===================== LEGAL MODALS ===================== -->
-        <div class="modal-overlay" id="privacyModal">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">Privacy Policy</h3>
-                    <button class="modal-close" onclick="closeModal('privacyModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-                </div>
-                <div class="modal-body">
-                    <div class="legal-content">
-                        <p><strong>Last Updated:</strong> <span id="lastUpdatedPrivacy"></span></p>
-                        <p>AstraSpin is a casual reward-based game. We do not collect any personal data from users. All data such as coins and progress is stored locally on your device using browser storage.</p>
-                        <h4>Advertising Partners</h4>
-                        <p>Our game may display advertisements served by third-party advertising partners. These partners may use cookies, device identifiers, and similar technologies to serve ads based on your prior visits to our game or other websites.</p>
-                        <h4>Contact Information</h4>
-                        <p>Email: imranidrisi78692@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-overlay" id="termsModal">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">Terms & Conditions</h3>
-                    <button class="modal-close" onclick="closeModal('termsModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-                </div>
-                <div class="modal-body">
-                    <div class="legal-content">
-                        <p><strong>Last Updated:</strong> <span id="lastUpdatedTerms"></span></p>
-                        <p>Welcome to AstraSpin. These Terms and Conditions govern your use of our game. By accessing or using the game, you agree to be bound by these Terms.</p>
-                        <h4>User Responsibilities</h4>
-                        <p>You agree to use the game only for lawful purposes. You must not use the game in a way that could damage, disable, overburden, or impair the game.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-overlay" id="disclaimerModal">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">About</h3>
-                    <button class="modal-close" onclick="closeModal('disclaimerModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-                </div>
-                <div class="modal-body">
-                    <div class="legal-content">
-                        <p><strong>Last Updated:</strong> <span id="lastUpdatedDisclaimer"></span></p>
-                        <p>AstraSpin is a free-to-play casual game. Virtual coins earned in the game have no real-world monetary value unless explicitly stated by a valid redemption program. We do not guarantee any fixed earnings.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===================== GAME-SPECIFIC MODALS ===================== -->
-        <div class="modal-overlay" id="resultModal">
-            <div class="modal">
-                <div class="result-content">
-                    <div class="result-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 17,14 19,22 12,17 5,22 7,14 2,9 9,9"/></svg>
-                    </div>
-                    <h2 class="result-title">Congratulations</h2>
-                    <p class="result-amount" id="resultAmount">0</p>
-                    <button class="claim-btn" id="claimBtn" onclick="handleClaimClick()">CLAIM REWARD</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-overlay" id="rewardAdModal">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">Reward</h3>
-                    <button class="modal-close" onclick="closeRewardAd()" aria-label="Close">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                    </button>
-                </div>
-                <div class="modal-body reward-ad-body">
-                    <p class="reward-ad-label">Sponsored</p>
-                    <div class="reward-ad-container">
-                        <div class="admoloBanner" data-publisher="eyJpdiI6IktlVnMxcDllK2duU0lIeWNiK0FZMWc9PSIsInZhbHVlIjoibEhUZXJBaEFQaGZOdVJqQ21odEJWUT09IiwibWFjIjoiYWNlNzg4ZTZhOWFjMWE4Yzg1MDNhY2MwMTYxM2M0ZTdlZmEwMzJhMDg5MWZiNjY1OTY4ZGRjZDY4NjJjNWY5OCIsInRhZyI6IiJ9" data-adsize="300x300"></div>
-                    </div>
-                    <button class="action-card-btn" onclick="closeRewardAd()" style="margin-top: 15px;">Continue</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-overlay" id="redeemModal">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">Redeem</h3>
-                    <button class="modal-close" onclick="closeModal('redeemModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-                </div>
-                <div class="modal-body">
-                    <div class="data-card">
-                        <p class="data-label">Balance</p>
-                        <p class="data-value" id="redeemBalance">0</p>
-                    </div>
-                    <div class="data-card">
-                        <p class="data-label">Minimum</p>
-                        <p class="data-value" style="font-size:18px;">10,000</p>
-                    </div>
-                    <button class="claim-btn" id="redeemConfirmBtn" onclick="processRedeem()" style="margin-top:14px;">Redeem via WhatsApp</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-overlay" id="giftConfirmModal">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">Confirm</h3>
-                    <button class="modal-close" onclick="closeModal('giftConfirmModal')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-                </div>
-                <div class="modal-body">
-                    <div style="padding: 24px 20px; text-align: center;">
-                        <div id="giftConfirmImage" style="width: 90px; height: 90px; margin: 0 auto 14px; background: var(--bg-secondary); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center;"></div>
-                        <h3 id="giftConfirmName" style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;margin-bottom:6px;">Item</h3>
-                        <p style="font-size:13px;color:var(--text-medium);margin-bottom:18px;">Cost: <strong id="giftConfirmCoins">0</strong></p>
-                        <div style="display: flex; gap: 12px;">
-                            <button class="action-card-btn" onclick="closeModal('giftConfirmModal')" style="background:var(--bg-secondary);color:var(--text-dark);box-shadow:0 5px 0 #ccc;">Cancel</button>
-                            <button class="action-card-btn" onclick="confirmGiftRedeem()">Redeem</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-overlay" id="confirmModal">
-            <div class="modal">
-                <div style="padding: 28px 20px; text-align: center;">
-                    <div style="width:70px;height:70px;margin:0 auto 18px;background:#ffebee;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-                    </div>
-                    <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;margin-bottom:8px;">Reset All Data?</h2>
-                    <p style="color:var(--text-medium);font-size:14px;margin-bottom:22px;">This will permanently delete all your coins, progress, and history. This action cannot be undone.</p>
-                    <div style="display: flex; gap: 12px;">
-                        <button class="action-card-btn" onclick="closeModal('confirmModal')" style="background:var(--bg-secondary);color:var(--text-dark);box-shadow:0 5px 0 #ccc;">Cancel</button>
-                        <button class="action-card-btn" onclick="resetAllData()" style="background:#d32f2f;box-shadow:0 5px 0 #b71c1c;">Reset</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hidden Admolo Interstitial Container -->
         <div class="admoloInterstitial" data-publisher="eyJpdiI6Ik9WYVFNTzlHbXZlUUlWM05XUldSQ2c9PSIsInZhbHVlIjoibnIzYWN5WUx2Nmx6bGRsQnpRZXFpUT09IiwibWFjIjoiNWM4ZjRjOTgxZTBjNGJmNDQ3NTg5YTlmZWUxMzFmZWJkMmFmYmUyZjk3ZjI0MTJhOGJhMTJjOTU2NTc0M2ExOSIsInRhZyI6IiJ9" data-adsize="interstitial" style="display: none;"></div>
-
     </div>
 
     <script>
-        // ============================================
-        // EDITABLE LINKS VARIABLE
-        // ============================================
-        const links = {
-            website: "https://tokenrush.online/",
-            privacy: "privacy-policy.html",
-            terms: "terms.html",
-            about: "about.html",
-            contact: "contact.html",
-            disclaimer: "disclaimer.html",
-            share: "https://astraspin.in/"
-        };
-
+        const links = { home: "index.html", games49: "games49.html", coins: "coins-rewards.html", website: "https://tokenrush.online/", share: "https://astraspin.in/" };
         const linkItems = [
+            { key: 'home', label: '🏠 Home', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>' },
+            { key: 'games49', label: '🎮 All 49 Games', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M6 12h4M8 10v4M15 11h0M18 13h0"></path></svg>' },
+            { key: 'coins', label: '🪙 Coins & Rewards', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12M8 10h8M8 14h8"></path></svg>' },
             { key: 'website', label: 'Official Website', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>' },
-            { key: 'privacy', label: 'Privacy Policy', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>' },
-            { key: 'terms', label: 'Terms & Conditions', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>' },
-            { key: 'disclaimer', label: 'Disclaimer', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>' },
-            { key: 'about', label: 'About', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>' },
-            { key: 'contact', label: 'Contact', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>' },
             { key: 'share', label: 'Share Website', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>' }
         ];
 
         function renderSettingsLinks() {
-            const container = document.getElementById('settingsLinksList');
-            container.innerHTML = '';
+            const container = document.getElementById('settingsLinksList'); container.innerHTML = '';
             linkItems.forEach(item => {
-                const url = links[item.key];
-                const el = document.createElement('a');
-                el.className = 'settings-list-item';
-                
-                if (item.key === 'share') {
-                    el.href = 'javascript:void(0)';
-                    el.onclick = (e) => {
-                        e.preventDefault();
-                        handleShareClick();
-                    };
-                } else {
-                    el.href = url;
-                    el.target = '_blank';
-                }
-                
-                el.innerHTML = `
-                    <div class="list-icon-box">${item.icon}</div>
-                    <div class="list-text">${item.label}</div>
-                    <div class="list-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
-                `;
+                const url = links[item.key]; const el = document.createElement('a'); el.className = 'settings-list-item';
+                if (item.key === 'share') { el.href = 'javascript:void(0)'; el.onclick = (e) => { e.preventDefault(); handleShareClick(); }; } else { el.href = url; }
+                el.innerHTML = `<div class="list-icon-box">${item.icon}</div><div class="list-text">${item.label}</div><div class="list-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>`;
                 container.appendChild(el);
             });
         }
 
-        // ============================================
-        // SHARE LOGIC
-        // ============================================
-        function handleShareClick() {
-            const shareUrl = window.location.href;
-            if (navigator.share) {
-                navigator.share({
-                    title: 'AstraSpin - Play & Win Rewards',
-                    text: 'Check out AstraSpin, a fun mobile web game!',
-                    url: shareUrl
-                }).catch(err => console.log('Error sharing:', err));
-            } else {
-                openModal('shareModal');
-            }
-        }
+        function handleShareClick() { const shareUrl = window.location.href; if (navigator.share) { navigator.share({ title: 'AstraSpin - Play & Win Rewards', text: 'Check out AstraSpin, a fun mobile web game!', url: shareUrl }).catch(err => {}); } }
+        function shareGame() { handleShareClick(); }
 
-        function copyShareLink() {
-            const shareUrl = window.location.href;
-            navigator.clipboard.writeText(shareUrl).then(() => {
-                showToast('Link Copied!');
-            }).catch(err => {
-                const textArea = document.createElement('textarea');
-                textArea.value = shareUrl;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                showToast('Link Copied!');
-            });
-        }
-
-        function showToast(message) {
-            const toast = document.getElementById('copyToast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2000);
-        }
-
-        // ============================================
-        // STATE VARIABLES (AstraSpin)
-        // ============================================
-        var WHATSAPP_URL = 'https://wa.me/7715952502?text=';
-        var MIN_REDEEM = 10000;
-        var DAILY_BONUS = 100;
+        var WHATSAPP_URL = 'https://wa.me/917715952502?text='; 
+        var MIN_REDEEM = 20000; 
         var SPIN_COOLDOWN = 10000;
+        var dailyRewards = [100, 150, 250, 400, 600, 1000, 2000];
+        
+        // iOS-Style Darker, Sophisticated Wheel Colors
         var segments = [
-            { value: 20, color: '#00e676' }, { value: 30, color: '#ffb300' }, { value: 40, color: '#69f0ae' },
-            { value: 50, color: '#00c853' }, { value: 60, color: '#388e3c' }, { value: 70, color: '#5efc82' },
-            { value: 80, color: '#ffb300' }, { value: 100, color: '#009624' }
+            { value: 0, color: '#e5e5ea', weight: 300 }, // Light Gray
+            { value: 10, color: '#34c759', weight: 250 }, // Green
+            { value: 20, color: '#007aff', weight: 200 }, // Blue
+            { value: 50, color: '#af52de', weight: 150 }, // Purple
+            { value: 60, color: '#ff9500', weight: 100 }, // Orange
+            { value: 100, color: '#ff3b30', weight: 50 }, // Red
+            { value: 500, color: '#5856d6', weight: 40 }, // Indigo
+            { value: 2000, color: '#ffd60a', weight: 10 }, // Yellow
+            { value: 5000, color: '#1c1c1e', weight: 1 } // Black
         ];
+
         var giftCategories = {
-            kids: [{ name: 'Teddy Bear', coins: 8800, emoji: '🧸', badge: 'popular' }, { name: 'Toy Car', coins: 6600, emoji: '🚗', badge: 'new' }, { name: 'Puzzle', coins: 5500, emoji: '🧩' }],
-            daily: [{ name: 'Spoon Set', coins: 4400, emoji: '🥄' }, { name: 'Glass Set', coins: 5000, emoji: '🥛' }, { name: 'Kitchen Bowl', coins: 6000, emoji: '🥣' }],
-            electronics: [{ name: 'Charger', coins: 11000, emoji: '🔌', badge: 'popular' }, { name: 'Earphones', coins: 16500, emoji: '🎧', badge: 'new' }, { name: 'LED Light', coins: 9000, emoji: '💡' }],
-            medium: [{ name: 'Smart Watch', coins: 88000, emoji: '⌚', badge: 'popular' }, { name: 'Budget Phone', coins: 165000, emoji: '📱' }],
-            big: [{ name: 'Scooter', coins: 1100000, emoji: '🛵', badge: 'dream' }, { name: 'Bike', coins: 2200000, emoji: '🏍️', badge: 'dream' }]
+            kids: [
+                { name: 'Teddy Bear', approx_val: '₹80', coins: 80000, emoji: '🧸', badge: 'popular', available: true },
+                { name: 'Toy Car', approx_val: '₹60', coins: 60000, emoji: '🚗', badge: 'new', available: true },
+                { name: 'Puzzle', approx_val: '₹50', coins: 50000, emoji: '🧩', available: true },
+                { name: 'Notebook', approx_val: '₹20', coins: 20000, emoji: '📒', available: true }
+            ],
+            daily: [
+                { name: 'Spoon Set', approx_val: '₹40', coins: 40000, emoji: '🥄', available: true },
+                { name: 'Glass Set', approx_val: '₹50', coins: 50000, emoji: '🥛', available: false }, 
+                { name: 'Keychain', approx_val: '₹10', coins: 10000, emoji: '🔑', available: true },
+                { name: 'Small Bowl', approx_val: '₹30', coins: 30000, emoji: '🥣', available: true }
+            ],
+            electronics: [
+                { name: 'Cable', approx_val: '₹70', coins: 70000, emoji: '🔌', badge: 'popular', available: true },
+                { name: 'Phone Stand', approx_val: '₹90', coins: 90000, emoji: '📱', badge: 'new', available: true },
+                { name: 'Pen Set', approx_val: '₹20', coins: 20000, emoji: '🖊️', available: true },
+                { name: 'LED Light', approx_val: '₹40', coins: 40000, emoji: '💡', available: true }
+            ]
         };
-        var deviceId = null, coins = 0, totalSpins = 0, lastDailyClaim = 0, lastSpinTime = 0, currentRotation = 0, isSpinning = false, currentReward = 0, isOnline = true, cooldownInterval = null, musicEnabled = false, soundEnabled = true, audioContext = null, selectedGift = null, wheelCanvas = null, wheelCtx = null;
+        var deviceId = null, coins = 0, totalSpins = 0, lastDailyClaim = 0, currentStreak = 1, lastSpinTime = 0, currentRotation = 0, isSpinning = false, currentReward = 0, isOnline = true, cooldownInterval = null, musicEnabled = false, soundEnabled = true, audioContext = null, selectedGift = null, wheelCanvas = null, wheelCtx = null, isClaimingGift = false;
 
-        // ============================================
-        // DEVICE ID & PERSISTENCE
-        // ============================================
         function getOrCreateDeviceId() { var storedId = localStorage.getItem("astra_device_id"); if (storedId) return storedId; var newId = "ASTRA-" + Date.now() + "-" + Math.floor(Math.random() * 100000); localStorage.setItem("astra_device_id", newId); return newId; }
-        function loadAllData() { try { deviceId = getOrCreateDeviceId(); var savedCoins = localStorage.getItem("astra_coins"); if (savedCoins !== null && savedCoins !== undefined) { coins = parseInt(savedCoins); if (isNaN(coins)) coins = 0; } var savedSpins = localStorage.getItem("astra_spins"); if (savedSpins !== null) totalSpins = parseInt(savedSpins) || 0; var savedDaily = localStorage.getItem("astra_daily_claim"); if (savedDaily !== null) lastDailyClaim = parseInt(savedDaily) || 0; var savedSpinTime = localStorage.getItem("astra_last_spin_time"); if (savedSpinTime !== null) lastSpinTime = parseInt(savedSpinTime) || 0; var savedRotation = localStorage.getItem("astra_wheel_rotation"); if (savedRotation !== null) currentRotation = parseFloat(savedRotation) || 0; musicEnabled = localStorage.getItem("astra_music") === "true"; soundEnabled = localStorage.getItem("astra_sound") !== "false"; } catch(e) { console.error("Error loading data:", e); } }
-        function saveAllData() { try { if (deviceId) localStorage.setItem("astra_device_id", deviceId); localStorage.setItem("astra_coins", coins.toString()); localStorage.setItem("astra_spins", totalSpins.toString()); localStorage.setItem("astra_daily_claim", lastDailyClaim.toString()); localStorage.setItem("astra_last_spin_time", lastSpinTime.toString()); localStorage.setItem("astra_wheel_rotation", currentRotation.toString()); localStorage.setItem("astra_music", musicEnabled.toString()); localStorage.setItem("astra_sound", soundEnabled.toString()); } catch(e) { console.error("Error saving data:", e); } }
-        function saveSpinState(reward) { try { localStorage.setItem("astra_spin_done", "true"); localStorage.setItem("astra_spin_reward", reward.toString()); } catch(e) {} }
-        function clearSpinState() { try { localStorage.removeItem("astra_spin_done"); localStorage.removeItem("astra_spin_reward"); } catch(e) {} }
-        function getSpinState() { try { return { done: localStorage.getItem("astra_spin_done") === "true", reward: parseInt(localStorage.getItem("astra_spin_reward")) || 0 }; } catch(e) { return { done: false, reward: 0 }; } }
+        function loadAllData() { 
+            try { 
+                deviceId = getOrCreateDeviceId(); 
+                var savedCoins = localStorage.getItem("astra_coins"); if (savedCoins !== null && savedCoins !== undefined) { coins = parseInt(savedCoins); if (isNaN(coins)) coins = 0; } 
+                var savedDaily = localStorage.getItem("astra_daily_claim"); if (savedDaily !== null) lastDailyClaim = parseInt(savedDaily) || 0; 
+                var savedStreak = localStorage.getItem("astra_daily_streak"); if (savedStreak !== null) currentStreak = parseInt(savedStreak) || 1; 
+                if (Date.now() - lastDailyClaim > 172800000 && currentStreak > 1) currentStreak = 1;
+                musicEnabled = localStorage.getItem("astra_music") === "true"; soundEnabled = localStorage.getItem("astra_sound") !== "false"; 
+            } catch(e) {} 
+        }
+        function saveAllData() { try { if (deviceId) localStorage.setItem("astra_device_id", deviceId); localStorage.setItem("astra_coins", coins.toString()); localStorage.setItem("astra_daily_claim", lastDailyClaim.toString()); localStorage.setItem("astra_daily_streak", currentStreak.toString()); localStorage.setItem("astra_music", musicEnabled.toString()); localStorage.setItem("astra_sound", soundEnabled.toString()); } catch(e) {} }
 
-        // ============================================
-        // AUDIO
-        // ============================================
         function initAudio() { if (!audioContext) { try { audioContext = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) {} } }
         function playTone(f, d, t) { if (!audioContext || !soundEnabled) return; try { var o = audioContext.createOscillator(); var g = audioContext.createGain(); o.connect(g); g.connect(audioContext.destination); o.frequency.value = f; o.type = t || 'sine'; g.gain.setValueAtTime(0.08, audioContext.currentTime); g.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + d); o.start(); o.stop(audioContext.currentTime + d); } catch(e) {} }
         function playClick() { playTone(700, 0.07, 'square'); }
         function playWin() { setTimeout(function(){playTone(520, 0.1, 'sine');}, 0); setTimeout(function(){playTone(650, 0.1, 'sine');}, 70); setTimeout(function(){playTone(780, 0.12, 'sine');}, 140); }
+        function playTick() { playTone(1200, 0.02, 'square'); }
         function toggleMusic() { initAudio(); musicEnabled = document.getElementById('musicToggle').checked; saveAllData(); }
         function toggleSound() { soundEnabled = document.getElementById('soundToggle').checked; saveAllData(); }
 
-        // ============================================
-        // UI UPDATES
-        // ============================================
-        function updateCoinDisplay() { var el = document.getElementById('coinDisplay'); if (el) { el.classList.add('animate'); el.textContent = coins.toLocaleString(); setTimeout(function(){ el.classList.remove('animate'); }, 400); } document.getElementById('settingsCoins').textContent = coins.toLocaleString(); document.getElementById('redeemBalance').textContent = coins.toLocaleString(); document.getElementById('deviceId').textContent = deviceId || 'Unknown'; document.getElementById('progressValue').textContent = coins.toLocaleString() + '/10,000'; document.getElementById('progressFill').style.width = Math.min(100, (coins / MIN_REDEEM) * 100) + '%'; var st = document.getElementById('walletStatus'); var txt = document.getElementById('statusText'); if (coins >= MIN_REDEEM) { st.className = 'wallet-status ready'; txt.textContent = 'Ready to redeem!'; } else { st.className = 'wallet-status pending'; txt.textContent = 'Keep playing!'; } updateRedeemButton(); renderGiftStore(); }
+        function updateCoinDisplay() { var el = document.getElementById('coinDisplay'); if (el) { el.classList.add('animate'); el.textContent = coins.toLocaleString(); setTimeout(function(){ el.classList.remove('animate'); }, 400); } document.getElementById('settingsCoins').textContent = coins.toLocaleString(); document.getElementById('redeemBalance').textContent = coins.toLocaleString(); document.getElementById('deviceId').textContent = deviceId || 'Unknown'; document.getElementById('progressValue').textContent = coins.toLocaleString() + '/20,000'; document.getElementById('progressFill').style.width = Math.min(100, (coins / MIN_REDEEM) * 100) + '%'; var st = document.getElementById('walletStatus'); var txt = document.getElementById('statusText'); if (coins >= MIN_REDEEM) { st.className = 'wallet-status ready'; txt.textContent = 'Ready to redeem!'; } else { st.className = 'wallet-status pending'; txt.textContent = 'Keep playing!'; } updateRedeemButton(); renderGiftStore(); }
         function updateRedeemButton() { var b = document.getElementById('redeemConfirmBtn'); if (b) b.disabled = coins < MIN_REDEEM || !isOnline; }
-        function updateDailyButton() { var b = document.getElementById('dailyBtn'); if (!b) return; var now = Date.now(); var elapsed = now - lastDailyClaim; var cooldown = 86400000; if (!isOnline) { b.disabled = true; b.textContent = 'Offline'; } else if (elapsed >= cooldown) { b.disabled = false; b.textContent = 'Claim Daily Bonus'; } else { b.disabled = true; var r = cooldown - elapsed; b.textContent = Math.floor(r / 3600000) + 'h ' + Math.floor((r % 3600000) / 60000) + 'm left'; } }
+        function updateDailyButton() { 
+            var b = document.getElementById('dailyBtn'); if (!b) return; 
+            var disp = document.getElementById('dailyRewardDisplay');
+            var now = Date.now(); var elapsed = now - lastDailyClaim; var cooldown = 86400000; 
+            if (disp) disp.textContent = dailyRewards[currentStreak - 1] + " Coins";
+            if (!isOnline) { b.disabled = true; b.textContent = 'Offline'; } 
+            else if (elapsed >= cooldown) { b.disabled = false; b.textContent = 'Claim Day ' + currentStreak + ' (' + dailyRewards[currentStreak-1] + ' Coins)'; } 
+            else { b.disabled = true; var r = cooldown - elapsed; b.textContent = 'Next in ' + Math.floor(r / 3600000) + 'h ' + Math.floor((r % 3600000) / 60000) + 'm'; } 
+        }
 
-        // ============================================
-        // GIFTS
-        // ============================================
-        function renderGiftStore() { renderGiftCategory('kidsGifts', giftCategories.kids); renderGiftCategory('dailyGifts', giftCategories.daily); renderGiftCategory('electronicsGifts', giftCategories.electronics); renderGiftCategory('mediumGifts', giftCategories.medium); renderGiftCategory('bigGifts', giftCategories.big); }
-        function renderGiftCategory(id, gifts) { var c = document.getElementById(id); if (!c) return; var h = ''; gifts.forEach(function(g, i) { var afford = coins >= g.coins; var badge = g.badge ? '<span class="gift-badge ' + g.badge + '">' + g.badge + '</span>' : ''; h += '<div class="gift-card' + (afford ? '' : ' disabled') + '" onclick="openGiftConfirm(\'' + id + '\',' + i + ')">'; h += badge; h += '<div class="gift-image-container"><span class="gift-emoji-fallback">' + g.emoji + '</span></div>'; h += '<p class="gift-name">' + g.name + '</p>'; h += '<div class="gift-coins">' + g.coins.toLocaleString() + '</div>'; h += '<button class="gift-redeem-btn" ' + (afford ? '' : 'disabled') + '>Redeem</button></div>'; }); c.innerHTML = h; }
-        function openGiftConfirm(cat, idx) { var map = { 'kidsGifts': giftCategories.kids, 'dailyGifts': giftCategories.daily, 'electronicsGifts': giftCategories.electronics, 'mediumGifts': giftCategories.medium, 'bigGifts': giftCategories.big }; var g = map[cat] ? map[cat][idx] : null; if (!g) return; if (coins < g.coins) return; selectedGift = g; playClick(); document.getElementById('giftConfirmName').textContent = g.name; document.getElementById('giftConfirmCoins').textContent = g.coins.toLocaleString(); document.getElementById('giftConfirmImage').innerHTML = '<span class="gift-emoji-fallback" style="font-size:42px;">' + g.emoji + '</span>'; openModal('giftConfirmModal'); }
-        function confirmGiftRedeem() { if (!selectedGift || coins < selectedGift.coins) { closeModal('giftConfirmModal'); return; } coins -= selectedGift.coins; updateCoinDisplay(); saveAllData(); var code = 'GIFT' + Math.floor(100000 + Math.random() * 900000); closeModal('giftConfirmModal'); setTimeout(function() { window.open(WHATSAPP_URL + encodeURIComponent('Gift: ' + selectedGift.name + '\nCode: ' + code + '\nCoins: ' + selectedGift.coins.toLocaleString()), '_blank'); }, 300); showRewardAd(); }
+        function renderGiftStore() { renderGiftCategory('kidsGifts', giftCategories.kids); renderGiftCategory('dailyGifts', giftCategories.daily); renderGiftCategory('electronicsGifts', giftCategories.electronics); }
+        function renderGiftCategory(id, gifts) { 
+            var c = document.getElementById(id); if (!c) return; var h = ''; 
+            gifts.forEach(function(g, i) { 
+                var afford = coins >= g.coins;
+                var badge = g.badge ? '<span class="gift-badge ' + g.badge + '">' + g.badge + '</span>' : ''; 
+                var stockOut = !g.available ? '<span class="gift-stock-out">Out of Stock</span>' : '';
+                var btnHtml = g.available ? '<button class="gift-redeem-btn" ' + (afford ? '' : 'disabled') + ' onclick="event.stopPropagation(); openGiftConfirm(\'' + id + '\',' + i + ')">Claim</button>' : '<button class="gift-redeem-btn" disabled>Unavailable</button>';
+                h += '<div class="gift-card' + (afford && g.available ? '' : ' disabled') + '" onclick="' + (g.available && afford ? 'openGiftConfirm(\'' + id + '\',' + i + ')' : '') + '">'; 
+                h += badge + stockOut; 
+                h += '<div class="gift-image-container"><span class="gift-emoji-fallback">' + g.emoji + '</span></div>'; 
+                h += '<p class="gift-name">' + g.name + '</p>'; 
+                h += '<p class="gift-approx">Approx. Value: ' + g.approx_val + '</p>'; 
+                h += '<div class="gift-coins">' + g.coins.toLocaleString() + ' Coins</div>'; 
+                h += btnHtml + '</div>'; 
+            }); 
+            c.innerHTML = h; 
+        }
+        function openGiftConfirm(cat, idx) { 
+            var map = { 'kidsGifts': giftCategories.kids, 'dailyGifts': giftCategories.daily, 'electronicsGifts': giftCategories.electronics }; 
+            var g = map[cat] ? map[cat][idx] : null; 
+            if (!g || !g.available) return; 
+            if (coins < g.coins) return; 
+            selectedGift = g; playClick(); 
+            document.getElementById('giftConfirmName').textContent = g.name; 
+            document.getElementById('giftConfirmVal').textContent = g.approx_val; 
+            document.getElementById('giftConfirmCoins').textContent = g.coins.toLocaleString(); 
+            document.getElementById('giftConfirmImage').innerHTML = '<span class="gift-emoji-fallback" style="font-size:42px;">' + g.emoji + '</span>'; 
+            var rdmBtn = document.getElementById('giftConfirmRedeemBtn');
+            rdmBtn.disabled = false; rdmBtn.textContent = 'Claim Now';
+            openModal('giftConfirmModal'); 
+        }
+        function confirmGiftRedeem() { 
+            if (isClaimingGift) return; 
+            if (!selectedGift || coins < selectedGift.coins) { closeModal('giftConfirmModal'); return; } 
+            isClaimingGift = true;
+            var rdmBtn = document.getElementById('giftConfirmRedeemBtn');
+            rdmBtn.disabled = true; rdmBtn.textContent = 'Processing...';
+            coins -= selectedGift.coins; 
+            updateCoinDisplay(); 
+            saveAllData(); 
+            var code = 'ASTRA' + Math.floor(100000 + Math.random() * 900000); 
+            var msg = 'Hello AstraSpin Team,\n\nI would like to claim my reward.\n\nGift: ' + selectedGift.name + '\nApprox Value: ' + selectedGift.approx_val + '\nCoins: ' + selectedGift.coins.toLocaleString() + '\nClaim ID: ' + code + '\n\nPlease let me know the next steps.';
+            setTimeout(function() { 
+                window.open(WHATSAPP_URL + encodeURIComponent(msg), '_blank'); 
+                closeModal('giftConfirmModal');
+                isClaimingGift = false;
+                triggerAdmoloInterstitial(); 
+            }, 800); 
+        }
 
-        // ============================================
-        // WHEEL & SPIN LOGIC
-        // ============================================
-        function drawWheel() { if (!wheelCanvas || !wheelCtx) return; var s = Math.min(wheelCanvas.width, wheelCanvas.height); var cx = s / 2, cy = s / 2; var r = Math.max(10, s / 2 - 10); var a = (2 * Math.PI) / segments.length; wheelCtx.clearRect(0, 0, s, s); wheelCtx.save(); wheelCtx.translate(cx, cy); wheelCtx.rotate(currentRotation * Math.PI / 180); segments.forEach(function(seg, i) { var sa = i * a - Math.PI / 2; var ea = sa + a; wheelCtx.beginPath(); wheelCtx.moveTo(0, 0); wheelCtx.arc(0, 0, r, sa, ea); wheelCtx.closePath(); wheelCtx.fillStyle = seg.color; wheelCtx.fill(); wheelCtx.strokeStyle = 'rgba(255,255,255,0.5)'; wheelCtx.lineWidth = 3; wheelCtx.stroke(); wheelCtx.save(); wheelCtx.rotate(sa + a / 2); wheelCtx.textAlign = 'right'; wheelCtx.fillStyle = '#FFF'; wheelCtx.font = 'bold ' + Math.max(14, Math.floor(r / 11)) + 'px Poppins'; wheelCtx.shadowColor = 'rgba(0,0,0,0.4)'; wheelCtx.shadowBlur = 3; wheelCtx.fillText(seg.value, r - 16, 5); wheelCtx.restore(); }); wheelCtx.restore(); }
+        function drawWheel() { 
+            if (!wheelCanvas || !wheelCtx) return; 
+            var s = Math.min(wheelCanvas.width, wheelCanvas.height); 
+            var cx = s / 2, cy = s / 2; 
+            var r = Math.max(10, s / 2 - 10); 
+            var a = (2 * Math.PI) / segments.length; 
+            wheelCtx.clearRect(0, 0, s, s); 
+            wheelCtx.save(); 
+            wheelCtx.translate(cx, cy); 
+            segments.forEach(function(seg, i) { 
+                var sa = i * a - Math.PI / 2; 
+                var ea = sa + a; 
+                wheelCtx.beginPath(); 
+                wheelCtx.moveTo(0, 0); 
+                wheelCtx.arc(0, 0, r, sa, ea); 
+                wheelCtx.closePath(); 
+                wheelCtx.fillStyle = seg.color; 
+                wheelCtx.fill(); 
+                wheelCtx.strokeStyle = 'rgba(255,255,255,0.3)'; 
+                wheelCtx.lineWidth = 2; 
+                wheelCtx.stroke(); 
+                wheelCtx.save(); 
+                wheelCtx.rotate(sa + a / 2); 
+                wheelCtx.textAlign = 'right'; 
+                wheelCtx.fillStyle = seg.color === '#ffd60a' || seg.color === '#e5e5ea' ? '#1c1c1e' : '#ffffff'; 
+                wheelCtx.font = 'bold ' + Math.max(14, Math.floor(r / 11)) + 'px Poppins'; 
+                wheelCtx.fillText(seg.value, r - 16, 5); 
+                wheelCtx.restore(); 
+            }); 
+            wheelCtx.restore(); 
+        }
         function initWheel() { wheelCanvas = document.getElementById('spinWheel'); if (!wheelCanvas) return; var container = wheelCanvas.parentElement; var size = Math.min(container.offsetWidth, container.offsetHeight); wheelCanvas.width = Math.max(100, size); wheelCanvas.height = Math.max(100, size); wheelCtx = wheelCanvas.getContext('2d'); drawWheel(); }
+        function getWeightedRandomSegment() { let totalWeight = segments.reduce((sum, seg) => sum + seg.weight, 0); let random = Math.random() * totalWeight; for(let i = 0; i < segments.length; i++) { random -= segments[i].weight; if(random <= 0) return i; } return segments.length - 1; }
         function handleSpinClick() { initAudio(); if (!isOnline) return; if (isSpinning) return; if (Date.now() - lastSpinTime < SPIN_COOLDOWN) return; playClick(); startSpinAnimation(); }
-        function startSpinAnimation() { if (isSpinning) return; isSpinning = true; document.getElementById('spinBtn').disabled = true; wheelCanvas.classList.add('spinning'); var rs = Math.floor(Math.random() * segments.length); var sa = 360 / segments.length; var fr = 6 + Math.floor(Math.random() * 3); var ta = 360 - (rs * sa) - (sa / 2); var tr = (fr * 360) + ta; currentRotation += tr; wheelCanvas.style.transform = 'rotate(' + currentRotation + 'deg)'; setTimeout(function() { isSpinning = false; lastSpinTime = Date.now(); totalSpins++; currentReward = segments[rs].value; wheelCanvas.classList.remove('spinning'); saveSpinState(currentReward); saveAllData(); playWin(); showResultAfterPopup(currentReward); }, 4000); }
-        function showResultAfterPopup(r) { document.getElementById('resultAmount').textContent = r + ' Coins'; document.getElementById('claimBtn').disabled = false; openModal('resultModal'); }
-        function handleClaimClick() { initAudio(); coins += currentReward; updateCoinDisplay(); saveAllData(); clearSpinState(); closeModal('resultModal'); startCooldown(); showRewardAd(); }
+        function startSpinAnimation() { 
+            if (isSpinning) return; 
+            isSpinning = true; 
+            document.getElementById('spinBtn').disabled = true; 
+            wheelCanvas.classList.add('spinning'); 
+            let selectedIndex = getWeightedRandomSegment();
+            let segAngle = 360 / segments.length; 
+            let targetAngle = 360 - (selectedIndex * segAngle + segAngle / 2); 
+            let offset = (Math.random() - 0.5) * (segAngle * 0.6); 
+            targetAngle += offset; 
+            let fullSpins = 6 + Math.floor(Math.random() * 4); 
+            let currentNormalized = currentRotation % 360; 
+            let delta = targetAngle - currentNormalized; 
+            if (delta < 0) delta += 360; 
+            currentRotation += delta + (fullSpins * 360); 
+            wheelCanvas.style.transform = 'rotate(' + currentRotation + 'deg)'; 
+            let duration = 4500; let elapsed = 0; let delay = 50; 
+            function tickLoop() { if(elapsed >= duration) return; playTick(); elapsed += delay; delay *= 1.08; setTimeout(tickLoop, delay); } 
+            tickLoop(); 
+            setTimeout(function() { 
+                isSpinning = false; 
+                lastSpinTime = Date.now(); 
+                totalSpins++; 
+                currentReward = segments[selectedIndex].value; 
+                wheelCanvas.classList.remove('spinning'); 
+                saveAllData(); 
+                playWin(); 
+                showResultAfterPopup(currentReward); 
+            }, 4500); 
+        }
+        function showResultAfterPopup(r) { document.getElementById('resultAmount').textContent = r + " Coins"; document.getElementById('claimBtn').disabled = false; openModal('resultModal'); }
+        function handleClaimClick() { initAudio(); coins += currentReward; updateCoinDisplay(); saveAllData(); closeModal('resultModal'); startCooldown(); triggerAdmoloInterstitial(); } 
         function startCooldown() { var b = document.getElementById('spinBtn'); var d = document.getElementById('cooldownDisplay'); b.disabled = true; var r = SPIN_COOLDOWN / 1000; if (cooldownInterval) clearInterval(cooldownInterval); cooldownInterval = setInterval(function() { r--; d.textContent = 'Wait ' + r + 's'; if (r <= 0) { clearInterval(cooldownInterval); cooldownInterval = null; d.textContent = ''; if (isOnline) b.disabled = false; } }, 1000); }
 
-        // ============================================
-        // DAILY & REDEEM
-        // ============================================
-        function claimDailyBonus() { if (!isOnline) return; var now = Date.now(); if (now - lastDailyClaim < 86400000) { updateDailyButton(); return; } initAudio(); playClick(); lastDailyClaim = now; coins += DAILY_BONUS; updateCoinDisplay(); updateDailyButton(); saveAllData(); playWin(); showRewardAd(); }
-        function processRedeem() { if (!isOnline) return; if (coins < MIN_REDEEM) return; initAudio(); playClick(); var code = 'ASTRA' + Math.floor(100000 + Math.random() * 900000); coins -= MIN_REDEEM; updateCoinDisplay(); saveAllData(); closeModal('redeemModal'); window.open(WHATSAPP_URL + encodeURIComponent('Redeem: ' + code + '\nCoins: 10,000'), '_blank'); showRewardAd(); }
+        function claimDailyBonus() { 
+            if (!isOnline) return; 
+            var now = Date.now(); 
+            if (now - lastDailyClaim < 86400000) return; 
+            initAudio(); playClick(); 
+            lastDailyClaim = now; 
+            var reward = dailyRewards[currentStreak - 1];
+            coins += reward; 
+            if (currentStreak < 7) { currentStreak++; } else { currentStreak = 1; } 
+            updateCoinDisplay(); 
+            updateDailyButton(); 
+            saveAllData(); 
+            playWin(); 
+            triggerAdmoloInterstitial(); 
+        }
+        function processRedeem() { if (!isOnline) return; if (coins < MIN_REDEEM) return; initAudio(); playClick(); var code = 'ASTRA' + Math.floor(100000 + Math.random() * 900000); coins -= MIN_REDEEM; updateCoinDisplay(); saveAllData(); closeModal('redeemModal'); window.open(WHATSAPP_URL + encodeURIComponent('Hello AstraSpin Team,\n\nI would like to redeem my coins.\n\nCoins: 20,000\nAmount: ₹20\nRedeem ID: ' + code + '\n\nPlease let me know the next steps.'), '_blank'); triggerAdmoloInterstitial(); }
 
-        // ============================================
-        // ADMOLO ADS
-        // ============================================
         function triggerAdmoloInterstitial() { try { if (window.admolo) { if (typeof window.admolo.showInterstitial === 'function') { window.admolo.showInterstitial(); } else if (typeof window.admolo.requestAd === 'function') { window.admolo.requestAd('interstitial'); } else if (typeof window.admolo.push === 'function') { window.admolo.push(function() { if (window.admolo.showInterstitial) window.admolo.showInterstitial(); }); } } } catch(err) {} }
-        function showRewardAd() { openModal('rewardAdModal'); setTimeout(function() { closeModal('rewardAdModal'); }, 5000); }
-        function closeRewardAd() { closeModal('rewardAdModal'); }
-        
-        // ============================================
-        // GAMEPIX ADS INTEGRATION
-        // ============================================
-        function triggerGamePixInterstitial() {
-            try {
-                if (window.GamePix && typeof window.GamePix.showInterstitial === 'function') {
-                    GamePix.showInterstitial();
-                }
-            } catch(e) {}
-        }
+        function triggerGamePixInterstitial() { try { if (window.GamePix && typeof window.GamePix.showInterstitial === 'function') { GamePix.showInterstitial(); } } catch(e) {} }
 
-        function initGamePixBanner() {
-            // No banner in play.html to avoid duplicate ads
-        }
-
-        // ============================================
-        // NAVIGATION & MODALS
-        // ============================================
-        function goHome() {
-            if (window.parent && window.parent.closeExternalGame) {
-                window.parent.closeExternalGame();
-            } else {
-                window.location.href = 'index.html';
-            }
-        }
-
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-            if (id === 'settingsModal') {
-                updateCoinDisplay();
-                updateDailyButton();
-                document.getElementById('musicToggle').checked = musicEnabled;
-                document.getElementById('soundToggle').checked = soundEnabled;
-            }
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-        }
-
-        function openRedeem() {
-            initAudio();
-            playClick();
-            updateCoinDisplay();
-            openModal('redeemModal');
-        }
-
+        function openModal(id) { document.getElementById(id).classList.add('active'); if (id === 'settingsModal') { updateCoinDisplay(); updateDailyButton(); document.getElementById('musicToggle').checked = musicEnabled; document.getElementById('soundToggle').checked = soundEnabled; } }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+        function openRedeem() { initAudio(); playClick(); updateCoinDisplay(); openModal('redeemModal'); }
         function confirmReset() { playClick(); openModal('confirmModal'); }
-        function resetAllData() { playClick(); coins = 0; totalSpins = 0; lastDailyClaim = 0; currentRotation = 0; lastSpinTime = 0; try { localStorage.removeItem("astra_coins"); localStorage.removeItem("astra_spins"); localStorage.removeItem("astra_daily_claim"); localStorage.removeItem("astra_wheel_rotation"); localStorage.removeItem("astra_last_spin_time"); clearSpinState(); } catch(e) {} updateCoinDisplay(); updateDailyButton(); closeModal('confirmModal'); closeModal('settingsModal'); }
+        function resetAllData() { playClick(); coins = 0; lastDailyClaim = 0; currentStreak = 1; currentRotation = 0; lastSpinTime = 0; try { localStorage.removeItem("astra_coins"); localStorage.removeItem("astra_daily_claim"); localStorage.removeItem("astra_daily_streak"); localStorage.removeItem("astra_wheel_rotation"); localStorage.removeItem("astra_last_spin_time"); } catch(e) {} updateCoinDisplay(); updateDailyButton(); closeModal('confirmModal'); closeModal('settingsModal'); }
 
-        // ============================================
-        // INITIALIZATION
-        // ============================================
         document.addEventListener('DOMContentLoaded', function() {
-            loadAllData();
-            updateCoinDisplay();
-            updateDailyButton();
-            renderSettingsLinks();
-            
-            var currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-            var lp = document.getElementById('lastUpdatedPrivacy'); if(lp) lp.textContent = currentDate;
-            var lt = document.getElementById('lastUpdatedTerms'); if(lt) lt.textContent = currentDate;
-            var ld = document.getElementById('lastUpdatedDisclaimer'); if(ld) ld.textContent = currentDate;
-
+            loadAllData(); updateCoinDisplay(); updateDailyButton(); renderSettingsLinks();
             window.addEventListener('online', () => { isOnline = true; updateDailyButton(); });
             window.addEventListener('offline', () => { isOnline = false; updateDailyButton(); });
-            
-            setInterval(updateDailyButton, 60000);
-            
-            initWheel();
-            
-            setTimeout(function() {
-                triggerAdmoloInterstitial();
-                triggerGamePixInterstitial();
-            }, 1500);
+            setInterval(updateDailyButton, 60000); initWheel();
+            setTimeout(function() { triggerAdmoloInterstitial(); triggerGamePixInterstitial(); }, 1500);
         });
-
-        document.querySelectorAll('.modal-overlay').forEach(function(o) {
-            o.addEventListener('click', function(e) {
-                if (e.target === o) o.classList.remove('active');
-            });
-        });
-
+        document.querySelectorAll('.modal-overlay').forEach(function(o) { o.addEventListener('click', function(e) { if (e.target === o) o.classList.remove('active'); }); });
         document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
     </script>
 </body>

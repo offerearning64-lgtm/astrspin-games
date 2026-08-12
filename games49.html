@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All 49 Games - AstraSpin</title>
+    <meta name="description" content="Explore the full collection of 49 premium HTML5 games on AstraSpin. Action, puzzle, racing, and more!">
+    <link rel="canonical" href="https://astraspin.in/games49.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300c853'/%3E%3Cpath d='M50 20L58 40H78L62 52L68 72L50 60L32 72L38 52L22 40H42Z' fill='white'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #f4fdf6; --bg-secondary: #e8f7ec; --bg-card: #ffffff; --text-dark: #102a1c; --text-medium: #3b5a45; --text-light: #7a9285; --accent-green: #00c853; --accent-green-dark: #009624; --accent-green-light: #5efc82; --gold: #ffb300; --gold-dark: #ff8f00; --shadow-soft: 0 8px 30px rgba(0, 200, 83, 0.08); --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05); --border-light: #d1e8da; --radius: 24px; --radius-sm: 14px; --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px); }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; user-select: none; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-dark); line-height: 1.5; padding: 20px; padding-top: calc(20px + var(--safe-top)); }
+        .header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .back-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border-light); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-soft); flex-shrink: 0; text-decoration: none; }
+        .back-btn svg { width: 20px; height: 20px; color: var(--text-dark); }
+        .page-title { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: var(--text-dark); }
+        .search-bar { width: 100%; max-width: 1200px; margin: 0 auto 25px auto; padding: 14px 20px; border-radius: 50px; border: 2px solid var(--border-light); background: var(--bg-card); font-size: 15px; font-family: 'Inter', sans-serif; color: var(--text-dark); outline: none; box-shadow: var(--shadow-soft); }
+        
+        .games-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 1200px; margin: 0 auto; }
+        @media (min-width: 600px) { .games-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 900px) { .games-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 1200px) { .games-grid { grid-template-columns: repeat(5, 1fr); } }
+        .game-card { background: var(--bg-card); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid var(--border-light); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .game-card:hover { transform: scale(1.05); box-shadow: 0 10px 24px rgba(0,0,0,0.15); z-index: 5; }
+        .game-card:active { transform: scale(0.98); }
+        .game-thumb-wrapper { width: 100%; height: 120px; background: #f0f0f0; position: relative; overflow: hidden; }
+        .game-thumb { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0; transition: opacity 0.3s ease; }
+        .game-thumb.loaded { opacity: 1; }
+        .card-spinner { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 28px; height: 28px; border: 3px solid rgba(0, 200, 83, 0.2); border-top-color: var(--accent-green); border-radius: 50%; animation: spin 0.8s linear infinite; z-index: 1; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .img-error { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); color: var(--text-light); font-size: 24px; }
+        .game-name { font-size: 13px; font-weight: 600; color: var(--text-medium); padding: 10px 8px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .no-results { text-align: center; color: var(--text-light); font-size: 16px; margin-top: 40px; grid-column: 1 / -1; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="back-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
+        <div class="page-title">All 49 Games</div>
+    </div>
+    <input type="text" class="search-bar" id="searchInput" placeholder="Search games..." oninput="filterGames()">
+    
+    <div class="games-grid" id="gamesGrid"></div>
+
+    <script>
+        const games = [
+            { name: "AstraSpin", thumbnail: "https://www.dropbox.com/scl/fi/2yq5ynci8qqk51p5pet3f/file_00000000aa1c81faa781466976d65032.png?rlkey=dn6vyl4x89x01qgtpqn9h3086&st=bp9rfi3m&raw=1", gameUrl: "play.html" },
+            { name: "Wolfoo Maze Adventure", thumbnail: "https://www.dropbox.com/scl/fi/uml1w7f681jtyfti8dk6g/file_00000000196482088c9a6d04bcc8d731.png?rlkey=3oyh9294wr9o0rgz5hgkob77p&st=4q1jpcxp&raw=1", gameUrl: "https://html5.gamemonetize.games/325h6p6tzaeefiur6a50ype2k3id3rrk/" },
+            { name: "Stickboy War", thumbnail: "https://www.dropbox.com/scl/fi/j85uva6nxwmmw5s96juub/file_0000000026b08208afa410ed06532a7f.png?rlkey=5wufbegoie8i7mus2k64i01pm&st=jl435rf6&raw=1", gameUrl: "https://html5.gamemonetize.games/5g0mc76dxrv2gwcdr9p5yctnru12xdpe/" },
+            { name: "Cars Tycoon", thumbnail: "https://www.dropbox.com/scl/fi/d2k3ino1689muqekmzbmj/file_0000000076348208ab73c335172f2bb2.png?rlkey=te51m4xmpc728h1vwsbsskajh&st=oxzzj8bw&raw=1", gameUrl: "https://html5.gamemonetize.games/xwaq928fa1zfi6j3xrwzrfkux7mw0eo4/" },
+            { name: "Snake Puzzle 3D Game", thumbnail: "https://www.dropbox.com/scl/fi/z46m3l8kod69275el76e7/file_0000000047088208aa0fed218685bb45.png?rlkey=fj2qv9gpb5nt3xitk010okhag&st=lrhg4n1c&raw=1", gameUrl: "https://html5.gamemonetize.games/p7r8fcbrgcsuxbi1blzqg8hdeh8armks/" },
+            { name: "BlockStacking", thumbnail: "https://www.dropbox.com/scl/fi/2ogls9ihqccu0eocll3qe/file_00000000873c82089316cd585c7f8671.png?rlkey=etkd5l7bbt0lqcy65uuetgqsl&st=jp2soehl&raw=1", gameUrl: "https://html5.gamemonetize.games/nuaat2rdliues9xqaphhoqvss2ay1ohn/" },
+            { name: "forest dash", thumbnail: "https://www.dropbox.com/scl/fi/ed5a9dhlkc8ilak37gyi5/file_0000000040708208a02b6849162b00b6.png?rlkey=uhcx946gzxfbpakeittz1i8s4&st=gn9uuy6i&raw=1", gameUrl: "https://html5.gamemonetize.games/rz9ba6bfxnv8xaujk5p4hhcz58k5cy6j/" },
+            { name: "Reds Winding Way", thumbnail: "https://www.dropbox.com/scl/fi/umujh830tl8uvll68esbz/file_00000000d5e48208ac7f11a7ca09c9e7.png?rlkey=zb6gjcos6t3pecbcatgm8myr8&st=n1wixcsb&raw=1", gameUrl: "https://html5.gamemonetize.games/fkfno9625kk7y8564cllyqj9vb27bwfi/" },
+            { name: "Undead Walking 3D", thumbnail: "https://www.dropbox.com/scl/fi/5eoapxx4dkc4q53dwby4s/file_00000000e340820899531d27d2f60777.png?rlkey=r4c6qrtih57ig15w693n9uxsr&st=e75i2tqp&raw=1", gameUrl: "https://html5.gamemonetize.games/66bos2g1jhk2r1ja7d9m1w8bx5in42wm/" },
+            { name: "Shadeo", thumbnail: "https://www.dropbox.com/scl/fi/yjmcxjlz5dyk5084plmrn/file_0000000075f082119b0c41ccfa0bebee.png?rlkey=a8k8g6egvx5pq195uv1xiscsy&st=c7qq62lg&raw=1", gameUrl: "https://html5.gamemonetize.co/8vfho1asm0098j2cmonh52mejbn4wed1/" },
+            { name: "Maze Escape Hero", thumbnail: "https://www.dropbox.com/scl/fi/whr516uw59uggmwpzg538/file_00000000a8648208a9ccc11ab296a1bc.png?rlkey=617ebuil48v85y4rwhg2zj19d&st=omqwd7x7&raw=1", gameUrl: "https://html5.gamemonetize.games/q8b3ptca79qtunfxcswnjk7nbmff758j/" },
+            { name: "Wolfoo Tangram", thumbnail: "https://www.dropbox.com/scl/fi/cc1br6rsy9a1bmo34whcx/file_00000000540c8208bc670e9160084f8e.png?rlkey=fejs9wvnyoncomns42a5bram1&st=c9f9yixv&raw=1", gameUrl: "https://html5.gamemonetize.games/jybkltxxrz8gpuo138l06twrzi5k969a/" },
+            { name: "My Army Base", thumbnail: "https://www.dropbox.com/scl/fi/pt900riqkge0urfls1bwp/file_000000008f988208a377f6f1eb2baddd.png?rlkey=jknu80waclrew27jquqb5n9jc&st=uu3cq7l3&raw=1", gameUrl: "https://html5.gamemonetize.games/572ceho5rkg6hwtxu4cbbzozhnic7qgp/" },
+            { name: "Ninja Gorilla Jigsaw Puzzle", thumbnail: "https://www.dropbox.com/scl/fi/736i01vxplxp0szy91705/file_00000000ed00820888f3036c5967d74b.png?rlkey=njmx08nlhd8puhn7407x3k4f2&st=i2c1q7nj&raw=1", gameUrl: "https://html5.gamemonetize.games/kk58533eij7rp0qwzzz4k0zmzkhqxqq9/" },
+            { name: "Border Clash", thumbnail: "https://www.dropbox.com/scl/fi/nkmyi2t274opdj308k9tu/file_0000000043148209a15c1d5d9f704e86.png?rlkey=89e4a8q9b44c0igmllr8bmz0f&st=rv3u0ao9&raw=1", gameUrl: "https://html5.gamemonetize.games/5921u29madpu933ts7ntcfelv43c7w4z/" },
+            { name: "Nokia 3310 Snack Game", thumbnail: "https://www.dropbox.com/scl/fi/onaqt4ylaiubzkcj5c4rd/file_00000000c1c08208a3d2bae2286ebfa5.png?rlkey=r3q1zinadk2mfg45upbzy0txp&st=8viuy0ij&raw=1", gameUrl: "https://html5.gamemonetize.games/6b0xlr5mm4dc6fhb5vmk0fd0pycakrx4/" },
+            { name: "The Greedy Crow", thumbnail: "https://www.dropbox.com/scl/fi/nkmyi2t274opdj308k9tu/file_0000000043148209a15c1d5d9f704e86.png?rlkey=89e4a8q9b44c0igmllr8bmz0f&st=2r424hri&raw=1", gameUrl: "https://html5.gamemonetize.games/ho87h1i7wg0b4z4wn8povt2yp0kpuu2s/" },
+            { name: "Evolution Arena Battle Royale", thumbnail: "https://www.dropbox.com/scl/fi/d3d27rpvfogyot9hkbkb0/file_00000000ab108209b4fc26ee5e1910c4.png?rlkey=qhmm6mfm6n4aec8dkraj4zlo6&st=elps7uob&raw=1", gameUrl: "https://html5.gamemonetize.games/4adbhwgxkorksg0bcpj17xsnm1p7b5x2/" },
+            { name: "Block Crush", thumbnail: "https://www.dropbox.com/scl/fi/ttmur0s4syhz3uatt9fjx/file_00000000fc98821191d6c7e1244ed246.png?rlkey=5oiuwr3khlk06tkxn5cc1ntur&st=cqrurm7l&raw=1", gameUrl: "https://html5.gamemonetize.games/5uxyz8rtoo2zfghu0svgkcgmn7akf4yh/" },
+            { name: "Dragon Power", thumbnail: "https://www.dropbox.com/scl/fi/gustfl7w2gz5vbhdiua75/file_00000000938c8211887171621506b1e0.png?rlkey=6tb889qji4r6uclvm70ahjyb0&st=w2y85ibp&raw=1", gameUrl: "https://html5.gamemonetize.games/8wn4vu90rxh6ln82i8s066610snxmoiu/" },
+            { name: "Merge Royal 2048", thumbnail: "https://www.dropbox.com/scl/fi/hb2c23895bb8k8vm8v5dk/file_0000000026a482088484eddff6d26818.png?rlkey=yqqh81n5uyd9jlkmfi7k7kfnj&st=esoymgtk&raw=1", gameUrl: "https://html5.gamemonetize.games/25r9f4p2wvx39zl81xmfz0s6v6txvyoa/" },
+            { name: "The Last Adventure", thumbnail: "https://www.dropbox.com/scl/fi/tjl39bm5xifmpbvvzq919/file_00000000b3f08211b431a30bb1e74482.png?rlkey=fdezkepexj4p8y1bu51oqmaov&st=j7s4nocw&raw=1", gameUrl: "https://html5.gamemonetize.games/nrrbcxfrqv6tc74rixopccow45qm8blf/" },
+            { name: "Drive and Dodge: Car Racing 3D", thumbnail: "https://www.dropbox.com/scl/fi/1jiwbu89216fw9msuap62/file_0000000027e48211b75c1910748492ab.png?rlkey=n0lw8zmo4skajijwc4r1j9vpb&st=ze5p17gb&raw=1", gameUrl: "https://html5.gamemonetize.games/eevs3wrwe1jwqi87dh1ov6n2opkmdb1y/" },
+            { name: "Splatcha!", thumbnail: "https://www.dropbox.com/scl/fi/vblffwvwwjgbz178a03xd/file_000000006c9081fb9e072e21711ef34d.png?rlkey=x7esaksmkxs4x0zkjnwq5i90m&st=2jo96gxr&raw=1", gameUrl: "https://html5.gamemonetize.games/fxim8vjv68vmfqt3bqfr62mmhn566t52/" },
+            { name: "Obby: Traps And Jumps", thumbnail: "https://www.dropbox.com/scl/fi/r529uaivc16j6tars75w6/file_000000009e2c8230be77e3cbcb752b4f.png?rlkey=rdcpv8x7quivdx7krdgruewze&st=6urh8hhr&raw=1", gameUrl: "https://html5.gamemonetize.games/jzxxdr3hvkp7s3zcwhmicrot1q7rmpvi/" },
+            { name: "Tiger Coloring Book", thumbnail: "https://www.dropbox.com/scl/fi/63s2yuo5kbwhh5uhw63ps/file_00000000266081fdb8c36e1dae72a402.png?rlkey=cqwo7f5v0ny0l9wof4zrhry0t&st=2vmkcwbm&raw=1", gameUrl: "https://html5.gamemonetize.games/9mezx3shlsfag58h6f3qseyxxtmkdfrt/" },
+            { name: "Trio Twist Puzzle", thumbnail: "https://www.dropbox.com/scl/fi/hb2c23895bb8k8vm8v5dk/file_0000000026a482088484eddff6d26818.png?rlkey=yqqh81n5uyd9jlkmfi7k7kfnj&st=hxs9ilew&raw=1", gameUrl: "https://html5.gamemonetize.games/19bydoh88tudafz8fvhm97llktgt6vih/" },
+            { name: "Cute Animal Puzzle Game", thumbnail: "https://www.dropbox.com/scl/fi/3m43lplugkbj13vuhzsd7/file_00000000af4081fbbd5c46b2a1cc42b5.png?rlkey=nirelinhttl2q64l33yo9k0ps&st=1xvx1vgh&raw=1", gameUrl: "https://html5.gamemonetize.games/svc0a1dfc37v3yl57d78fv9zja6vbrbh/" },
+            { name: "Mahjong Bird Tiles", thumbnail: "https://www.dropbox.com/scl/fi/nch2vfo3kw01f3hoq0684/Mahjong-Bird-Tiles-512x512.jpg?rlkey=v2kkrv5041knn4g16q7j51lg0&st=250ud7y6&raw=1", gameUrl: "https://html5.gamemonetize.games/i3eg65u2gdp73rrxdlycvue65qxik1ha/" },
+            { name: "Emoji Line Puzzle", thumbnail: "https://www.dropbox.com/scl/fi/2dyhnhn2v9yaz2cle016a/file_00000000c1308207beec1a07f7d667da.png?rlkey=1p43cc4nlklike3c71zclzg82&st=aq1qj95w&raw=1", gameUrl: "https://html5.gamemonetize.games/ussw9l3ypn90k3dq23xugv25xfde2h0z/" },
+            { name: "Sunny Spell", thumbnail: "https://www.dropbox.com/scl/fi/zgu969w4moef87h9qbr3p/file_0000000076388209b735214ec05a0031.png?rlkey=fle5apubp1f7dctzxk4g05xyq&st=y5oosis2&raw=1", gameUrl: "https://html5.gamemonetize.games/13vb7ekr5qbc07cea99y3gfu1mdl0beb/" },
+            { name: "Taxi Driver Ultimate", thumbnail: "https://www.dropbox.com/scl/fi/fer52zb7osx39etfmd2hb/file_00000000a36081f8a4bf0d415ac351e6.png?rlkey=jd72941t3blwetk7k14oh7z8z&st=jkabepl7&raw=1", gameUrl: "https://html5.gamemonetize.games/pmto5x09kwupuhqxuv893k4209b43sra/" },
+            { name: "Landing Hero", thumbnail: "https://www.dropbox.com/scl/fi/wey3ktewnmos9aa2mna3j/file_0000000005e8820ba611142731fbc4b5.png?rlkey=50ncd18vuq1olw67rcsj5h33u&st=7smte9ld&raw=1", gameUrl: "https://html5.gamemonetize.games/unl2t99qvksbjdrfmns3o8tl9zulikxn/" },
+            { name: "Paws Up", thumbnail: "https://www.dropbox.com/scl/fi/apxdho68w28b00p3tyref/file_00000000081c81fabf6b6764464b3dcf.png?rlkey=8bcxfmvvsgghaf6j0o90yd6q0&st=337nibuy&raw=1", gameUrl: "https://html5.gamemonetize.games/byup37a0na7wv43exxwl2onzvl3eu10e/" },
+            { name: "Zombi Defense", thumbnail: "https://www.dropbox.com/scl/fi/l8bwj6jg8w28f7faq57v6/file_00000000def0823093819caa6699605d.png?rlkey=ixgkbxpq42dbfkv5d6vcmw39d&st=wel3zale&raw=1", gameUrl: "https://html5.gamemonetize.games/prhu172i8mne9pzmzscopypk1eyrqvve/" },
+            { name: "Hero Monster Battle Game", thumbnail: "https://www.dropbox.com/scl/fi/504p6bgnu4f9123apgaxb/file_00000000de9c81fa910ee35317febd70.png?rlkey=9xvx333ek7nooade9lyt9xf5d&st=nw1ffm7h&raw=1", gameUrl: "https://html5.gamemonetize.games/6doelx16q7orssbq3ux8a8u1bra89w0c/" },
+            { name: "Sniper Corps", thumbnail: "https://www.dropbox.com/scl/fi/tp1tp2l3peqrnp4x5rbyo/file_000000001808820bb44f63032ae5723e.png?rlkey=w8u7r6zbo99h73x3pb1gn9yy2&st=v7q9k3qd&raw=1", gameUrl: "https://html5.gamemonetize.games/awoa5hf68467okwkcqntdqo7kzuvx2bq/" },
+            { name: "Dresser Avatar", thumbnail: "https://www.dropbox.com/scl/fi/z30fvry6uj07etqbagkre/file_0000000075848211adf9753c2f3ad03a.png?rlkey=ff8bw4bkqvf2248zqbkz2nfnz&st=agbwxz9u&raw=1", gameUrl: "https://html5.gamemonetize.games/6our5ufbzognhn9cnw3nopxrzhxzg6k9/" },
+            { name: "Bikkings: brothers to valhalla", thumbnail: "https://www.dropbox.com/scl/fi/uzxwvbcamwzgvwdvl72pt/file_000000009fa081faaee3ef9e69098af8.png?rlkey=ic5k7d96glp5hdwelmjoo5p81&st=id8ghgsv&raw=1", gameUrl: "https://html5.gamemonetize.games/655n5q7c9b3lkrt0sj373e9ccvcek2yx/" },
+            { name: "MemoPlay", thumbnail: "https://www.dropbox.com/scl/fi/mwbbphxyup25qsm505tlc/file_0000000067c4820b9ec1a584736f626f.png?rlkey=tqp799ve8mnskroz6l8wtqkjt&st=dyi7jhkt&raw=1", gameUrl: "https://html5.gamemonetize.games/kubm5wihrxgifm5h0my3cl9eucoiq2v3/" },
+            { name: "Chinchilla Trails", thumbnail: "https://www.dropbox.com/scl/fi/bsp8iekt9aeytz72esfkv/file_000000004104820785b08f0ec773bd65.png?rlkey=ms4w9xjne5sjz43nnvaeokpfj&st=9mqrzoy5&raw=1", gameUrl: "https://html5.gamemonetize.games/psex0pu8c87epfkv1oyz1udy08443lm7/" },
+            { name: "Bad Cat Prankster Moms Return", thumbnail: "https://www.dropbox.com/scl/fi/szgvbspndewmao8v5tz0j/file_00000000cdc081faae5b4099e2de2bfe.png?rlkey=j3esyy98g7q8jmh9j74i0730d&st=c9yopntz&raw=1", gameUrl: "https://html5.gamemonetize.games/1d7if1wi5xc3huco6ti0nr2mbwexqimr/" },
+            { name: "Freight", thumbnail: "https://www.dropbox.com/scl/fi/5sj46gh14uzojthjj63b4/file_00000000226c820b8c38783c311e3534.png?rlkey=yhdk2tz0w5w4euu1a1hp3ynip&st=ee9oprv4&raw=1", gameUrl: "https://html5.gamemonetize.games/bzurcjmddtj7xub90bf9puihzlj68i6v/" },
+            { name: "SkyHop!", thumbnail: "https://www.dropbox.com/scl/fi/u726d08gr019gwn7ytma0/file_00000000082481fa901d08cf6fbff595.png?rlkey=ibcdhxzen1ps65zzhaf6p313v&st=moxsmzsn&raw=1", gameUrl: "https://html5.gamemonetize.games/lf6epuc15f2gnwxjvkk1l78cpdo68krb/" },
+            { name: "Bear Go Home", thumbnail: "https://www.dropbox.com/scl/fi/u69oiezh6d26ak75shubd/file_00000000935c820b81609e0692af5e71.png?rlkey=opaea7zvq74lm4l6hjcwry9jn&st=khaom0f0&raw=1", gameUrl: "https://html5.gamemonetize.games/7jvzazw0rfch8xt5yb9t4dqwvrfcnau0/" },
+            { name: "Mountain Bike Xtreme", thumbnail: "https://www.dropbox.com/scl/fi/wihnd4cqclwrojh5hus8v/file_00000000ea608211a99a31644840e1b1.png?rlkey=g2ashkgv7lyozr9miz3lxsaj9&st=3z8762r3&raw=1", gameUrl: "https://html5.gamemonetize.games/zyhebe7h94bxl7ig0gw7mcesn9tst3bm/" },
+            { name: "Zombie Siege", thumbnail: "https://www.dropbox.com/scl/fi/ovj1flghdy0kgnu8beye0/file_00000000d97481faa57edb4a2d477ba5.png?rlkey=sekvld8allzzykmi2x73ibviw&st=ayd11euv&raw=1", gameUrl: "https://html5.gamemonetize.games/tark0i208v8u3vh634f5k7p2xffftwgv/" },
+            { name: "Car Word Hunt", thumbnail: "https://www.dropbox.com/scl/fi/xrkb93qwuafwt8o3p1wh1/file_00000000a618820b992e79b6df087ad2.png?rlkey=487sv0ohs2zvh7u28vic3piox&st=f0oulryq&raw=1", gameUrl: "https://html5.gamemonetize.games/u2m6de7ylbhetfhprgckox2krn5uwkto/" },
+            { name: "Sort Color Water Puzzle", thumbnail: "https://www.dropbox.com/scl/fi/faas6hyyixybiyj2x44ue/file_0000000070e8820683570f0d98c63931.png?rlkey=h2svk45vq5ag0q10wzhippucb&st=49obwg51&raw=1", gameUrl: "https://html5.gamemonetize.games/tji0kvqoftggeanohsx75fatit8vb9b8/" },
+            { name: "Kim Jong Un Backroom", thumbnail: "https://www.dropbox.com/scl/fi/9aqkpvjl15vvdoiwc5rrg/file_000000001b288211b286ea374edc61b3.png?rlkey=ndl46xbel3b15pryk6fu6ip72&st=dvy7wfi8&raw=1", gameUrl: "https://html5.gamemonetize.games/ovdr36phl8kni2mh8qop0ml5992qk0iv/" }
+        ];
+
+        function renderGames(filter = '') {
+            const grid = document.getElementById('gamesGrid');
+            grid.innerHTML = '';
+            const filteredGames = games.filter(g => g.name.toLowerCase().includes(filter.toLowerCase()));
+            
+            if (filteredGames.length === 0) {
+                grid.innerHTML = '<p class="no-results">No games found matching your search.</p>';
+                return;
+            }
+
+            filteredGames.forEach((game, index) => {
+                const card = document.createElement('div');
+                card.className = 'game-card';
+                card.innerHTML = `
+                    <div class="game-thumb-wrapper">
+                        <div class="card-spinner"></div>
+                        <img src="${game.thumbnail}" class="game-thumb" alt="${game.name}" loading="lazy" decoding="async" onload="this.classList.add('loaded'); this.previousElementSibling.style.display='none';" onerror="this.previousElementSibling.style.display='none'; this.parentElement.classList.add('img-error');">
+                    </div>
+                    <div class="game-name">${game.name}</div>
+                `;
+                card.onclick = () => {
+                    window.location.href = 'index.html?game=' + encodeURIComponent(game.gameUrl);
+                };
+                grid.appendChild(card);
+            });
+        }
+
+        function filterGames() {
+            const input = document.getElementById('searchInput');
+            renderGames(input.value);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => renderGames());
+    </script>
+</body>
+</html>
