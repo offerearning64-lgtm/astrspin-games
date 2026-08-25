@@ -202,10 +202,6 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 #loadMoreBtn{display:block;margin:20px auto 0;padding:12px 24px;background:var(--bg-secondary);border:2px solid var(--border-light);border-radius:var(--radius-sm);color:var(--text-dark);font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;cursor:pointer}
 #loadMoreBtn:active{transform:scale(.98)}
 #loadMoreBtn:disabled{opacity:.5;cursor:not-allowed}
-
-/* AdSense Container CSS - Visible */
-.adsense-placeholder { display: block !important; width: 100%; max-width: 1200px; margin: 20px auto; text-align: center; overflow: hidden; min-height: 100px; }
-.adsense-placeholder ins.adsbygoogle { display: block; width: 100%; }
 </style>
 </head>
 <body>
@@ -225,10 +221,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 </button>
 </header>
 
-<!-- AdSense Ad Block (Top) - REPLACE YOUR_AD_SLOT_ID WITH YOUR ACTUAL AD SLOT ID -->
-<div class="adsense-placeholder" id="ad-top">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4203020665151099" data-ad-slot="YOUR_AD_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins>
-</div>
+<!-- AdSense Ad Blocks Removed -->
 
 <div class="single-banner-container" onclick="openGame('play.html')">
 <img src="https://www.dropbox.com/scl/fi/6tpcs51vnqfq1jcctrjic/file_0000000005dc820ba3f6b07158bca521.png?rlkey=qxrrir6mjhejjnazz4c7wkma3&raw=1" alt="AstraSpin Banner" class="single-banner-img" fetchpriority="high" decoding="async">
@@ -261,11 +254,6 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 </a>
 </div>
 
-<!-- AdSense Ad Block (Middle) - REPLACE YOUR_AD_SLOT_ID WITH YOUR ACTUAL AD SLOT ID -->
-<div class="adsense-placeholder" id="ad-middle">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4203020665151099" data-ad-slot="YOUR_AD_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins>
-</div>
-
 <div class="games-section" id="moreGamesSection" style="margin-top:40px;">
 <h2 class="section-title">Discover More (Third-Party)</h2>
 <div class="games-grid" id="gamepixGrid"></div>
@@ -296,11 +284,6 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 <a onclick="navigate('#privacy')">Privacy Policy</a>
 <a onclick="navigate('#terms')">Terms & Conditions</a>
 <a onclick="navigate('#disclaimer')">Disclaimer</a>
-</div>
-
-<!-- AdSense Ad Block (Bottom) - REPLACE YOUR_AD_SLOT_ID WITH YOUR ACTUAL AD SLOT ID -->
-<div class="adsense-placeholder" id="ad-bottom">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4203020665151099" data-ad-slot="YOUR_AD_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins>
 </div>
 
 <p class="copyright">&copy; 2026 AstraSpin. All rights reserved.</p>
@@ -498,14 +481,6 @@ fbBtn.addEventListener('pointercancel',e=>{if(e.pointerId===activePointerId){act
 document.addEventListener('DOMContentLoaded',function(){loadAllData();updateCoinDisplay();updateDailyButton();renderSettingsLinks();window.addEventListener('online',()=>{isOnline=true;updateDailyButton();});window.addEventListener('offline',()=>{isOnline=false;updateDailyButton();});setInterval(updateDailyButton,60000);setTimeout(initGamePixBanner,2000);fetchGamePixGames(1);setGames49Banner();const urlParams=new URLSearchParams(window.location.search);const gameParam=urlParams.get('game');if(gameParam){try{let g=decodeURIComponent(gameParam);openGame(g,true);}catch(e){}}setTimeout(function(){triggerAdmoloInterstitial();triggerGamePixInterstitial();},1500);});
 document.querySelectorAll('.modal-overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('active');}));
 document.addEventListener('contextmenu',e=>e.preventDefault());
-
-// AdSense Initialization
-try {
-    var ads = document.getElementsByClassName('adsbygoogle');
-    for (var i = 0; i < ads.length; i++) {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    }
-} catch (e) {}
 </script>
 </body>
 </html>
