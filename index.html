@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="monetag" content="9a3e0dff94b0c3c1c43ca35cfa4efb79">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>AstraSpin - Play Free Online Games & Spin to Win</title>
 <meta name="description" content="Play online games for free on AstraSpin. Enjoy unlimited HTML5 mobile games, spin and win games, and play games online without any downloads.">
-<meta name="robots" content="index, follow">
-
-<!-- Added Google AdSense Account Verification Meta Tag -->
-<meta name="google-adsense-account" content="ca-pub-4203020665151099">
-
 <link rel="canonical" href="https://astraspin.in/" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300c853'/%3E%3Cpath d='M50 20L58 40H78L62 52L68 72L50 60L32 72L38 52L22 40H42Z' fill='white'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!-- Correct AdSense Script Loader -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4203020665151099" crossorigin="anonymous"></script>
+<!-- Google AdSense Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9671316621072835"
+     crossorigin="anonymous"></script>
 
 <script class="admoloScript" src="https://cdn.admolo.com/assets/ads/ad.js"></script>
 <script type="text/javascript" src="https://api.gamepix.com/v1/sdk.js"></script>
@@ -41,21 +36,16 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 .single-banner-img{display:block;width:100%;height:auto}
 .section-title{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:var(--text-dark);margin-bottom:15px;padding-left:4px;display:flex;align-items:center;gap:8px}
 .section-title::before{content:'';width:4px;height:18px;background:var(--accent-green);border-radius:2px;display:inline-block}
-
-/* Premium Featured Card Design */
-.featured-rotation-container { display: flex; background: linear-gradient(135deg, #ffffff 0%, #f0fff4 100%); border-radius: 28px; overflow: hidden; box-shadow: 0 12px 40px rgba(0, 200, 83, 0.12); border: 1px solid rgba(255, 255, 255, 0.8); margin-bottom: 32px; cursor: pointer; transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease; position: relative; }
-.featured-rotation-container:hover { transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0, 200, 83, 0.2); }
-.featured-rotation-container:active { transform: translateY(0) scale(0.99); }
-.featured-thumb-wrapper { width: 120px; height: 120px; flex-shrink: 0; background: #f0f0f0; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 12px; border-radius: 20px; margin: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
-.featured-thumb { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 12px; opacity: 0; transition: opacity 0.5s ease, transform 0.5s ease; }
-.featured-rotation-container:hover .featured-thumb { transform: scale(1.05); }
-.featured-info { padding: 24px 24px 24px 0; display: flex; flex-direction: column; justify-content: center; flex: 1; min-width: 0; position: relative; }
-.featured-badge { display: inline-block; background: rgba(0, 200, 83, 0.1); color: var(--accent-green-dark); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border-radius: 12px; margin-bottom: 8px; width: fit-content; }
-.featured-info h3 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.featured-info p { font-size: 13px; color: var(--text-medium); margin-bottom: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
-.fade-swap { animation: fadeSwap .5s ease; }
+.featured-rotation-container{display:flex;background:var(--bg-card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-soft);border:1px solid var(--border-light);margin-bottom:32px;cursor:pointer;transition:transform .2s}
+.featured-rotation-container:active{transform:scale(.98)}
+.featured-thumb-wrapper{width:140px;height:140px;flex-shrink:0;background:var(--bg-secondary);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:12px}
+.featured-thumb{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;opacity:0;transition:opacity .3s ease}
+.featured-info{padding:20px;display:flex;flex-direction:column;justify-content:center;flex:1;min-width:0}
+.featured-info h3{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:var(--text-dark);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.featured-info p{font-size:13px;color:var(--text-light);margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.play-now-btn{align-self:flex-start;background:var(--accent-green);color:#fff;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;border:none;box-shadow:0 4px 10px rgba(0,200,83,.2)}
+.fade-swap{animation:fadeSwap .5s ease}
 @keyframes fadeSwap{0%{opacity:0;transform:translateY(5px)}100%{opacity:1;transform:translateY(0)}}
-
 .games-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding-bottom:20px}
 @media(min-width:600px){.games-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:900px){.games-grid{grid-template-columns:repeat(4,1fr)}}
@@ -221,29 +211,23 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
 </button>
 </header>
-
-<!-- AdSense Ad Blocks Removed -->
-
 <div class="single-banner-container" onclick="openGame('play.html')">
 <img src="https://www.dropbox.com/scl/fi/6tpcs51vnqfq1jcctrjic/file_0000000005dc820ba3f6b07158bca521.png?rlkey=qxrrir6mjhejjnazz4c7wkma3&raw=1" alt="AstraSpin Banner" class="single-banner-img" fetchpriority="high" decoding="async">
 </div>
-
-<!-- Premium Featured Game Card -->
 <div class="featured-section">
-    <h2 class="section-title">Featured Game</h2>
-    <div class="featured-rotation-container" id="featuredRotationCard" onclick="openGame(currentFeaturedGame.gameUrl)">
-        <div class="featured-thumb-wrapper">
-            <div class="card-spinner"></div>
-            <img id="featuredImg" src="" class="featured-thumb" alt="Featured Game" fetchpriority="high" decoding="async" onload="this.style.opacity=1;this.previousElementSibling.style.display='none';" onerror="this.previousElementSibling.style.display='none';this.style.display='none';">
-        </div>
-        <div class="featured-info">
-            <span class="featured-badge">Featured</span>
-            <h3 id="featuredTitle"></h3>
-            <p id="featuredDesc"></p>
-        </div>
-    </div>
+<h2 class="section-title">Featured Game</h2>
+<div class="featured-rotation-container" id="featuredRotationCard" onclick="openGame(currentFeaturedGame.gameUrl)">
+<div class="featured-thumb-wrapper">
+<div class="card-spinner"></div>
+<img id="featuredImg" src="" class="featured-thumb" alt="Featured Game" fetchpriority="high" decoding="async" onload="this.style.opacity=1;this.previousElementSibling.style.display='none';" onerror="this.previousElementSibling.style.display='none';this.style.display='none';">
 </div>
-
+<div class="featured-info">
+<h3 id="featuredTitle">Loading...</h3>
+<p id="featuredDesc">Discover amazing games and win rewards!</p>
+<button class="play-now-btn">Play Now</button>
+</div>
+</div>
+</div>
 <div class="games-section">
 <h2 class="section-title">Explore Games</h2>
 <a href="#games" class="banner-card" onclick="navigate('#games')">
@@ -254,7 +238,6 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 </div>
 </a>
 </div>
-
 <div class="games-section" id="moreGamesSection" style="margin-top:40px;">
 <h2 class="section-title">Discover More (Third-Party)</h2>
 <div class="games-grid" id="gamepixGrid"></div>
@@ -286,7 +269,6 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 <a onclick="navigate('#terms')">Terms & Conditions</a>
 <a onclick="navigate('#disclaimer')">Disclaimer</a>
 </div>
-
 <p class="copyright">&copy; 2026 AstraSpin. All rights reserved.</p>
 </footer>
 </div>
@@ -355,7 +337,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 </div>
 <button class="action-card-btn" id="redeemBtn" onclick="openRedeem()" style="background:linear-gradient(145deg,#ffcc00,#ffb300);box-shadow:0 5px 0 #b88a00;">Redeem Coins</button>
 </div>
-<div class="settings-section"><p class="section-label">Device Info</p><div class="data-card"><p class="data-label">Device ID</p><p class="data-value small" id="deviceId" style="font-size:13px;font-weight:500;color:var(--text-medium);word-break:break-all;"></p></div></div>
+<div class="settings-section"><p class="section-label">Device Info</p><div class="data-card"><p class="data-label">Device ID</p><p class="data-value small" id="deviceId" style="font-size:13px;font-weight:500;color:var(--text-medium);word-break:break-all;">Loading...</p></div></div>
 <div class="settings-section"><p class="section-label">Sound</p><div class="toggle-row"><span class="toggle-label">Music</span><label class="toggle-switch"><input type="checkbox" id="musicToggle" onchange="toggleMusic()"><span class="toggle-slider"></span></label></div><div class="toggle-row"><span class="toggle-label">Sound FX</span><label class="toggle-switch"><input type="checkbox" id="soundToggle" checked onchange="toggleSound()"><span class="toggle-slider"></span></label></div></div>
 <div class="settings-section">
 <p class="section-label">Gift Store (1,000 Coins = ₹1)</p>
@@ -409,7 +391,7 @@ function playWin(){setTimeout(function(){playTone(520,0.1,'sine');},0);setTimeou
 function playTick(){playTone(1200,0.02,'square');}
 function toggleMusic(){initAudio();musicEnabled=document.getElementById('musicToggle').checked;saveAllData();}
 function toggleSound(){soundEnabled=document.getElementById('soundToggle').checked;saveAllData();}
-function updateCoinDisplay(){var el=document.getElementById('coinDisplay');if(el){el.classList.add('animate');el.textContent=coins.toLocaleString();setTimeout(function(){el.classList.remove('animate');},400);}document.getElementById('settingsCoins').textContent=coins.toLocaleString();document.getElementById('redeemBalance').textContent=coins.toLocaleString();document.getElementById('deviceId').textContent=deviceId||'';document.getElementById('progressValue').textContent=coins.toLocaleString()+'/20,000';document.getElementById('progressFill').style.width=Math.min(100,(coins/MIN_REDEEM)*100)+'%';var st=document.getElementById('walletStatus');var txt=document.getElementById('statusText');if(coins>=MIN_REDEEM){st.className='wallet-status ready';txt.textContent='Ready to redeem!';}else{st.className='wallet-status pending';txt.textContent='Keep playing!';}updateRedeemButton();renderGiftStore();}
+function updateCoinDisplay(){var el=document.getElementById('coinDisplay');if(el){el.classList.add('animate');el.textContent=coins.toLocaleString();setTimeout(function(){el.classList.remove('animate');},400);}document.getElementById('settingsCoins').textContent=coins.toLocaleString();document.getElementById('redeemBalance').textContent=coins.toLocaleString();document.getElementById('deviceId').textContent=deviceId||'Unknown';document.getElementById('progressValue').textContent=coins.toLocaleString()+'/20,000';document.getElementById('progressFill').style.width=Math.min(100,(coins/MIN_REDEEM)*100)+'%';var st=document.getElementById('walletStatus');var txt=document.getElementById('statusText');if(coins>=MIN_REDEEM){st.className='wallet-status ready';txt.textContent='Ready to redeem!';}else{st.className='wallet-status pending';txt.textContent='Keep playing!';}updateRedeemButton();renderGiftStore();}
 function updateRedeemButton(){var b=document.getElementById('redeemConfirmBtn');if(b)b.disabled=coins<MIN_REDEEM||!isOnline;}
 function updateDailyButton(){var b=document.getElementById('dailyBtn');if(!b)return;var d=document.getElementById('dailyRewardDisplay');var n=Date.now();var e=n-lastDailyClaim;var c=86400000;if(d)d.textContent=dailyRewards[currentStreak-1]+" Coins";if(!isOnline){b.disabled=true;b.textContent='Offline';}else if(e>=c){b.disabled=false;b.textContent='Claim Day '+currentStreak+' ('+dailyRewards[currentStreak-1]+' Coins)';}else{b.disabled=true;var r=c-e;b.textContent='Next in '+Math.floor(r/3600000)+'h '+Math.floor((r%3600000)/60000)+'m';}}
 function renderGiftStore(){renderGiftCategory('kidsGifts',giftCategories.kids);renderGiftCategory('dailyGifts',giftCategories.daily);renderGiftCategory('electronicsGifts',giftCategories.electronics);}
@@ -424,7 +406,7 @@ function initGamePixBanner(){try{if(window.GamePix&&typeof window.GamePix.displa
 function shuffleArray(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 let allGamePixGames=[];let visibleGridUrls=new Set();let featuredInterval=null;let currentFeaturedGame=null;let lastFeaturedUrl=null;
 function getEligibleFeaturedGame(){let e=allGamePixGames.filter(g=>!visibleGridUrls.has(g.gameUrl));if(e.length===0)return null;if(e.length>1&&lastFeaturedUrl){e=e.filter(g=>g.gameUrl!==lastFeaturedUrl);}return e[Math.floor(Math.random()*e.length)];}
-function updateFeaturedGame(){let n=getEligibleFeaturedGame();if(!n)return;currentFeaturedGame=n;lastFeaturedUrl=n.gameUrl;const i=document.getElementById('featuredImg');const t=document.getElementById('featuredTitle');const d=document.getElementById('featuredDesc');i.style.opacity=0;i.style.display='block';i.previousElementSibling.style.display='block';i.src=n.thumbnail;let shortTitle=n.name.length>20?n.name.substring(0,18)+'...':n.name;t.textContent=shortTitle;d.textContent="Tap to play!";const f=document.querySelector('.featured-info');f.classList.remove('fade-swap');void f.offsetWidth;f.classList.add('fade-swap');}
+function updateFeaturedGame(){let n=getEligibleFeaturedGame();if(!n)return;currentFeaturedGame=n;lastFeaturedUrl=n.gameUrl;const i=document.getElementById('featuredImg');const t=document.getElementById('featuredTitle');const d=document.getElementById('featuredDesc');i.style.opacity=0;i.style.display='block';i.previousElementSibling.style.display='block';i.src=n.thumbnail;t.textContent=n.name;d.textContent="Play "+n.name+" now and earn coins!";const f=document.querySelector('.featured-info');f.classList.remove('fade-swap');void f.offsetWidth;f.classList.add('fade-swap');}
 function initFeaturedRotation(){if(featuredInterval)clearInterval(featuredInterval);updateFeaturedGame();featuredInterval=setInterval(()=>{updateFeaturedGame();},8000);}
 const games49Thumbnails=["https://www.dropbox.com/scl/fi/2yq5ynci8qqk51p5pet3f/file_00000000aa1c81faa781466976d65032.png?rlkey=dn6vyl4x89x01qgtpqn9h3086&raw=1","https://www.dropbox.com/scl/fi/j85uva6nxwmmw5s96juub/file_0000000026b08208afa410ed06532a7f.png?rlkey=5wufbegoie8i7mus2k64i01pm&raw=1","https://www.dropbox.com/scl/fi/d2k3ino1689muqekmzbmj/file_0000000076348208ab73c335172f2bb2.png?rlkey=te51m4xmpc728h1vwsbsskajh&raw=1","https://www.dropbox.com/scl/fi/z46m3l8kod69275el76e7/file_0000000047088208aa0fed218685bb45.png?rlkey=fj2qv9gpb5nt3xitk010okhag&raw=1","https://www.dropbox.com/scl/fi/uml1w7f681jtyfti8dk6g/file_00000000196482088c9a6d04bcc8d731.png?rlkey=3oyh9294wr9o0rgz5hgkob77p&raw=1"];
 function setGames49Banner(){const b=document.getElementById('games49BannerImg');if(b){b.src=games49Thumbnails[Math.floor(Math.random()*games49Thumbnails.length)];}}
