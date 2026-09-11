@@ -42,10 +42,27 @@ body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--tex
 </div>
 </div>
 <script>
-const games=[{name:"AstraSpin",thumbnail:"",gameUrl:"",category:"Casual",isNew:false},{name:"Wolfoo Maze Adventure",thumbnail:"",gameUrl:"",category:"Kids",isNew:true},{name:"Stickboy War",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Cars Tycoon",thumbnail:"",gameUrl:"",category:"Racing",isNew:false},{name:"Snake Puzzle 3D Game",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:true},{name:"BlockStacking",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"forest dash",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Reds Winding Way",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Undead Walking 3D",thumbnail:"",gameUrl:"",category:"Action",isNew:true},{name:"Shadeo",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Maze Escape Hero",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Wolfoo Tangram",thumbnail:"",gameUrl:"",category:"Kids",isNew:false},{name:"My Army Base",thumbnail:"",gameUrl:"",category:"Action",isNew:true},{name:"Ninja Gorilla Jigsaw Puzzle",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Border Clash",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Nokia 3310 Snack Game",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"The Greedy Crow",thumbnail:"",gameUrl:"",category:"Kids",isNew:false},{name:"Evolution Arena Battle Royale",thumbnail:"",gameUrl:"",category:"Action",isNew:true},{name:"Block Crush",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Dragon Power",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Merge Royal 2048",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"The Last Adventure",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Drive and Dodge: Car Racing 3D",thumbnail:"",gameUrl:"",category:"Racing",isNew:true},{name:"Splatcha!",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"Obby: Traps And Jumps",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Tiger Coloring Book",thumbnail:"",gameUrl:"",category:"Kids",isNew:false},{name:"Trio Twist Puzzle",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Cute Animal Puzzle Game",thumbnail:"",gameUrl:"",category:"Kids",isNew:false},{name:"Mahjong Bird Tiles",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Emoji Line Puzzle",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Sunny Spell",thumbnail:"",gameUrl:"",category:"Kids",isNew:true},{name:"Taxi Driver Ultimate",thumbnail:"",gameUrl:"",category:"Racing",isNew:false},{name:"Landing Hero",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"Paws Up",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"Zombi Defense",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Hero Monster Battle Game",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Sniper Corps",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Dresser Avatar",thumbnail:"",gameUrl:"",category:"Kids",isNew:true},{name:"Bikkings: brothers to valhalla",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"MemoPlay",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Chinchilla Trails",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Bad Cat Prankster Moms Return",thumbnail:"",gameUrl:"",category:"Kids",isNew:false},{name:"Freight",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"SkyHop!",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"Bear Go Home",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Mountain Bike Xtreme",thumbnail:"",gameUrl:"",category:"Racing",isNew:false},{name:"Zombie Siege",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Car Word Hunt",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Sort Color Water Puzzle",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Kim Jong Un Backroom",thumbnail:"",gameUrl:"",category:"Action",isNew:false}];
+let games = [];
+
+// Fetch central game data from index.html
+async function fetchGameData() {
+    try {
+        const res = await fetch('index.html', {cache: 'no-cache'});
+        const html = await res.text();
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        return JSON.parse(doc.getElementById('game-database').textContent);
+    } catch(e) {
+        console.error("Failed to load game data", e);
+        return [];
+    }
+}
 
 function renderCategories(){const grid=document.getElementById('categoriesGrid');grid.innerHTML='';const cats=[...new Set(games.map(g=>g.category))];const colors={'Action':'#ff5e7e','Puzzle':'#4a90e2','Racing':'#9b59b6','Kids':'#2ecc71','Arcade':'#ff9500','Casual':'#e67e00'};const icons={'Action':'🔥','Puzzle':'🧩','Racing':'🏎️','Kids':'🧸','Arcade':'🕹️','Casual':'🎮'};cats.forEach(cat=>{const count=games.filter(g=>g.category===cat).length;const c=document.createElement('a');c.href=`games.html?cat=${cat}`;c.className='category-card';c.innerHTML=`<div class="category-icon" style="background:${colors[cat]||'#ccc'}">${icons[cat]||'🎮'}</div><div class="category-name">${cat}</div><div class="category-count">${count} Games</div>`;grid.appendChild(c);});}
-document.addEventListener('DOMContentLoaded',renderCategories);
+
+document.addEventListener('DOMContentLoaded', async function() {
+    games = await fetchGameData();
+    renderCategories();
+});
 </script>
 </body>
 </html>
