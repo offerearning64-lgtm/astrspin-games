@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Categories - AstraSpin</title>
+<meta name="description" content="Browse games by category on AstraSpin. Choose from Action, Puzzle, Racing, Kids, Arcade, and Casual game categories.">
+<link rel="canonical" href="https://astraspin.in/categories.html" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ff9500'/%3E%3Cpath d='M50 20L58 40H78L62 52L68 72L50 60L32 72L38 52L22 40H42Z' fill='white'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9671316621072835" crossorigin="anonymous"></script>
+<style>
+:root{--bg-primary:#f0f7ff;--bg-secondary:#fff;--text-dark:#2d2d2d;--text-medium:#555;--text-light:#888;--accent-orange:#ff9500;--accent-orange-dark:#e67e00;--accent-pink:#ff5e7e;--accent-green:#2ecc71;--accent-blue:#4a90e2;--accent-purple:#9b59b6;--border-light:#e0e8f0;--safe-top:env(safe-area-inset-top,0px);--shadow-card:0 8px 0 rgba(0,0,0,0.08), 0 12px 24px rgba(0,0,0,0.05)}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-dark);position:fixed;top:0;left:0;right:0;bottom:0;-webkit-font-smoothing:antialiased}
+.app-wrapper{position:relative;width:100%;height:100%;z-index:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.page-container{max-width:1200px;margin:0 auto;padding:20px 16px;padding-top:calc(20px + var(--safe-top));padding-bottom:40px}
+.page-header{display:flex;align-items:center;gap:15px;margin-bottom:30px}
+.back-btn{width:50px;height:50px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;text-decoration:none;box-shadow:0 4px 0 rgba(0,0,0,0.1);border:3px solid var(--accent-orange)}
+.back-btn svg{width:24px;height:24px;color:var(--accent-orange-dark)}
+.page-title{font-family:'Fredoka',sans-serif;font-size:34px;font-weight:700;color:var(--text-dark)}
+.categories-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(min-width:600px){.categories-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.categories-grid{grid-template-columns:repeat(4,1fr)}}
+.category-card{background:#fff;border-radius:24px;padding:30px 20px;text-align:center;cursor:pointer;transition:transform .3s cubic-bezier(.34,1.56,.64,1);box-shadow:var(--shadow-card);border:4px solid #fff;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:15px}
+.category-card:hover{transform:translateY(-8px) rotate(-2deg)}
+.category-card:active{transform:scale(.98)}
+.category-icon{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;color:#fff}
+.category-name{font-family:'Fredoka',sans-serif;font-size:20px;font-weight:600;color:var(--text-dark)}
+.category-count{font-size:14px;color:var(--text-light)}
+</style>
+</head>
+<body>
+<div class="app-wrapper">
+<div class="page-container">
+<div class="page-header">
+<a href="index.html" class="back-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
+<div class="page-title">Categories</div>
+</div>
+<div class="categories-grid" id="categoriesGrid"></div>
+</div>
+</div>
+<script>
+const games=[{name:"AstraSpin",thumbnail:"",gameUrl:"",category:"Casual",isNew:false},{name:"Wolfoo Maze Adventure",thumbnail:"",gameUrl:"",category:"Kids",isNew:true},{name:"Stickboy War",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Cars Tycoon",thumbnail:"",gameUrl:"",category:"Racing",isNew:false},{name:"Snake Puzzle 3D Game",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:true},{name:"BlockStacking",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"forest dash",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Reds Winding Way",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Undead Walking 3D",thumbnail:"",gameUrl:"",category:"Action",isNew:true},{name:"Shadeo",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Maze Escape Hero",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Wolfoo Tangram",thumbnail:"",gameUrl:"",category:"Kids",isNew:false},{name:"My Army Base",thumbnail:"",gameUrl:"",category:"Action",isNew:true},{name:"Ninja Gorilla Jigsaw Puzzle",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Border Clash",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Nokia 3310 Snack Game",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"The Greedy Crow",thumbnail:"",gameUrl:"",category:"Kids",isNew:false},{name:"Evolution Arena Battle Royale",thumbnail:"",gameUrl:"",category:"Action",isNew:true},{name:"Block Crush",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Dragon Power",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Merge Royal 2048",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"The Last Adventure",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Drive and Dodge: Car Racing 3D",thumbnail:"",gameUrl:"",category:"Racing",isNew:true},{name:"Splatcha!",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"Obby: Traps And Jumps",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Tiger Coloring Book",thumbnail:"",gameUrl:"",category:"Kids",isNew:false},{name:"Trio Twist Puzzle",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Cute Animal Puzzle Game",thumbnail:"",gameUrl:"",category:"Kids",isNew:false},{name:"Mahjong Bird Tiles",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Emoji Line Puzzle",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Sunny Spell",thumbnail:"",gameUrl:"",category:"Kids",isNew:true},{name:"Taxi Driver Ultimate",thumbnail:"",gameUrl:"",category:"Racing",isNew:false},{name:"Landing Hero",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"Paws Up",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"Zombi Defense",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Hero Monster Battle Game",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Sniper Corps",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Dresser Avatar",thumbnail:"",gameUrl:"",category:"Kids",isNew:true},{name:"Bikkings: brothers to valhalla",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"MemoPlay",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Chinchilla Trails",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Bad Cat Prankster Moms Return",thumbnail:"",gameUrl:"",category:"Kids",isNew:false},{name:"Freight",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"SkyHop!",thumbnail:"",gameUrl:"",category:"Arcade",isNew:false},{name:"Bear Go Home",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Mountain Bike Xtreme",thumbnail:"",gameUrl:"",category:"Racing",isNew:false},{name:"Zombie Siege",thumbnail:"",gameUrl:"",category:"Action",isNew:false},{name:"Car Word Hunt",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Sort Color Water Puzzle",thumbnail:"",gameUrl:"",category:"Puzzle",isNew:false},{name:"Kim Jong Un Backroom",thumbnail:"",gameUrl:"",category:"Action",isNew:false}];
+
+function renderCategories(){const grid=document.getElementById('categoriesGrid');grid.innerHTML='';const cats=[...new Set(games.map(g=>g.category))];const colors={'Action':'#ff5e7e','Puzzle':'#4a90e2','Racing':'#9b59b6','Kids':'#2ecc71','Arcade':'#ff9500','Casual':'#e67e00'};const icons={'Action':'🔥','Puzzle':'🧩','Racing':'🏎️','Kids':'🧸','Arcade':'🕹️','Casual':'🎮'};cats.forEach(cat=>{const count=games.filter(g=>g.category===cat).length;const c=document.createElement('a');c.href=`games.html?cat=${cat}`;c.className='category-card';c.innerHTML=`<div class="category-icon" style="background:${colors[cat]||'#ccc'}">${icons[cat]||'🎮'}</div><div class="category-name">${cat}</div><div class="category-count">${count} Games</div>`;grid.appendChild(c);});}
+document.addEventListener('DOMContentLoaded',renderCategories);
+</script>
+</body>
+</html>
