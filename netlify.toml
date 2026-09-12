@@ -2,8 +2,30 @@
   command = "node build.js"
   publish = "."
 
+# 1. Games folder direct index.html access fix
+[[redirects]]
+  from = "/games/:game/index.html"
+  to = "/games/:game/index.html"
+  status = 200
+  force = true
+
+# 2. Games folder trailing slash access fix (/games/coin-rush-jungle/)
+[[redirects]]
+  from = "/games/:game/"
+  to = "/games/:game/index.html"
+  status = 200
+  force = true
+
+# 3. Games folder direct name access fix (/games/coin-rush-jungle)
+[[redirects]]
+  from = "/games/:game"
+  to = "/games/:game/index.html"
+  status = 200
+  force = true
+
+# 4. Games internal assets (images, js, css, audio) allow all
 [[redirects]]
   from = "/games/*"
   to = "/games/:splat"
   status = 200
-  force = false
+  force = true
